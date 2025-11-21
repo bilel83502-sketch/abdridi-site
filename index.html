@@ -64,7 +64,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <!-- Logo SVG (hex cyan + AB) -->
+        <!-- Logo -->
         <svg viewBox="0 0 120 140" width="64" height="74" aria-label="Logo AB DRIDI">
           <defs>
             <linearGradient id="hexGrad" x1="0" y1="0" x2="1" y2="0">
@@ -75,7 +75,7 @@
           <polygon points="60,6 110,35 110,85 60,114 10,85 10,35"
                    fill="none" stroke="url(#hexGrad)" stroke-width="8" stroke-linejoin="round"/>
           <text x="60" y="80" text-anchor="middle" font-size="64" font-weight="800"
-                font-family="Inter, Arial, sans-serif" fill="#0B3A86" letter-spacing="1">AB</text>
+                font-family="Inter, Arial, sans-serif" fill="#0B3A86">AB</text>
         </svg>
         <div class="logotype">DRIDI</div>
       </div>
@@ -87,8 +87,9 @@
   <section class="hero">
     <div class="container">
       <div class="center">
-        <!-- Logo principal plus grand -->
-        <svg viewBox="0 0 120 140" width="108" height="124" aria-label="Logo AB DRIDI">
+
+        <!-- Logo principal -->
+        <svg viewBox="0 0 120 140" width="108" height="124">
           <defs>
             <linearGradient id="hexGradHero" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%"  stop-color="#1ECBE1"/>
@@ -98,7 +99,7 @@
           <polygon points="60,6 110,35 110,85 60,114 10,85 10,35"
                    fill="none" stroke="url(#hexGradHero)" stroke-width="8" stroke-linejoin="round"/>
           <text x="60" y="80" text-anchor="middle" font-size="64" font-weight="800"
-                font-family="Inter, Arial, sans-serif" fill="#0B3A86" letter-spacing="1">AB</text>
+                font-family="Inter, Arial, sans-serif" fill="#0B3A86">AB</text>
         </svg>
 
         <span class="tag">Where intelligence meets performance excellence</span>
@@ -106,8 +107,7 @@
         <h1>Répondre mieux et plus vite aux appels d’offres.</h1>
         <p class="sub">
           Nous aidons les PME du transport & de la logistique à détecter les opportunités,
-          qualifier les dossiers, rédiger des réponses propres et nouer les bons partenariats
-          pour livrer sans friction.
+          qualifier les dossiers, rédiger des réponses propres et nouer les bons partenariats.
         </p>
 
         <div class="actions">
@@ -127,8 +127,7 @@
       </div>
     </div>
 
-    <!-- Vague de points animée -->
-    <div class="dots" aria-hidden="true">
+    <div class="dots">
       <svg preserveAspectRatio="none" viewBox="0 0 1200 220">
         <defs>
           <pattern id="pts" width="12" height="12" patternUnits="userSpaceOnUse">
@@ -148,57 +147,78 @@
     <div class="container">
       <div class="kicker">Services</div>
       <h2>Ce que l’on fait pour vous</h2>
-      <p class="muted" style="margin-top:-6px">Sans chiffres marketing : des actions concrètes, traçables et utiles.</p>
+      <p class="muted">Sans chiffres marketing : des actions concrètes, traçables et utiles.</p>
 
-      <div class="grid-3" style="margin-top:18px">
+      <div class="grid-3">
         <div class="card">
           <span class="pill">Appels d’offres</span>
           <h3>Veille & qualification</h3>
-          <p>Multi-sources, filtres par éligibilité, résumé des exigences, Go/NoGo rapide, rétroplanning et jalons.</p>
+          <p>Multi-sources, filtres par éligibilité, résumé des exigences, Go/NoGo rapide.</p>
         </div>
+
         <div class="card">
           <span class="pill">Rédaction</span>
           <h3>Réponse & dépôt</h3>
-          <p>Collecte des pièces, trame qualité, adaptation à la grille, relecture croisée, dépôt conforme (marché public/privé).</p>
+          <p>Collecte des pièces, trame qualité, relecture croisée, dépôt conforme.</p>
         </div>
+
         <div class="card">
           <span class="pill">Réseau</span>
           <h3>Matching partenaires</h3>
-          <p>Transporteurs, transitaires, stockeurs… compatibilité couverture/qualité/capacité/conformité pour livrer sans frictions.</p>
+          <p>Affrètement, stockage, spécialités — partenaires fiables pour livrer sans friction.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT (envoi direct vers Gmail via FormSubmit) -->
+  <!-- CONTACT -->
   <section id="contact" class="cta-strip">
     <div class="container cta-wrap">
       <div>
         <div class="kicker" style="color:#bfefff">Contact</div>
-        <h2 style="margin:0 0 6px">Parlons de vos prochains dépôts</h2>
-        <p style="color:#e7f3ff">Vous nous dites votre objectif. On revient avec une approche concrète — sans chiffres inventés.</p>
+        <h2>Parlons de vos prochains dépôts</h2>
+        <p style="color:#d9ebff">Expliquez-nous votre objectif, on revient rapidement avec du concret.</p>
       </div>
+
       <form class="form" action="https://formsubmit.co/bilel83502@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Contact DRIDI (site)">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="#">
-        <div class="field"><label style="color:#d9ebff">Nom & société</label><input name="nom" required placeholder="Ex : Bilel Dridi — DRIDI" /></div>
-        <div class="field"><label style="color:#d9ebff">Email professionnel</label><input type="email" name="email" required placeholder="prenom.nom@entreprise.com" /></div>
-        <div class="field"><label style="color:#d9ebff">Votre besoin (facultatif)</label><textarea name="message" rows="3" placeholder="Veille AO, rédaction, matching partenaires, data…"></textarea></div>
+
+        <div class="field">
+          <label style="color:#d9ebff">Nom & société</label>
+          <input name="nom" required placeholder="Ex : Nom Prénom — Entreprise" />
+        </div>
+
+        <div class="field">
+          <label style="color:#d9ebff">Email professionnel</label>
+          <input type="email" name="email" required placeholder="prenom.nom@entreprise.com" />
+        </div>
+
+        <div class="field">
+          <label style="color:#d9ebff">Votre besoin (facultatif)</label>
+          <textarea name="message" rows="3" placeholder="Veille AO, rédaction, matching partenaires, data…"></textarea>
+        </div>
+
         <button class="send" type="submit">Nous contacter</button>
-        <p style="font-size:12px;color:#cfe7ff;margin-top:8px">Aucune revente de données. RGPD respecté.</p>
+
+        <p style="font-size:12px;color:#cfe7ff;margin-top:8px">
+          Aucune revente de données. RGPD respecté.
+        </p>
       </form>
     </div>
   </section>
 
   <footer>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap">
       <div>© <span id="y"></span> DRIDI — Where intelligence meets performance excellence</div>
       <div><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></div>
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear()
+  </script>
+
 </body>
 </html>
