@@ -33,11 +33,12 @@
     /* CTA */
     .cta{
       background:var(--blue);
-      color:#fff;               /* ⬅ TEXTE BLANC */
+      color:#fff !important;   /* TEXTE BLANC FORCÉ */
       padding:10px 16px;
       border-radius:16px;
       font-weight:700;
       border:0;
+      display:inline-block;
     }
     .cta:hover{opacity:.92}
 
@@ -51,8 +52,6 @@
     .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:14px 18px;font-weight:800;border:2px solid transparent}
     .btn-primary{background:var(--cyan);color:#06223a}
     .btn-outline{border-color:rgba(255,255,255,.35);color:#fff}
-    .hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px}
-    .hero-card p{margin:0;color:#dbe9ff;font-size:14px}
 
     /* Sections */
     section{padding:64px 0}
@@ -108,14 +107,15 @@
         <span class="tag">Where intelligence meets performance excellence</span>
         <h1>Gagnez plus d’appels d’offres.<br/> Accélérez vos partenariats.</h1>
         <p class="sub">AB DRIDI accompagne les PME du transport & de la logistique avec une approche <strong>data + stratégie</strong> : veille des marchés, qualification, dossiers de réponse, matching de partenaires et pilotage de la performance.</p>
+        
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Obtenir un audit gratuit</a>
           <a class="btn btn-outline" href="#services">Voir nos services</a>
         </div>
-        <div class="hero-card" style="margin-top:18px">
-          <p>« Depuis qu’on travaille avec AB DRIDI, on cible mieux, on répond plus vite et on gagne plus souvent. » — Client PME transport</p>
-        </div>
+
+        <!-- TÉMOIGNAGE SUPPRIMÉ ICI -->
       </div>
+
       <div>
         <div class="card" style="background:#fff2;border-color:#fff3">
           <h3 style="color:#fff">Ce que vous obtenez</h3>
@@ -127,6 +127,7 @@
           </ul>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -143,7 +144,7 @@
         <div class="card">
           <span class="pill">Appels d’offres</span>
           <h3>Veille, qualification & réponse</h3>
-          <p>Détection multi-sources, scoring d’éligibilité, rétroplanning, collecte pièces, rédaction & chiffrage, dépôt et suivi.</p>
+          <p>Détection multi-sources, scoring d’éligibilité, rétroplanning, collecte pièces, rédaction & chiffrage, dépôt et suivi — en conformité.</p>
         </div>
         <div class="card">
           <span class="pill">Go-to-market</span>
@@ -153,12 +154,12 @@
         <div class="card">
           <span class="pill">Matching</span>
           <h3>Réseau transport & logistique</h3>
-          <p>Base de données évolutive d’acteurs et algorithmes de compatibilité.</p>
+          <p>Base de données évolutive d’acteurs, compatibilité, couverture, capacité, qualité.</p>
         </div>
         <div class="card">
           <span class="pill">Data</span>
           <h3>Tableaux de bord & KPI</h3>
-          <p>Suivi des taux de réponse, win rate, marge nette, SLA, reporting mensuel clair.</p>
+          <p>Reporting clair du taux de réponse, win rate, marge nette, SLA et remplissage.</p>
         </div>
         <div class="card">
           <span class="pill">Conformité</span>
@@ -167,8 +168,8 @@
         </div>
         <div class="card">
           <span class="pill">Accompagnement</span>
-          <h3>Coaching & méthode</h3>
-          <p>Process complet : qualification, rédaction, soutenance, formation.</p>
+          <h3>Coaching d’équipes & méthode</h3>
+          <p>Qualification, rédaction, soutenance, bouclage. Formation aux bonnes pratiques gagnantes.</p>
         </div>
       </div>
     </div>
@@ -197,7 +198,7 @@
         <div class="step">
           <div class="n">3</div>
           <h3>Réponse & soutenance</h3>
-          <p>Dossiers complets, chiffrage, différenciation, soutenance — jusqu’à la signature.</p>
+          <p>Dossiers complets, chiffrage, différenciation, Q/R, soutenance — jusqu’à la signature.</p>
         </div>
       </div>
     </div>
@@ -216,10 +217,11 @@
           <li>📈 Recommandations chiffrées</li>
         </ul>
       </div>
+
       <form onsubmit="event.preventDefault(); alert('Merci ! Nous revenons vers vous très vite.');" class="card" style="background:#0f214f;color:#fff;border:1px solid rgba(255,255,255,.15)">
         <div class="field">
           <label>Nom & société</label>
-          <input required placeholder="Ex : Prénom.Nom — entreprise " />
+          <input required placeholder="Ex : Prénom.Nom — entreprise" />
         </div>
         <div class="field">
           <label>Email professionnel</label>
@@ -230,7 +232,10 @@
           <textarea rows="4" placeholder="Veille AO, rédaction, matching partenaires, data KPI…"></textarea>
         </div>
         <button class="btn btn-primary" type="submit" style="border-radius:12px;width:100%">Recevoir mon audit</button>
-        <p style="font-size:12px;color:#b9d6ff;margin-top:10px">En soumettant ce formulaire, vous acceptez d’être recontacté.</p>
+
+        <p style="font-size:12px;color:#b9d6ff;margin-top:10px">
+          En soumettant ce formulaire, vous acceptez d’être recontacté. RGPD respecté.
+        </p>
       </form>
     </div>
 
