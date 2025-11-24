@@ -20,32 +20,27 @@
     a{color:var(--cyan);text-decoration:none}
     img{max-width:100%;display:block}
 
-    /* Layout */
     .container{width:min(1140px,92vw);margin:0 auto}
     header.nav{position:sticky;top:0;background:#fff;border-bottom:1px solid #eef2f7;z-index:50}
     .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand svg{width:42px;height:42px}
     .brand-name{font-weight:800;letter-spacing:.4px;font-size:18px;color:var(--blue)}
     .nav-links{display:flex;gap:18px}
     .nav-links a{font-weight:600;color:#334;opacity:.9}
 
-    /* CTA */
     .cta{
       background:var(--blue);
-      color:#fff !important;   /* TEXTE BLANC FORCÉ */
+      color:#fff !important;
       padding:10px 16px;
       border-radius:16px;
       font-weight:700;
       border:0;
       display:inline-block;
     }
-    .cta:hover{opacity:.92}
 
-    /* Hero */
-    .hero{background:linear-gradient(140deg, #061538 0%, #0c2b66 60%, #0B1430 100%);color:#fff;padding:84px 0 72px;position:relative;overflow:hidden}
+    .hero{background:linear-gradient(140deg, #061538 0%, #0c2b66 60%, #0B1430 100%);color:#fff;padding:84px 0 72px;}
     .hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
-    .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);font-size:12px;color:#cfeaf5}
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);font-size:12px;color:#cfeaf5}
     h1{font-size:42px;line-height:1.1;margin:18px 0 12px}
     .sub{font-size:18px;color:#e8f6fb;opacity:.92}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
@@ -53,27 +48,22 @@
     .btn-primary{background:var(--cyan);color:#06223a}
     .btn-outline{border-color:rgba(255,255,255,.35);color:#fff}
 
-    /* Sections */
     section{padding:64px 0}
     .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:24px}
     h2{font-size:28px;margin:0;color:#0d2050}
     .kicker{color:var(--cyan);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
 
-    /* Services */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    @media (max-width: 920px){.hero .container{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+    @media(max-width:920px){.hero .container{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
     .card{background:#fff;border:1px solid #eef2f7;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
     .card h3{margin:6px 0 8px;font-size:18px;color:var(--blue)}
-    .card p{margin:0;color:#3a4356}
     .pill{display:inline-flex;align-items:center;gap:8px;background:var(--mist);border-radius:999px;padding:6px 10px;font-size:12px;color:#2a3346}
 
-    /* Process */
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .step{background:#fff;border:1px dashed #d9e2ef;border-radius:16px;padding:18px}
     .step .n{width:36px;height:36px;border-radius:10px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:900}
 
-    /* Contact */
-    .contact{background:linear-gradient(180deg,#081a3f, #0b1430);color:#fff}
+    .contact{background:linear-gradient(180deg,#081a3f,#0b1430);color:#fff}
     .contact .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
     .field{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
     .field input,.field textarea{background:#0e214f;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 14px;color:#eaf6ff}
@@ -83,180 +73,185 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container nav-wrap">
-      <div class="brand">
-        <img src="Logo AB DRIDI.png"
-             alt="Logo AB DRIDI"
-             style="width:48px;height:48px;border-radius:12px;object-fit:cover;" />
-        <div class="brand-name">AB DRIDI</div>
-      </div>
-      <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#process">Méthode</a>
-        <a href="#contact" class="cta">Parler à un expert</a>
-      </nav>
+<header class="nav">
+  <div class="container nav-wrap">
+    <div class="brand">
+      <img src="Logo AB DRIDI.png" alt="Logo AB DRIDI" style="width:48px;height:48px;border-radius:12px;object-fit:cover;" />
+      <div class="brand-name">AB DRIDI</div>
     </div>
-  </header>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">Méthode</a>
+      <a href="#contact" class="cta">Parler à un expert</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div>
-        <span class="tag">Where intelligence meets performance excellence</span>
-        <h1>Gagnez plus d’appels d’offres.<br/> Accélérez vos partenariats.</h1>
-        <p class="sub">AB DRIDI accompagne les PME du transport & de la logistique avec une approche <strong>data + stratégie</strong> : veille des marchés, qualification, dossiers de réponse, matching de partenaires et pilotage de la performance.</p>
-        
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Obtenir un audit gratuit</a>
-          <a class="btn btn-outline" href="#services">Voir nos services</a>
-        </div>
+<section class="hero" id="home">
+  <div class="container">
+    <div>
+      <span class="tag">Where intelligence meets performance excellence</span>
+      <h1>Gagnez plus d’appels d’offres.<br/> Accélérez vos partenariats.</h1>
+      <p class="sub">AB DRIDI accompagne les PME du transport & de la logistique avec une approche <strong>data + stratégie</strong>.</p>
 
-        <!-- TÉMOIGNAGE SUPPRIMÉ ICI -->
-      </div>
-
-      <div>
-        <div class="card" style="background:#fff2;border-color:#fff3">
-          <h3 style="color:#fff">Ce que vous obtenez</h3>
-          <ul style="margin:0;padding-left:18px;color:#d3e7ff;line-height:1.7">
-            <li>Un pipeline d’appels d’offres priorisés et prêts à traiter</li>
-            <li>Des dossiers complets, structurés et compétitifs</li>
-            <li>Des partenaires fiables (affrètement, stockage, spécialités)</li>
-            <li>Un reporting clair sur le taux de win & la marge</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="kicker">Services</div>
-          <h2>Nos expertises cœur</h2>
-        </div>
-      </div>
-      <div class="grid">
-        <div class="card">
-          <span class="pill">Appels d’offres</span>
-          <h3>Veille, qualification & réponse</h3>
-          <p>Détection multi-sources, scoring d’éligibilité, rétroplanning, collecte pièces, rédaction & chiffrage, dépôt et suivi — en conformité.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Go-to-market</span>
-          <h3>Externalisation commerciale PME</h3>
-          <p>Prospection ciblée, nurturing, prises de RDV, argumentaires sectoriels, CRM & playbooks.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Matching</span>
-          <h3>Réseau transport & logistique</h3>
-          <p>Base de données évolutive d’acteurs, compatibilité, couverture, capacité, qualité.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Data</span>
-          <h3>Tableaux de bord & KPI</h3>
-          <p>Reporting clair du taux de réponse, win rate, marge nette, SLA et remplissage.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Conformité</span>
-          <h3>Dossiers & certifications</h3>
-          <p>Gestion documentaire, attestations, assurances, RSE, conformité douanière.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Accompagnement</span>
-          <h3>Coaching d’équipes & méthode</h3>
-          <p>Qualification, rédaction, soutenance, bouclage. Formation aux bonnes pratiques gagnantes.</p>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Obtenir un audit gratuit</a>
+        <a class="btn btn-outline" href="#services">Voir nos services</a>
       </div>
     </div>
-  </section>
 
-  <!-- PROCESS -->
-  <section id="process">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="kicker">Méthode</div>
-          <h2>Notre façon de faire gagner</h2>
-        </div>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="n">1</div>
-          <h3>Audit express (30–45 min)</h3>
-          <p>On clarifie vos cibles, vos forces et vos exigences opérationnelles.</p>
-        </div>
-        <div class="step">
-          <div class="n">2</div>
-          <h3>Pipeline d’opportunités</h3>
-          <p>Veille + scoring + priorisation ; on ne traite que ce qui a du sens.</p>
-        </div>
-        <div class="step">
-          <div class="n">3</div>
-          <h3>Réponse & soutenance</h3>
-          <p>Dossiers complets, chiffrage, différenciation, Q/R, soutenance — jusqu’à la signature.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container wrap">
-      <div>
-        <div class="kicker" style="color:#8fe9f6">Parlons-en</div>
-        <h2 style="color:#fff;margin:6px 0 12px">Plan d’action en 48 h</h2>
-        <p style="color:#cfe7ff">Laissez-nous 3 infos et on revient vers vous avec un plan d’attaque.</p>
-        <ul style="color:#cfe7ff;line-height:1.9">
-          <li>📅 Visio de 30 min</li>
-          <li>📌 3 opportunités à court terme</li>
-          <li>📈 Recommandations chiffrées</li>
+    <div>
+      <div class="card" style="background:#fff2;border-color:#fff3">
+        <h3 style="color:#fff">Ce que vous obtenez</h3>
+        <ul style="margin:0;padding-left:18px;color:#d3e7ff;line-height:1.7">
+          <li>Pipeline priorisé</li>
+          <li>Dossiers complets & compétitifs</li>
+          <li>Partenaires fiables</li>
+          <li>Reporting clair</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
 
-      <form onsubmit="event.preventDefault(); alert('Merci ! Nous revenons vers vous très vite.');" class="card" style="background:#0f214f;color:#fff;border:1px solid rgba(255,255,255,.15)">
-        <div class="field">
-          <label>Nom & société</label>
-          <input required placeholder="Ex : Prénom.Nom — entreprise" />
-        </div>
-        <div class="field">
-          <label>Email professionnel</label>
-          <input type="email" required placeholder="prenom.nom@entreprise.com" />
-        </div>
-        <div class="field">
-          <label>Votre besoin principal</label>
-          <textarea rows="4" placeholder="Veille AO, rédaction, matching partenaires, data KPI…"></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit" style="border-radius:12px;width:100%">Recevoir mon audit</button>
-
-        <p style="font-size:12px;color:#b9d6ff;margin-top:10px">
-          En soumettant ce formulaire, vous acceptez d’être recontacté. RGPD respecté.
-        </p>
-      </form>
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">Services</div>
+        <h2>Nos expertises cœur</h2>
+      </div>
     </div>
 
-    <div style="text-align:center;margin-top:24px;color:#e6f5ff;font-size:15px;">
-      <strong>Contact</strong><br>
-      <a href="mailto:contact.abdridi@gmail.com" style="color:#9fe9ff">contact.abdridi@gmail.com</a> —
-      <a href="tel:+33749845661" style="color:#9fe9ff">07.49.84.56.61</a> —
-      <a href="tel:+33621359640" style="color:#9fe9ff">06.21.35.96.40</a>
-    </div>
-  </section>
+    <div class="grid">
+      <div class="card">
+        <span class="pill">Appels d’offres</span>
+        <h3>Veille & réponse</h3>
+        <p>Détection multi-sources, scoring, rédaction, dépôt et suivi.</p>
+      </div>
 
-  <footer>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div>© <span id="y"></span> AB DRIDI — Where intelligence meets performance excellence</div>
-      <div><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></div>
-    </div>
-  </footer>
+      <div class="card">
+        <span class="pill">Go-to-market</span>
+        <h3>Externalisation commerciale</h3>
+        <p>Prospection, nurturing, RDV, argumentaires sectoriels.</p>
+      </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+      <div class="card">
+        <span class="pill">Matching</span>
+        <h3>Réseau transport & logistique</h3>
+        <p>Compatibilité selon couverture, capacité et qualité.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Data</span>
+        <h3>Tableaux de bord & KPI</h3>
+        <p>Reporting clair du win rate, marge nette et SLA.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Conformité</span>
+        <h3>Dossiers & certifications</h3>
+        <p>Gestion documentaire et conformité.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Accompagnement</span>
+        <h3>Coaching</h3>
+        <p>Formation aux meilleures pratiques gagnantes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">Méthode</div>
+        <h2>Notre façon de faire gagner</h2>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Audit express</h3>
+        <p>Clarification des objectifs et contraintes.</p>
+      </div>
+
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Pipeline qualifié</h3>
+        <p>Scoring, priorisation, opportunities ciblées.</p>
+      </div>
+
+      <div class="step">
+        <div class="n">3</div>
+        <h3>Réponse & soutenance</h3>
+        <p>Dossiers complets & différenciation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container wrap">
+    <div>
+      <div class="kicker" style="color:#8fe9f6">Parlons-en</div>
+      <h2 style="color:#fff;margin:6px 0 12px">Plan d’action en 48 h</h2>
+      <p style="color:#cfe7ff">Laissez 3 infos et on revient vers vous.</p>
+    </div>
+
+    <!-- ⭐⭐ FORMULAIRE EMAIL FONCTIONNEL ⭐⭐ -->
+    <form action="https://formsubmit.co/contact.abdridi@gmail.com" method="POST" 
+          class="card" style="background:#0f214f;color:#fff;border:1px solid rgba(255,255,255,.15)">
+
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="hidden" name="_next" value="https://ton-site.github.io/merci.html">
+
+      <div class="field">
+        <label>Nom & société</label>
+        <input name="nom" required placeholder="Ex : Prénom.Nom — entreprise" />
+      </div>
+
+      <div class="field">
+        <label>Email professionnel</label>
+        <input name="email" type="email" required placeholder="prenom.nom@entreprise.com" />
+      </div>
+
+      <div class="field">
+        <label>Votre besoin principal</label>
+        <textarea name="message" rows="4" placeholder="Veille AO, rédaction, matching partenaires…"></textarea>
+      </div>
+
+      <button class="btn btn-primary" type="submit" style="border-radius:12px;width:100%">
+        Recevoir mon audit
+      </button>
+
+      <p style="font-size:12px;color:#b9d6ff;margin-top:10px">
+        En soumettant ce formulaire, vous acceptez d’être recontacté.
+      </p>
+    </form>
+  </div>
+
+  <div style="text-align:center;margin-top:24px;color:#e6f5ff;font-size:15px;">
+    <strong>Contact</strong><br>
+    <a href="mailto:contact.abdridi@gmail.com" style="color:#9fe9ff">contact.abdridi@gmail.com</a> —
+    <a href="tel:+33749845661" style="color:#9fe9ff">07.49.84.56.61</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+    <div>© <span id="y"></span> AB DRIDI</div>
+    <div><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
