@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bilel83502-sketch.github.io/abdridi-site/sitemap.xml
