@@ -89,7 +89,7 @@
     h1{font-size:42px;line-height:1.1;margin:18px 0 12px}
     .sub{font-size:18px;color:#e8f6fb;opacity:.92}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:14px 18px;font-weight:800;border:2px solid transparent}
+    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:14px 18px;font-weight:800;border:2px solid transparent;cursor:pointer}
     .btn-primary{background:var(--cyan);color:#06223a}
     .btn-outline{border-color:rgba(255,255,255,.35);color:#fff}
 
@@ -247,13 +247,15 @@
       <p style="color:#cfe7ff">Laissez 3 infos et on revient vers vous.</p>
     </div>
 
-    <!-- ⭐⭐ FORMULAIRE EMAIL FONCTIONNEL ⭐⭐ -->
+    <!-- FORMULAIRE EMAIL -->
     <form action="https://formsubmit.co/contact.abdridi@gmail.com" method="POST" 
           class="card" style="background:#0f214f;color:#fff;border:1px solid rgba(255,255,255,.15)">
 
+      <!-- désactiver captcha formsubmit -->
       <input type="hidden" name="_captcha" value="false">
 
-      <input type="hidden" name="_next" value="https://ton-site.github.io/merci.html">
+      <!-- ✅ URL DE REDIRECTION APRÈS ENVOI (PAGE MERCI) -->
+      <input type="hidden" name="_next" value="https://bilel83502-sketch.github.io/abdridi-site/merci.html">
 
       <div class="field">
         <label>Nom & société</label>
