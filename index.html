@@ -1,304 +1,609 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- TITRE & DESCRIPTION SEO -->
-  <title>AB DRIDI — Where intelligence meets performance excellence</title>
-  <meta name="description" content="AB DRIDI : cabinet tech & performance. Veille et réponse aux appels d'offres, matching de partenaires, data & reporting, externalisation commerciale pour PME du transport et de la logistique."/>
+  <title>AB DRIDI — Stratégie & performance</title>
+  <meta name="description" content="AB DRIDI accompagne les PME du transport et de la logistique à générer davantage de chiffre d’affaires, en les positionnant stratégiquement sur des marchés porteurs et durables." />
 
-  <!-- INDEXATION & CANONICAL -->
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://bilel83502-sketch.github.io/abdridi-site/" />
+  <!-- Canonical (avec ton domaine) -->
+  <link rel="canonical" href="https://abdridi.com/" />
 
-  <!-- VERIFICATION GOOGLE SEARCH CONSOLE -->
-  <meta name="google-site-verification" content="msGJdHF1zbc9ujbo0USxZMyNNA9ZEiy2mEu1ieOugic" />
-
-  <!-- OPEN GRAPH (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AB DRIDI — Where intelligence meets performance excellence" />
-  <meta property="og:description" content="AB DRIDI accompagne les PME du transport et de la logistique avec une approche data + stratégie : appels d'offres, externalisation commerciale, data & reporting." />
-  <meta property="og:url" content="https://bilel83502-sketch.github.io/abdridi-site/" />
+  <meta property="og:title" content="AB DRIDI — Stratégie & performance" />
+  <meta property="og:description" content="Gagnez plus d’appels d’offres. Accélérez vos partenariats. Data + stratégie pour les PME T&L." />
+  <meta property="og:url" content="https://abdridi.com/" />
   <meta property="og:site_name" content="AB DRIDI" />
-  <meta property="og:image" content="https://bilel83502-sketch.github.io/abdridi-site/Logo%20AB%20DRIDI.png" />
+  <meta property="og:image" content="https://abdridi.com/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
-
-  <!-- TWITTER CARD -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="AB DRIDI — Where intelligence meets performance excellence" />
-  <meta name="twitter:description" content="AB DRIDI accompagne les PME du transport et de la logistique avec une approche data + stratégie : appels d'offres, externalisation commerciale, data & reporting." />
-  <meta name="twitter:image" content="https://bilel83502-sketch.github.io/abdridi-site/Logo%20AB%20DRIDI.png" />
-
-  <!-- DONNÉES STRUCTURÉES (SCHEMA.ORG) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AB DRIDI",
-    "url": "https://bilel83502-sketch.github.io/abdridi-site/",
-    "logo": "https://bilel83502-sketch.github.io/abdridi-site/Logo%20AB%20DRIDI.png",
-    "description": "Cabinet tech & performance pour PME du transport et de la logistique : appels d'offres, partenariats, data, externalisation commerciale.",
-    "areaServed": "France",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "commercial",
-      "email": "contact.abdridi@gmail.com",
-      "telephone": "+33749845661"
-    }
-  }
-  </script>
 
   <style>
     :root{
-      --blue:#003C8F;
-      --cyan:#1ECBE1;
-      --ink:#1A1A1A;
-      --mist:#E6E9ED;
-      --bg:#0B1430;
-      --radius:16px;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --bgNavy1:#020814;
+      --bgNavy2:#030B1B;
+      --bgNavy3:#041026;
+
+      --panel: rgba(255,255,255,.03);
+      --text:#F2F6FA;
+      --muted: rgba(242,246,250,.72);
+      --line: rgba(242,246,250,.14);
+
+      /* AB DRIDI colors (logo family) */
+      --c1:#16B3F3;
+      --c2:#5CCBFF;
+      --c3:#0A6FA8;
+
+      /* Secondary (very subtle) */
+      --s1:#7B61FF;
+
+      --g1: linear-gradient(135deg, rgba(22,179,243,.95), rgba(92,203,255,.65) 55%, rgba(10,111,168,.95));
+      --g2: linear-gradient(135deg, rgba(22,179,243,.85), rgba(123,97,255,.35));
+
+      --max: 1220px;
+      --r: 18px;
+      --r2: 28px;
+      --shadow: 0 28px 120px rgba(0,0,0,.60);
+
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,Montserrat,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);}
-    a{color:var(--cyan);text-decoration:none}
-    img{max-width:100%;display:block}
-
-    .container{width:min(1140px,92vw);margin:0 auto}
-    header.nav{position:sticky;top:0;background:#fff;border-bottom:1px solid #eef2f7;z-index:50}
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand-name{font-weight:800;letter-spacing:.4px;font-size:18px;color:var(--blue)}
-    .nav-links{display:flex;gap:18px}
-    .nav-links a{font-weight:600;color:#334;opacity:.9}
-
-    .cta{
-      background:var(--blue);
-      color:#fff !important;
-      padding:10px 16px;
-      border-radius:16px;
-      font-weight:700;
-      border:0;
-      display:inline-block;
+    html,body{
+      margin:0;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(22,179,243,.10), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(123,97,255,.08), transparent 62%),
+        linear-gradient(180deg, var(--bgNavy1) 0%, var(--bgNavy2) 45%, var(--bgNavy3) 100%);
+      overflow-x:hidden;
+      letter-spacing:.12px;
     }
 
-    .hero{background:linear-gradient(140deg, #061538 0%, #0c2b66 60%, #0B1430 100%);color:#fff;padding:84px 0 72px;}
-    .hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
-    .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);font-size:12px;color:#cfeaf5}
-    h1{font-size:42px;line-height:1.1;margin:18px 0 12px}
-    .sub{font-size:18px;color:#e8f6fb;opacity:.92}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:14px 18px;font-weight:800;border:2px solid transparent;cursor:pointer}
-    .btn-primary{background:var(--cyan);color:#06223a}
-    .btn-outline{border-color:rgba(255,255,255,.35);color:#fff}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px;}
 
-    section{padding:64px 0}
-    .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:24px}
-    h2{font-size:28px;margin:0;color:#0d2050}
-    .kicker{color:var(--cyan);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+    /* Background effects */
+    .bgWaves{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .9;
+    }
+    .bgWaves:before,
+    .bgWaves:after{
+      content:"";
+      position:absolute;
+      inset:-22%;
+      background:
+        radial-gradient(60% 40% at 18% 38%, rgba(22,179,243,.11), transparent 60%),
+        radial-gradient(55% 38% at 82% 58%, rgba(92,203,255,.09), transparent 62%),
+        radial-gradient(52% 36% at 52% 18%, rgba(123,97,255,.07), transparent 64%);
+      filter: blur(28px);
+      transform: translate3d(0,0,0);
+      will-change: transform;
+      animation: drift1 22s ease-in-out infinite;
+    }
+    .bgWaves:after{
+      opacity: .72;
+      filter: blur(38px);
+      animation: drift2 30s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+    @keyframes drift1{
+      0%{transform: translate(-1.0%, -1.2%) scale(1.03)}
+      50%{transform: translate(1.2%, 0.9%) scale(1.05)}
+      100%{transform: translate(-1.0%, -1.2%) scale(1.03)}
+    }
+    @keyframes drift2{
+      0%{transform: translate(0.9%, -1.0%) scale(1.04)}
+      50%{transform: translate(-1.2%, 1.1%) scale(1.06)}
+      100%{transform: translate(0.9%, -1.0%) scale(1.04)}
+    }
 
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    @media(max-width:920px){.hero .container{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
-    .card{background:#fff;border:1px solid #eef2f7;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    .card h3{margin:6px 0 8px;font-size:18px;color:var(--blue)}
-    .pill{display:inline-flex;align-items:center;gap:8px;background:var(--mist);border-radius:999px;padding:6px 10px;font-size:12px;color:#2a3346}
+    .bgGrain{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .18;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+    }
 
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .step{background:#fff;border:1px dashed #d9e2ef;border-radius:16px;padding:18px}
-    .step .n{width:36px;height:36px;border-radius:10px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:900}
+    /* Top bar */
+    .top{
+      position:fixed; top:0; left:0; right:0;
+      z-index:50;
+      background: rgba(5,6,7,.55);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(242,246,250,.12);
+    }
+    .top .in{
+      height: 72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
 
-    .contact{background:linear-gradient(180deg,#081a3f,#0b1430);color:#fff}
-    .contact .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
-    .field{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
-    .field input,.field textarea{background:#0e214f;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 14px;color:#eaf6ff}
+    .brand{display:flex; align-items:center; gap: 12px;}
+    .mark{
+      width: 10px; height:10px; border-radius:999px;
+      background: var(--g1);
+      box-shadow: 0 0 0 6px rgba(22,179,243,.10);
+    }
+    .brand img{
+      height: 26px; width:auto; display:block;
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,.45));
+    }
 
-    footer{background:#010818;color:#9fb3c8;padding:18px 0;font-size:13px}
+    .nav{display:flex; gap: 8px; align-items:center; color: rgba(242,246,250,.78); font-size:12px; letter-spacing:1.2px; text-transform:uppercase}
+    .nav a{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(242,246,250,.22);
+      background: rgba(255,255,255,.03);
+    }
+    .nav a:hover{border-color: rgba(242,246,250,.32); color: var(--text); background: rgba(255,255,255,.05)}
+
+    .pillBtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(242,246,250,.20);
+      background: rgba(255,255,255,.03);
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      white-space:nowrap;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .pillBtn:hover{transform: translateY(-1px); border-color: rgba(242,246,250,.32); background: rgba(255,255,255,.05)}
+    .pillBtn.primary{
+      border: 0;
+      background: var(--g1);
+      color: #050607;
+      font-weight: 900;
+      box-shadow: 0 18px 70px rgba(22,179,243,.18);
+    }
+
+    header.top, main{position:relative; z-index: 2;}
+
+    /* Hero */
+    .hero{padding-top: 96px;}
+    .heroGrid{display:grid; grid-template-columns: 1fr; gap: 14px; padding: 26px 0 10px;}
+
+    .tri{display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px;}
+
+    .tile{
+      border: 1px solid rgba(242,246,250,.14);
+      background: rgba(255,255,255,.03);
+      border-radius: 28px;
+      overflow:hidden;
+      box-shadow: 0 28px 120px rgba(0,0,0,.60);
+    }
+    .tile .head{
+      padding: 16px 16px 14px;
+      border-bottom: 1px solid rgba(242,246,250,.14);
+      background: rgba(0,0,0,.18);
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .k{font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(242,246,250,.78);}
+    .k b{color: rgba(242,246,250,.92)}
+    .floors{font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(242,246,250,.60); white-space:nowrap;}
+    .tile .body{padding: 16px 16px 18px; color: rgba(242,246,250,.78); line-height: 1.6; font-size: 14px;}
+    .tile .img{border-top: 1px solid rgba(242,246,250,.10); height: 160px; background-size:cover; background-position:center;}
+
+    .mega{
+      margin-top: 18px;
+      border: 1px solid rgba(242,246,250,.14);
+      border-radius: 28px;
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      box-shadow: 0 28px 120px rgba(0,0,0,.60);
+    }
+    .mega .topline{
+      padding: 14px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(242,246,250,.14);
+      background: rgba(0,0,0,.18);
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(242,246,250,.20);
+      background: rgba(255,255,255,.03);
+      font-size: 11px;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+      color: rgba(242,246,250,.86);
+    }
+    .tag i{width:8px; height:8px; border-radius:999px; background: var(--g2)}
+    .mega .inner{padding: 20px 16px 18px;}
+    .headline{
+      margin: 0;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: -1.3px;
+      line-height: .92;
+      font-size: clamp(44px, 6.2vw, 88px);
+    }
+    .headline .accent{
+      background: var(--g1);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .sub{margin: 14px 0 0; color: rgba(242,246,250,.72); font-size: 16px; line-height: 1.65; max-width: 72ch;}
+    .ctaRow{margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(242,246,250,.14); display:flex; gap: 12px; flex-wrap:wrap; align-items:center;}
+
+    .section{padding: 92px 0; border-top: 1px solid rgba(242,246,250,.14);}
+    .h2{
+      margin: 0;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      line-height: .86;
+      font-size: clamp(44px, 7.4vw, 118px);
+    }
+    .h2 .thin{color: rgba(242,246,250,.55); font-weight: 900}
+    .h2 .hi{background: var(--g1); -webkit-background-clip:text; background-clip:text; color:transparent;}
+    .twoCol{display:grid; grid-template-columns: 7fr 5fr; gap: 14px; align-items:start; margin-top: 18px;}
+    .copy{color: rgba(242,246,250,.72); font-size: 16px; line-height: 1.7; max-width: 56ch;}
+
+    .mosaic{display:grid; grid-template-columns: 1fr 1fr; gap: 10px;}
+    .shot{
+      border-radius: 28px;
+      border: 1px solid rgba(242,246,250,.16);
+      overflow:hidden;
+      height: 220px;
+      position:relative;
+      background-size: cover !important;
+      background-position: center center !important;
+      background:
+        radial-gradient(520px 220px at 25% 20%, rgba(22,179,243,.18), transparent 60%),
+        radial-gradient(520px 220px at 80% 30%, rgba(123,97,255,.12), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+    .shot:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.58));
+    }
+    .shot span{
+      position:absolute;
+      left: 14px;
+      bottom: 12px;
+      font-size: 11px;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      color: rgba(242,246,250,.78);
+    }
+
+    .infra{
+      margin-top: 14px;
+      border: 1px solid rgba(242,246,250,.14);
+      border-radius: 28px;
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .infra .row{display:flex; justify-content:space-between; align-items:center; gap: 12px; padding: 16px; border-bottom: 1px solid rgba(242,246,250,.14)}
+    .infra .row:last-child{border-bottom:0}
+    .infra .row b{letter-spacing: 2.8px; text-transform: uppercase; font-size: 12px}
+    .infra .row span{color: rgba(242,246,250,.70); font-size: 13px}
+
+    .infra.method .row{
+      display:grid;
+      grid-template-columns: 300px 1fr;
+      align-items:center;
+      gap: 14px;
+    }
+    .infra.method .row b{
+      display:block;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 1.25;
+      white-space: normal;
+    }
+
+    .pager{margin-top: 10px; display:flex; align-items:center; justify-content:flex-end; gap: 10px; color: rgba(242,246,250,.70); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;}
+    .dots{display:flex; gap: 6px;}
+    .dots i{width:7px; height:7px; border-radius:999px; background: rgba(242,246,250,.18)}
+    .dots i.on{background: rgba(22,179,243,.75)}
+
+    .contactBox{
+      border: 1px solid rgba(242,246,250,.14);
+      border-radius: 28px;
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      box-shadow: 0 28px 120px rgba(0,0,0,.60);
+    }
+    .contactBox .topline{padding: 14px 16px; border-bottom: 1px solid rgba(242,246,250,.14); background: rgba(0,0,0,.18); display:flex; justify-content:space-between; align-items:center; gap: 12px;}
+    .contactBox .inner{padding: 16px;}
+
+    label{display:block; margin-bottom: 6px; font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(242,246,250,.68);}
+    input, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(242,246,250,.16);
+      background: rgba(0,0,0,.28);
+      color: var(--text);
+      outline:none;
+      margin-bottom: 12px;
+    }
+    textarea{min-height: 120px; resize: vertical}
+    input:focus, textarea:focus{border-color: rgba(22,179,243,.60); box-shadow: 0 0 0 4px rgba(22,179,243,.12)}
+    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap: 10px}
+    .fine{margin-top: 10px; color: rgba(242,246,250,.62); font-size: 12px; line-height: 1.45}
+
+    footer{padding: 28px 0 46px; border-top: 1px solid rgba(242,246,250,.14); color: rgba(242,246,250,.70); font-size: 13px}
+    .footRow{display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap}
+
+    @media (max-width: 980px){
+      .tri{grid-template-columns: 1fr}
+      .twoCol{grid-template-columns: 1fr}
+      .tile .img{height: 140px}
+      .shot{height: 190px}
+      .infra.method .row{grid-template-columns: 1fr}
+    }
+    @media (max-width: 680px){
+      .nav{display:none}
+      .grid2{grid-template-columns: 1fr}
+    }
   </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="container nav-wrap">
-    <div class="brand">
-      <img src="Logo AB DRIDI.png" alt="Logo AB DRIDI" style="width:48px;height:48px;border-radius:12px;object-fit:cover;" />
-      <div class="brand-name">AB DRIDI</div>
-    </div>
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#process">Méthode</a>
-      <a href="#contact" class="cta">Parler à un expert</a>
-    </nav>
-  </div>
-</header>
+  <div class="bgWaves" aria-hidden="true"></div>
+  <div class="bgGrain" aria-hidden="true"></div>
 
-<section class="hero" id="home">
-  <div class="container">
-    <div>
-      <span class="tag">Where intelligence meets performance excellence</span>
-      <h1>Gagnez plus d’appels d’offres.<br/> Accélérez vos partenariats.</h1>
-      <p class="sub">AB DRIDI accompagne les PME du transport & de la logistique avec une approche <strong>data + stratégie</strong>.</p>
+  <header class="top">
+    <div class="wrap in">
+      <a class="brand" href="#top" aria-label="Accueil">
+        <span class="mark" aria-hidden="true"></span>
+        <img src="assets/logo.png" alt="AB DRIDI" />
+      </a>
 
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Obtenir un audit gratuit</a>
-        <a class="btn btn-outline" href="#services">Voir nos services</a>
+      <nav class="nav" aria-label="Navigation">
+        <a href="#services">Services</a>
+        <a href="#methode">Méthode</a>
+        <a href="#contact">Parler à un expert</a>
+      </nav>
+
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="pillBtn primary" href="#contact">Audit gratuit</a>
       </div>
     </div>
+  </header>
 
-    <div>
-      <div class="card" style="background:#fff2;border-color:#fff3">
-        <h3 style="color:#fff">Ce que vous obtenez</h3>
-        <ul style="margin:0;padding-left:18px;color:#d3e7ff;line-height:1.7">
-          <li>Pipeline priorisé</li>
-          <li>Dossiers complets & compétitifs</li>
-          <li>Partenaires fiables</li>
-          <li>Reporting clair</li>
-        </ul>
+  <main id="top" class="wrap">
+
+    <section class="hero">
+      <div class="heroGrid">
+
+        <div class="tri">
+          <article class="tile">
+            <div class="head">
+              <div class="k"><b>APPELS D’OFFRES</b><br/>Veille &amp; réponse</div>
+              <div class="floors">PME • T&amp;L</div>
+            </div>
+            <div class="body">Détection multi-sources, scoring, rédaction, dépôt et suivi.</div>
+            <div class="img" aria-hidden="true" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80');"></div>
+          </article>
+
+          <article class="tile">
+            <div class="head">
+              <div class="k"><b>PARTENARIATS</b><br/>Réseau transport &amp; logistique</div>
+              <div class="floors">Matching</div>
+            </div>
+            <div class="body">Compatibilité selon couverture, capacité et qualité.</div>
+            <div class="img" aria-hidden="true" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80');"></div>
+          </article>
+
+          <article class="tile">
+            <div class="head">
+              <div class="k"><b>ACCOMPAGNEMENT DIGITAL</b><br/>Présence &amp; performance en ligne</div>
+              <div class="floors">WEB</div>
+            </div>
+            <div class="body">Refonte de site web, optimisation de la présence digitale et cohérence de l’image de marque.</div>
+            <div class="img" aria-hidden="true" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80');"></div>
+          </article>
+        </div>
+
+        <div class="mega">
+          <div class="topline">
+            <span class="tag"><i></i> Là où la stratégie rencontre la performance</span>
+            <span class="tag"><i></i> transport • logistique</span>
+          </div>
+
+          <div class="inner">
+            <h1 class="headline">Gagnez plus <span class="accent">d’appels d’offres</span>.<br/>Accélérez vos partenariats.</h1>
+            <p class="sub">AB DRIDI accompagne les PME du transport et de la logistique à générer davantage de chiffre d’affaires, en les positionnant stratégiquement sur des marchés porteurs et durables.</p>
+
+            <div class="ctaRow">
+              <a class="pillBtn primary" href="#contact">Obtenir un audit gratuit</a>
+              <a class="pillBtn" href="#services">Voir nos services</a>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="services">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="kicker">Services</div>
-        <h2>Nos expertises cœur</h2>
+    <section class="section" id="valeur">
+      <h2 class="h2">CE QUE<br><span class="thin">VOUS</span><br><span class="hi">OBTENEZ</span></h2>
+
+      <div class="twoCol">
+        <div class="mosaic" aria-label="Galerie">
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1600&q=80');"><span>PIPELINE</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80');"><span>DOSSIERS</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');"><span>PARTENAIRES</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80');"><span>REPORTING</span></div>
+        </div>
+
+        <div>
+          <p class="copy">Quatre livrables. Pas plus. Présentés comme des “amenities” p9 : simples, premium, répétables.</p>
+          <div class="infra">
+            <div class="row"><b>Pipeline priorisé</b><span>Opportunités classées</span></div>
+            <div class="row"><b>Dossiers compétitifs</b><span>Conformité + différenciation</span></div>
+            <div class="row"><b>Partenaires fiables</b><span>Matching qualité/capacité</span></div>
+            <div class="row"><b>Reporting clair</b><span>KPI actionnables</span></div>
+          </div>
+          <div class="pager">
+            <span>1 / 4</span>
+            <span class="dots"><i class="on"></i><i></i><i></i><i></i></span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="grid">
-      <div class="card">
-        <span class="pill">Appels d’offres</span>
-        <h3>Veille & réponse</h3>
-        <p>Détection multi-sources, scoring, rédaction, dépôt et suivi.</p>
+    <section class="section" id="services">
+      <h2 class="h2">NOS<br><span class="thin">EXPERTISES</span><br><span class="hi">CŒUR</span></h2>
+
+      <div class="twoCol">
+        <div>
+          <p class="copy">Même contenu que ton site, mais organisé avec le langage p9 : titre monumental + liste propre.</p>
+          <div class="infra">
+            <div class="row"><b>Appels d’offres</b><span>Veille &amp; réponse</span></div>
+            <div class="row"><b>Go-to-market</b><span>Externalisation commerciale</span></div>
+            <div class="row"><b>Matching</b><span>Réseau transport &amp; logistique</span></div>
+            <div class="row"><b>Data</b><span>Tableaux de bord &amp; KPI</span></div>
+            <div class="row"><b>Conformité</b><span>Dossiers &amp; certifications</span></div>
+            <div class="row"><b>Accompagnement digital</b><span>Refonte de sites internet & présence en ligne</span></div>
+          </div>
+          <div class="pager">
+            <span>2 / 4</span>
+            <span class="dots"><i></i><i class="on"></i><i></i><i></i></span>
+          </div>
+        </div>
+
+        <div class="mosaic" aria-label="Visuels">
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80');"><span>APPELS D’OFFRES</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1600&q=80');"><span>GO-TO-MARKET</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80');"><span>MATCHING</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80');"><span>DATA</span></div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <span class="pill">Go-to-market</span>
-        <h3>Externalisation commerciale</h3>
-        <p>Prospection, nurturing, RDV, argumentaires sectoriels.</p>
+    <section class="section" id="methode">
+      <h2 class="h2">NOTRE<br><span class="thin">FAÇON</span><br><span class="hi">DE GAGNER</span></h2>
+
+      <div class="twoCol">
+        <div class="mosaic" aria-label="Galerie">
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80');"><span>01 — AUDIT</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1600&q=80');"><span>02 — PIPELINE</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80');"><span>03 — RÉPONSE</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80');"><span>SOUTENANCE</span></div>
+        </div>
+
+        <div>
+          <p class="copy">La méthode reste en 3 étapes, comme sur ton site. On la met en scène avec le rythme p9.</p>
+          <div class="infra method">
+            <div class="row"><b>01 — AUDIT EXPRESS</b><span>Clarification des objectifs et contraintes.</span></div>
+            <div class="row"><b>02 — PIPELINE QUALIFIÉ</b><span>Scoring, priorisation, opportunités ciblées.</span></div>
+            <div class="row"><b>03 — RÉPONSE &amp; SOUTENANCE</b><span>Dossiers complets &amp; différenciation.</span></div>
+          </div>
+          <div class="pager">
+            <span>3 / 4</span>
+            <span class="dots"><i></i><i></i><i class="on"></i><i></i></span>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <span class="pill">Matching</span>
-        <h3>Réseau transport & logistique</h3>
-        <p>Compatibilité selon couverture, capacité et qualité.</p>
+    <section class="section" id="contact">
+      <h2 class="h2">PARLONS-<br><span class="thin">EN</span><br><span class="hi">48 H</span></h2>
+
+      <div class="twoCol">
+        <div>
+          <p class="copy">Plan d’action en 48 h. Laissez 3 infos et on revient vers vous.</p>
+
+          <div class="contactBox">
+            <div class="topline">
+              <span class="tag"><i></i> Recevoir mon audit stratégique</span>
+            </div>
+            <div class="inner">
+              <form action="merci.html" method="GET">
+                <div class="grid2">
+                  <div>
+                    <label for="name">Nom &amp; société</label>
+                    <input id="name" name="name" placeholder="Nom, Société" required />
+                  </div>
+                  <div>
+                    <label for="email">Email professionnel</label>
+                    <input id="email" type="email" name="email" placeholder="nom@entreprise.com" required />
+                  </div>
+                </div>
+
+                <label for="need">Votre besoin principal</label>
+                <textarea id="need" name="need" placeholder="Décris ton besoin en 2-3 phrases…" required></textarea>
+
+                <button class="pillBtn primary" type="submit">Recevoir mon audit stratégique</button>
+                <div class="fine">En soumettant ce formulaire, vous acceptez d’être recontacté.</div>
+              </form>
+
+              <div style="height:10px"></div>
+              <div class="infra" style="border-radius: 18px;">
+                <div class="row"><b>Contact</b><span>contact.abdridi@gmail.com — 07.49.84.56.61</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pager">
+            <span>4 / 4</span>
+            <span class="dots"><i></i><i></i><i></i><i class="on"></i></span>
+          </div>
+        </div>
+
+        <div class="mosaic" aria-label="Visuels">
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80');"><span>AUDIT</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1600&q=80');"><span>PIPELINE</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80');"><span>DOSSIERS</span></div>
+          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80');"><span>REPORTING</span></div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <span class="pill">Data</span>
-        <h3>Tableaux de bord & KPI</h3>
-        <p>Reporting clair du win rate, marge nette et SLA.</p>
+    <footer>
+      <div class="footRow">
+        <div>© AB DRIDI</div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="#" onclick="event.preventDefault();">Mentions légales</a>
+          <span style="opacity:.35">·</span>
+          <a href="#" onclick="event.preventDefault();">Confidentialité</a>
+        </div>
       </div>
+    </footer>
 
-      <div class="card">
-        <span class="pill">Conformité</span>
-        <h3>Dossiers & certifications</h3>
-        <p>Gestion documentaire et conformité.</p>
-      </div>
+  </main>
 
-      <div class="card">
-        <span class="pill">Accompagnement</span>
-        <h3>Coaching</h3>
-        <p>Formation aux meilleures pratiques gagnantes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="process">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="kicker">Méthode</div>
-        <h2>Notre façon de faire gagner</h2>
-      </div>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="n">1</div>
-        <h3>Audit express</h3>
-        <p>Clarification des objectifs et contraintes.</p>
-      </div>
-
-      <div class="step">
-        <div class="n">2</div>
-        <h3>Pipeline qualifié</h3>
-        <p>Scoring, priorisation, opportunities ciblées.</p>
-      </div>
-
-      <div class="step">
-        <div class="n">3</div>
-        <h3>Réponse & soutenance</h3>
-        <p>Dossiers complets & différenciation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="container wrap">
-    <div>
-      <div class="kicker" style="color:#8fe9f6">Parlons-en</div>
-      <h2 style="color:#fff;margin:6px 0 12px">Plan d’action en 48 h</h2>
-      <p style="color:#cfe7ff">Laissez 3 infos et on revient vers vous.</p>
-    </div>
-
-    <!-- FORMULAIRE EMAIL -->
-    <form action="https://formsubmit.co/contact.abdridi@gmail.com" method="POST" 
-          class="card" style="background:#0f214f;color:#fff;border:1px solid rgba(255,255,255,.15)">
-
-      <!-- désactiver captcha formsubmit -->
-      <input type="hidden" name="_captcha" value="false">
-
-      <!-- ✅ URL DE REDIRECTION APRÈS ENVOI (PAGE MERCI) -->
-      <input type="hidden" name="_next" value="https://bilel83502-sketch.github.io/abdridi-site/merci.html">
-
-      <div class="field">
-        <label>Nom & société</label>
-        <input name="nom" required placeholder="Ex : Prénom.Nom — entreprise" />
-      </div>
-
-      <div class="field">
-        <label>Email professionnel</label>
-        <input name="email" type="email" required placeholder="prenom.nom@entreprise.com" />
-      </div>
-
-      <div class="field">
-        <label>Votre besoin principal</label>
-        <textarea name="message" rows="4" placeholder="Veille AO, rédaction, matching partenaires…"></textarea>
-      </div>
-
-      <button class="btn btn-primary" type="submit" style="border-radius:12px;width:100%">
-        Recevoir mon audit
-      </button>
-
-      <p style="font-size:12px;color:#b9d6ff;margin-top:10px">
-        En soumettant ce formulaire, vous acceptez d’être recontacté.
-      </p>
-    </form>
-  </div>
-
-  <div style="text-align:center;margin-top:24px;color:#e6f5ff;font-size:15px;">
-    <strong>Contact</strong><br>
-    <a href="mailto:contact.abdridi@gmail.com" style="color:#9fe9ff">contact.abdridi@gmail.com</a> —
-    <a href="tel:+33749845661" style="color:#9fe9ff">07.49.84.56.61</a>
-  </div>
-</section>
-
-<footer>
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-    <div>© <span id="y"></span> AB DRIDI</div>
-    <div><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (ev)=>{
+        const href = a.getAttribute('href');
+        if(!href || href === '#') return;
+        const t = document.querySelector(href);
+        if(!t) return;
+        ev.preventDefault();
+        t.scrollIntoView({behavior:'smooth', block:'start'});
+      })
+    });
+  </script>
 
 </body>
 </html>
