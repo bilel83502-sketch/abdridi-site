@@ -138,8 +138,19 @@
       box-shadow: 0 0 0 6px rgba(22,179,243,.10);
     }
     .brand img{
-      height: 26px; width:auto; display:block;
+      height: 34px; width:auto; display:block;
       filter: drop-shadow(0 10px 30px rgba(0,0,0,.45));
+    }
+
+    /* AJOUT : texte AB DRIDI en blanc et gras à côté du logo */
+    .brand .brandText{
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 1;
+      white-space: nowrap;
     }
 
     .nav{display:flex; gap: 8px; align-items:center; color: rgba(242,246,250,.78); font-size:12px; letter-spacing:1.2px; text-transform:uppercase}
@@ -376,6 +387,7 @@
       <a class="brand" href="#top" aria-label="Accueil">
         <span class="mark" aria-hidden="true"></span>
         <img src="Logo%20AB%20DRIDI.png" alt="AB DRIDI" />
+        <span class="brandText">AB DRIDI</span>
       </a>
 
       <nav class="nav" aria-label="Navigation">
