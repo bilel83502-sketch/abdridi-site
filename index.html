@@ -4,606 +4,190 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>AB DRIDI — Stratégie & performance</title>
-  <meta name="description" content="AB DRIDI accompagne les PME du transport et de la logistique à générer davantage de chiffre d’affaires, en les positionnant stratégiquement sur des marchés porteurs et durables." />
+  <title>AB DRIDI — Stratégie, appels d’offres & performance</title>
+  <meta name="description" content="AB DRIDI accompagne les PME du transport et de la logistique à générer plus de chiffre d’affaires via les appels d’offres, la data et la stratégie." />
 
-  <!-- Canonical (avec ton domaine) -->
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://abdridi.com/" />
 
   <!-- Open Graph -->
-  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="AB DRIDI — Where intelligence meets performance excellence" />
+  <meta property="og:description" content="Stratégie, appels d’offres, data & accompagnement digital pour les PME transport & logistique." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AB DRIDI — Stratégie & performance" />
-  <meta property="og:description" content="Gagnez plus d’appels d’offres. Accélérez vos partenariats. Data + stratégie pour les PME T&L." />
   <meta property="og:url" content="https://abdridi.com/" />
-  <meta property="og:site_name" content="AB DRIDI" />
-  <meta property="og:image" content="https://abdridi.com/assets/logo.png" />
-  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image" content="https://abdridi.com/Logo%20AB%20DRIDI.png" />
 
   <style>
     :root{
-      --bgNavy1:#020814;
-      --bgNavy2:#030B1B;
-      --bgNavy3:#041026;
+      --bg1:#020814;
+      --bg2:#030B1B;
+      --bg3:#041026;
 
-      --panel: rgba(255,255,255,.03);
       --text:#F2F6FA;
-      --muted: rgba(242,246,250,.72);
-      --line: rgba(242,246,250,.14);
+      --muted:rgba(242,246,250,.7);
+      --line:rgba(242,246,250,.14);
 
-      /* AB DRIDI colors (logo family) */
       --c1:#16B3F3;
       --c2:#5CCBFF;
       --c3:#0A6FA8;
 
-      /* Secondary (very subtle) */
-      --s1:#7B61FF;
+      --g1:linear-gradient(135deg,#16B3F3,#5CCBFF 55%,#0A6FA8);
+      --radius:22px;
+      --shadow:0 30px 120px rgba(0,0,0,.6);
 
-      --g1: linear-gradient(135deg, rgba(22,179,243,.95), rgba(92,203,255,.65) 55%, rgba(10,111,168,.95));
-      --g2: linear-gradient(135deg, rgba(22,179,243,.85), rgba(123,97,255,.35));
-
-      --max: 1220px;
-      --r: 18px;
-      --r2: 28px;
-      --shadow: 0 28px 120px rgba(0,0,0,.60);
-
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
     }
 
     *{box-sizing:border-box}
     html,body{
       margin:0;
-      font-family: var(--font);
-      color: var(--text);
+      color:var(--text);
       background:
-        radial-gradient(1200px 700px at 15% -10%, rgba(22,179,243,.10), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(123,97,255,.08), transparent 62%),
-        linear-gradient(180deg, var(--bgNavy1) 0%, var(--bgNavy2) 45%, var(--bgNavy3) 100%);
+        radial-gradient(1200px 600px at 15% -10%, rgba(22,179,243,.12), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(123,97,255,.08), transparent 62%),
+        linear-gradient(180deg,var(--bg1),var(--bg2),var(--bg3));
       overflow-x:hidden;
-      letter-spacing:.12px;
     }
 
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px;}
-
-    /* Background effects */
+    /* BACKGROUND LIVING */
+    .bgWaves,.bgGrain{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+    }
     .bgWaves{
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      opacity: .9;
-    }
-    .bgWaves:before,
-    .bgWaves:after{
-      content:"";
-      position:absolute;
-      inset:-22%;
+      z-index:0;
+      opacity:.9;
+      filter:blur(28px);
+      animation:drift 28s ease-in-out infinite;
       background:
-        radial-gradient(60% 40% at 18% 38%, rgba(22,179,243,.11), transparent 60%),
-        radial-gradient(55% 38% at 82% 58%, rgba(92,203,255,.09), transparent 62%),
-        radial-gradient(52% 36% at 52% 18%, rgba(123,97,255,.07), transparent 64%);
-      filter: blur(28px);
-      transform: translate3d(0,0,0);
-      will-change: transform;
-      animation: drift1 22s ease-in-out infinite;
+        radial-gradient(55% 40% at 20% 40%, rgba(22,179,243,.18), transparent 60%),
+        radial-gradient(50% 35% at 80% 55%, rgba(92,203,255,.14), transparent 62%);
     }
-    .bgWaves:after{
-      opacity: .72;
-      filter: blur(38px);
-      animation: drift2 30s ease-in-out infinite;
-      mix-blend-mode: screen;
+    @keyframes drift{
+      0%{transform:translate(-1%,-1%)}
+      50%{transform:translate(1%,1%)}
+      100%{transform:translate(-1%,-1%)}
     }
-    @keyframes drift1{
-      0%{transform: translate(-1.0%, -1.2%) scale(1.03)}
-      50%{transform: translate(1.2%, 0.9%) scale(1.05)}
-      100%{transform: translate(-1.0%, -1.2%) scale(1.03)}
-    }
-    @keyframes drift2{
-      0%{transform: translate(0.9%, -1.0%) scale(1.04)}
-      50%{transform: translate(-1.2%, 1.1%) scale(1.06)}
-      100%{transform: translate(0.9%, -1.0%) scale(1.04)}
-    }
-
     .bgGrain{
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      opacity: .18;
-      mix-blend-mode: overlay;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      z-index:1;
+      opacity:.18;
+      mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
     }
 
-    /* Top bar */
-    .top{
-      position:fixed; top:0; left:0; right:0;
-      z-index:50;
-      background: rgba(5,6,7,.55);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(242,246,250,.12);
+    header,main{position:relative;z-index:2}
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      backdrop-filter:blur(12px);
+      background:rgba(2,8,20,.7);
+      border-bottom:1px solid var(--line);
     }
-    .top .in{
-      height: 72px;
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      padding:16px 22px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 14px;
-    }
-
-    .brand{display:flex; align-items:center; gap: 12px;}
-    .mark{
-      width: 10px; height:10px; border-radius:999px;
-      background: var(--g1);
-      box-shadow: 0 0 0 6px rgba(22,179,243,.10);
     }
     .brand img{
-      height: 26px; width:auto; display:block;
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,.45));
+      height:36px;
+      display:block;
     }
-
-    .nav{display:flex; gap: 8px; align-items:center; color: rgba(242,246,250,.78); font-size:12px; letter-spacing:1.2px; text-transform:uppercase}
-    .nav a{
-      padding:10px 12px;
+    nav a{
+      margin-left:14px;
+      padding:8px 14px;
+      border:1px solid var(--line);
       border-radius:999px;
-      border:1px solid rgba(242,246,250,.22);
-      background: rgba(255,255,255,.03);
-    }
-    .nav a:hover{border-color: rgba(242,246,250,.32); color: var(--text); background: rgba(255,255,255,.05)}
-
-    .pillBtn{
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(242,246,250,.20);
-      background: rgba(255,255,255,.03);
-      font-size: 12px;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      white-space:nowrap;
-      transition: transform .15s ease, border-color .15s ease, background .15s ease;
-    }
-    .pillBtn:hover{transform: translateY(-1px); border-color: rgba(242,246,250,.32); background: rgba(255,255,255,.05)}
-    .pillBtn.primary{
-      border: 0;
-      background: var(--g1);
-      color: #050607;
-      font-weight: 900;
-      box-shadow: 0 18px 70px rgba(22,179,243,.18);
+      text-decoration:none;
+      color:var(--text);
+      font-size:12px;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
     }
 
-    header.top, main{position:relative; z-index: 2;}
-
-    /* Hero */
-    .hero{padding-top: 96px;}
-    .heroGrid{display:grid; grid-template-columns: 1fr; gap: 14px; padding: 26px 0 10px;}
-
-    .tri{display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px;}
-
-    .tile{
-      border: 1px solid rgba(242,246,250,.14);
-      background: rgba(255,255,255,.03);
-      border-radius: 28px;
-      overflow:hidden;
-      box-shadow: 0 28px 120px rgba(0,0,0,.60);
+    /* HERO */
+    main{padding-top:120px}
+    .wrap{max-width:1200px;margin:auto;padding:0 22px}
+    h1{
+      font-size:clamp(42px,6vw,84px);
+      line-height:.95;
+      text-transform:uppercase;
+      font-weight:900;
     }
-    .tile .head{
-      padding: 16px 16px 14px;
-      border-bottom: 1px solid rgba(242,246,250,.14);
-      background: rgba(0,0,0,.18);
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 10px;
-    }
-    .k{font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(242,246,250,.78);}
-    .k b{color: rgba(242,246,250,.92)}
-    .floors{font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(242,246,250,.60); white-space:nowrap;}
-    .tile .body{padding: 16px 16px 18px; color: rgba(242,246,250,.78); line-height: 1.6; font-size: 14px;}
-    .tile .img{border-top: 1px solid rgba(242,246,250,.10); height: 160px; background-size:cover; background-position:center;}
-
-    .mega{
-      margin-top: 18px;
-      border: 1px solid rgba(242,246,250,.14);
-      border-radius: 28px;
-      background: rgba(255,255,255,.03);
-      overflow:hidden;
-      box-shadow: 0 28px 120px rgba(0,0,0,.60);
-    }
-    .mega .topline{
-      padding: 14px 16px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap: 12px;
-      border-bottom: 1px solid rgba(242,246,250,.14);
-      background: rgba(0,0,0,.18);
-    }
-    .tag{
-      display:inline-flex; align-items:center; gap: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(242,246,250,.20);
-      background: rgba(255,255,255,.03);
-      font-size: 11px;
-      letter-spacing: 2.6px;
-      text-transform: uppercase;
-      color: rgba(242,246,250,.86);
-    }
-    .tag i{width:8px; height:8px; border-radius:999px; background: var(--g2)}
-    .mega .inner{padding: 20px 16px 18px;}
-    .headline{
-      margin: 0;
-      font-weight: 950;
-      text-transform: uppercase;
-      letter-spacing: -1.3px;
-      line-height: .92;
-      font-size: clamp(44px, 6.2vw, 88px);
-    }
-    .headline .accent{
-      background: var(--g1);
+    h1 span{
+      background:var(--g1);
       -webkit-background-clip:text;
-      background-clip:text;
       color:transparent;
     }
-    .sub{margin: 14px 0 0; color: rgba(242,246,250,.72); font-size: 16px; line-height: 1.65; max-width: 72ch;}
-    .ctaRow{margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(242,246,250,.14); display:flex; gap: 12px; flex-wrap:wrap; align-items:center;}
-
-    .section{padding: 92px 0; border-top: 1px solid rgba(242,246,250,.14);}
-    .h2{
-      margin: 0;
-      font-weight: 950;
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      line-height: .86;
-      font-size: clamp(44px, 7.4vw, 118px);
+    p{
+      color:var(--muted);
+      max-width:60ch;
+      line-height:1.7;
+      font-size:16px;
     }
-    .h2 .thin{color: rgba(242,246,250,.55); font-weight: 900}
-    .h2 .hi{background: var(--g1); -webkit-background-clip:text; background-clip:text; color:transparent;}
-    .twoCol{display:grid; grid-template-columns: 7fr 5fr; gap: 14px; align-items:start; margin-top: 18px;}
-    .copy{color: rgba(242,246,250,.72); font-size: 16px; line-height: 1.7; max-width: 56ch;}
-
-    .mosaic{display:grid; grid-template-columns: 1fr 1fr; gap: 10px;}
-    .shot{
-      border-radius: 28px;
-      border: 1px solid rgba(242,246,250,.16);
-      overflow:hidden;
-      height: 220px;
-      position:relative;
-      background-size: cover !important;
-      background-position: center center !important;
-      background:
-        radial-gradient(520px 220px at 25% 20%, rgba(22,179,243,.18), transparent 60%),
-        radial-gradient(520px 220px at 80% 30%, rgba(123,97,255,.12), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-    }
-    .shot:before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.58));
-    }
-    .shot span{
-      position:absolute;
-      left: 14px;
-      bottom: 12px;
-      font-size: 11px;
-      letter-spacing: 2.8px;
-      text-transform: uppercase;
-      color: rgba(242,246,250,.78);
+    .cta{
+      margin-top:28px;
+      display:inline-block;
+      padding:14px 26px;
+      border-radius:999px;
+      background:var(--g1);
+      color:#020814;
+      font-weight:900;
+      text-decoration:none;
+      box-shadow:0 18px 60px rgba(22,179,243,.35);
     }
 
-    .infra{
-      margin-top: 14px;
-      border: 1px solid rgba(242,246,250,.14);
-      border-radius: 28px;
-      background: rgba(255,255,255,.03);
-      overflow:hidden;
-    }
-    .infra .row{display:flex; justify-content:space-between; align-items:center; gap: 12px; padding: 16px; border-bottom: 1px solid rgba(242,246,250,.14)}
-    .infra .row:last-child{border-bottom:0}
-    .infra .row b{letter-spacing: 2.8px; text-transform: uppercase; font-size: 12px}
-    .infra .row span{color: rgba(242,246,250,.70); font-size: 13px}
-
-    .infra.method .row{
-      display:grid;
-      grid-template-columns: 300px 1fr;
-      align-items:center;
-      gap: 14px;
-    }
-    .infra.method .row b{
-      display:block;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-size: 12px;
-      line-height: 1.25;
-      white-space: normal;
-    }
-
-    .pager{margin-top: 10px; display:flex; align-items:center; justify-content:flex-end; gap: 10px; color: rgba(242,246,250,.70); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;}
-    .dots{display:flex; gap: 6px;}
-    .dots i{width:7px; height:7px; border-radius:999px; background: rgba(242,246,250,.18)}
-    .dots i.on{background: rgba(22,179,243,.75)}
-
-    .contactBox{
-      border: 1px solid rgba(242,246,250,.14);
-      border-radius: 28px;
-      background: rgba(255,255,255,.03);
-      overflow:hidden;
-      box-shadow: 0 28px 120px rgba(0,0,0,.60);
-    }
-    .contactBox .topline{padding: 14px 16px; border-bottom: 1px solid rgba(242,246,250,.14); background: rgba(0,0,0,.18); display:flex; justify-content:space-between; align-items:center; gap: 12px;}
-    .contactBox .inner{padding: 16px;}
-
-    label{display:block; margin-bottom: 6px; font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(242,246,250,.68);}
-    input, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(242,246,250,.16);
-      background: rgba(0,0,0,.28);
-      color: var(--text);
-      outline:none;
-      margin-bottom: 12px;
-    }
-    textarea{min-height: 120px; resize: vertical}
-    input:focus, textarea:focus{border-color: rgba(22,179,243,.60); box-shadow: 0 0 0 4px rgba(22,179,243,.12)}
-    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap: 10px}
-    .fine{margin-top: 10px; color: rgba(242,246,250,.62); font-size: 12px; line-height: 1.45}
-
-    footer{padding: 28px 0 46px; border-top: 1px solid rgba(242,246,250,.14); color: rgba(242,246,250,.70); font-size: 13px}
-    .footRow{display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap}
-
-    @media (max-width: 980px){
-      .tri{grid-template-columns: 1fr}
-      .twoCol{grid-template-columns: 1fr}
-      .tile .img{height: 140px}
-      .shot{height: 190px}
-      .infra.method .row{grid-template-columns: 1fr}
-    }
-    @media (max-width: 680px){
-      .nav{display:none}
-      .grid2{grid-template-columns: 1fr}
+    footer{
+      border-top:1px solid var(--line);
+      margin-top:120px;
+      padding:40px 22px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="bgWaves" aria-hidden="true"></div>
-  <div class="bgGrain" aria-hidden="true"></div>
+  <div class="bgWaves"></div>
+  <div class="bgGrain"></div>
 
-  <header class="top">
-    <div class="wrap in">
-      <a class="brand" href="#top" aria-label="Accueil">
-        <span class="mark" aria-hidden="true"></span>
-        <img src="assets/logo.png" alt="AB DRIDI" />
-      </a>
-
-      <nav class="nav" aria-label="Navigation">
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <!-- LOGO CORRECT -->
+        <img src="Logo%20AB%20DRIDI.png" alt="AB DRIDI">
+      </div>
+      <nav>
         <a href="#services">Services</a>
         <a href="#methode">Méthode</a>
         <a href="#contact">Parler à un expert</a>
       </nav>
-
-      <div style="display:flex; gap:10px; align-items:center;">
-        <a class="pillBtn primary" href="#contact">Audit gratuit</a>
-      </div>
     </div>
   </header>
 
-  <main id="top" class="wrap">
-
-    <section class="hero">
-      <div class="heroGrid">
-
-        <div class="tri">
-          <article class="tile">
-            <div class="head">
-              <div class="k"><b>APPELS D’OFFRES</b><br/>Veille &amp; réponse</div>
-              <div class="floors">PME • T&amp;L</div>
-            </div>
-            <div class="body">Détection multi-sources, scoring, rédaction, dépôt et suivi.</div>
-            <div class="img" aria-hidden="true" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80');"></div>
-          </article>
-
-          <article class="tile">
-            <div class="head">
-              <div class="k"><b>PARTENARIATS</b><br/>Réseau transport &amp; logistique</div>
-              <div class="floors">Matching</div>
-            </div>
-            <div class="body">Compatibilité selon couverture, capacité et qualité.</div>
-            <div class="img" aria-hidden="true" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80');"></div>
-          </article>
-
-          <article class="tile">
-            <div class="head">
-              <div class="k"><b>ACCOMPAGNEMENT DIGITAL</b><br/>Présence &amp; performance en ligne</div>
-              <div class="floors">WEB</div>
-            </div>
-            <div class="body">Refonte de site web, optimisation de la présence digitale et cohérence de l’image de marque.</div>
-            <div class="img" aria-hidden="true" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80');"></div>
-          </article>
-        </div>
-
-        <div class="mega">
-          <div class="topline">
-            <span class="tag"><i></i> Là où la stratégie rencontre la performance</span>
-            <span class="tag"><i></i> transport • logistique</span>
-          </div>
-
-          <div class="inner">
-            <h1 class="headline">Gagnez plus <span class="accent">d’appels d’offres</span>.<br/>Accélérez vos partenariats.</h1>
-            <p class="sub">AB DRIDI accompagne les PME du transport et de la logistique à générer davantage de chiffre d’affaires, en les positionnant stratégiquement sur des marchés porteurs et durables.</p>
-
-            <div class="ctaRow">
-              <a class="pillBtn primary" href="#contact">Obtenir un audit gratuit</a>
-              <a class="pillBtn" href="#services">Voir nos services</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
+  <main>
+    <section class="wrap">
+      <h1>
+        Gagnez plus<br>
+        <span>d’appels d’offres</span>
+      </h1>
+      <p>
+        AB DRIDI accompagne les PME du transport et de la logistique à générer plus de chiffre d’affaires, en les positionnant stratégiquement sur des marchés durables et performants.
+      </p>
+      <a href="#contact" class="cta">Obtenir un audit gratuit</a>
     </section>
-
-    <section class="section" id="valeur">
-      <h2 class="h2">CE QUE<br><span class="thin">VOUS</span><br><span class="hi">OBTENEZ</span></h2>
-
-      <div class="twoCol">
-        <div class="mosaic" aria-label="Galerie">
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1600&q=80');"><span>PIPELINE</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80');"><span>DOSSIERS</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');"><span>PARTENAIRES</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80');"><span>REPORTING</span></div>
-        </div>
-
-        <div>
-          <p class="copy">Quatre livrables. Pas plus. Présentés comme des “amenities” p9 : simples, premium, répétables.</p>
-          <div class="infra">
-            <div class="row"><b>Pipeline priorisé</b><span>Opportunités classées</span></div>
-            <div class="row"><b>Dossiers compétitifs</b><span>Conformité + différenciation</span></div>
-            <div class="row"><b>Partenaires fiables</b><span>Matching qualité/capacité</span></div>
-            <div class="row"><b>Reporting clair</b><span>KPI actionnables</span></div>
-          </div>
-          <div class="pager">
-            <span>1 / 4</span>
-            <span class="dots"><i class="on"></i><i></i><i></i><i></i></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <h2 class="h2">NOS<br><span class="thin">EXPERTISES</span><br><span class="hi">CŒUR</span></h2>
-
-      <div class="twoCol">
-        <div>
-          <p class="copy">Même contenu que ton site, mais organisé avec le langage p9 : titre monumental + liste propre.</p>
-          <div class="infra">
-            <div class="row"><b>Appels d’offres</b><span>Veille &amp; réponse</span></div>
-            <div class="row"><b>Go-to-market</b><span>Externalisation commerciale</span></div>
-            <div class="row"><b>Matching</b><span>Réseau transport &amp; logistique</span></div>
-            <div class="row"><b>Data</b><span>Tableaux de bord &amp; KPI</span></div>
-            <div class="row"><b>Conformité</b><span>Dossiers &amp; certifications</span></div>
-            <div class="row"><b>Accompagnement digital</b><span>Refonte de sites internet & présence en ligne</span></div>
-          </div>
-          <div class="pager">
-            <span>2 / 4</span>
-            <span class="dots"><i></i><i class="on"></i><i></i><i></i></span>
-          </div>
-        </div>
-
-        <div class="mosaic" aria-label="Visuels">
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80');"><span>APPELS D’OFFRES</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1600&q=80');"><span>GO-TO-MARKET</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80');"><span>MATCHING</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80');"><span>DATA</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="methode">
-      <h2 class="h2">NOTRE<br><span class="thin">FAÇON</span><br><span class="hi">DE GAGNER</span></h2>
-
-      <div class="twoCol">
-        <div class="mosaic" aria-label="Galerie">
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80');"><span>01 — AUDIT</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1600&q=80');"><span>02 — PIPELINE</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80');"><span>03 — RÉPONSE</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80');"><span>SOUTENANCE</span></div>
-        </div>
-
-        <div>
-          <p class="copy">La méthode reste en 3 étapes, comme sur ton site. On la met en scène avec le rythme p9.</p>
-          <div class="infra method">
-            <div class="row"><b>01 — AUDIT EXPRESS</b><span>Clarification des objectifs et contraintes.</span></div>
-            <div class="row"><b>02 — PIPELINE QUALIFIÉ</b><span>Scoring, priorisation, opportunités ciblées.</span></div>
-            <div class="row"><b>03 — RÉPONSE &amp; SOUTENANCE</b><span>Dossiers complets &amp; différenciation.</span></div>
-          </div>
-          <div class="pager">
-            <span>3 / 4</span>
-            <span class="dots"><i></i><i></i><i class="on"></i><i></i></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <h2 class="h2">PARLONS-<br><span class="thin">EN</span><br><span class="hi">48 H</span></h2>
-
-      <div class="twoCol">
-        <div>
-          <p class="copy">Plan d’action en 48 h. Laissez 3 infos et on revient vers vous.</p>
-
-          <div class="contactBox">
-            <div class="topline">
-              <span class="tag"><i></i> Recevoir mon audit stratégique</span>
-            </div>
-            <div class="inner">
-              <form action="merci.html" method="GET">
-                <div class="grid2">
-                  <div>
-                    <label for="name">Nom &amp; société</label>
-                    <input id="name" name="name" placeholder="Nom, Société" required />
-                  </div>
-                  <div>
-                    <label for="email">Email professionnel</label>
-                    <input id="email" type="email" name="email" placeholder="nom@entreprise.com" required />
-                  </div>
-                </div>
-
-                <label for="need">Votre besoin principal</label>
-                <textarea id="need" name="need" placeholder="Décris ton besoin en 2-3 phrases…" required></textarea>
-
-                <button class="pillBtn primary" type="submit">Recevoir mon audit stratégique</button>
-                <div class="fine">En soumettant ce formulaire, vous acceptez d’être recontacté.</div>
-              </form>
-
-              <div style="height:10px"></div>
-              <div class="infra" style="border-radius: 18px;">
-                <div class="row"><b>Contact</b><span>contact.abdridi@gmail.com — 07.49.84.56.61</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pager">
-            <span>4 / 4</span>
-            <span class="dots"><i></i><i></i><i></i><i class="on"></i></span>
-          </div>
-        </div>
-
-        <div class="mosaic" aria-label="Visuels">
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80');"><span>AUDIT</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1600&q=80');"><span>PIPELINE</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80');"><span>DOSSIERS</span></div>
-          <div class="shot" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80');"><span>REPORTING</span></div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footRow">
-        <div>© AB DRIDI</div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="#" onclick="event.preventDefault();">Mentions légales</a>
-          <span style="opacity:.35">·</span>
-          <a href="#" onclick="event.preventDefault();">Confidentialité</a>
-        </div>
-      </div>
-    </footer>
-
   </main>
 
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (ev)=>{
-        const href = a.getAttribute('href');
-        if(!href || href === '#') return;
-        const t = document.querySelector(href);
-        if(!t) return;
-        ev.preventDefault();
-        t.scrollIntoView({behavior:'smooth', block:'start'});
-      })
-    });
-  </script>
+  <footer>
+    © AB DRIDI — Tous droits réservés
+  </footer>
 
 </body>
 </html>
