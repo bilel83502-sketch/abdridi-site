@@ -3,983 +3,1273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AB DRIDI — Veille Marchés Publics Transport</title>
-  <meta name="description" content="Identifiez les appels d'offres transport, analysez la concurrence et remportez plus de marchés. 6 100+ consultations, 102 sources officielles.">
+  <title>AB DRIDI — Cabinet Conseil Marchés Publics Transport</title>
+  <meta name="description" content="Cabinet conseil spécialisé marchés publics transport. Veille, montage de dossiers et accompagnement stratégique pour remporter vos appels d'offres.">
   <link rel="canonical" href="https://abdridi.com">
+  <link rel="icon" href="https://portal.abdridi.com/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* ── RESET ──────────────────────────────── */
+    /* ══════════════════════════════════════════════════════
+       RESET & BASE
+    ══════════════════════════════════════════════════════ */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #fff;
-      color: #6B7280;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      background: #0A0A0A;
+      color: rgba(250,250,250,0.8);
       -webkit-font-smoothing: antialiased;
-      line-height: 1.7;
+      line-height: 1.6;
       overflow-x: hidden;
     }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
 
-    /* ── TOKENS ────────────────────────────── */
-    :root {
-      --dark: #0F1724;
-      --dark2: #131E2E;
-      --cream: #FDF8F4;
-      --white: #FFFFFF;
-      --text-dark: #1A1A2E;
-      --text-muted-dark: #94A3B8;
-      --text-body: #6B7280;
-      --text-heading: #1A1A2E;
-      --accent: #6366F1;
-      --accent-hover: #4F46E5;
-      --cyan: #00C2FF;
-      --border-light: #E8ECF0;
-      --border-dark: rgba(255,255,255,0.08);
-      --card-dark: rgba(255,255,255,0.04);
+    /* ── Grain overlay ── */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 9999;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: 0.4;
     }
 
-    /* ── TYPOGRAPHY ─────────────────────────── */
-    h1, h2 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15; color: var(--white); }
-    h3, h4 { font-family: 'Inter', sans-serif; }
-    .section-light h1, .section-light h2, .section-cream h1, .section-cream h2 { color: var(--text-heading); }
+    /* ── Cursor glow ── */
+    .cursor-glow {
+      position: fixed;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,168,83,0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.4s;
+      opacity: 0;
+    }
+    body:hover .cursor-glow { opacity: 1; }
 
-    .label-tag {
+    /* ── Scroll reveal ── */
+    .r { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .r.v { opacity: 1; transform: translateY(0); }
+
+    /* ══════════════════════════════════════════════════════
+       TOKENS
+    ══════════════════════════════════════════════════════ */
+    :root {
+      --bg: #0A0A0A;
+      --bg-raised: #141414;
+      --bg-card: #1A1A1A;
+      --gold: #D4A853;
+      --gold-dim: rgba(212,168,83,0.15);
+      --text: rgba(250,250,250,0.8);
+      --text-sec: rgba(250,250,250,0.5);
+      --text-muted: rgba(250,250,250,0.3);
+      --border: rgba(255,255,255,0.08);
+      --green: #4ADE80;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ══════════════════════════════════════════════════════
+       LAYOUT
+    ══════════════════════════════════════════════════════ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 120px 0; position: relative; }
+    .section-label {
       display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
     }
     .section-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(30px, 4vw, 44px);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
     }
-    .section-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--text-body);
-      max-width: 600px;
-    }
-    .section-sub-dark {
-      color: var(--text-muted-dark);
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
     }
 
-    /* ── LAYOUT ─────────────────────────────── */
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
-    .section-dark { background: var(--dark); padding: 100px 0; }
-    .section-light { background: var(--white); padding: 100px 0; }
-    .section-cream { background: var(--cream); padding: 100px 0; }
-    .text-center { text-align: center; }
-    .flex-center { display: flex; justify-content: center; }
-    .mx-auto { margin-left: auto; margin-right: auto; }
-
-    /* ── NAVBAR ─────────────────────────────── */
-    .navbar {
-      position: fixed; top: 0; width: 100%; z-index: 100;
-      height: 72px;
-      display: flex; align-items: center;
-      background: transparent;
-      border-bottom: 1px solid transparent;
-      transition: all 0.3s ease;
-      padding: 0 40px;
+    /* ══════════════════════════════════════════════════════
+       NAVBAR
+    ══════════════════════════════════════════════════════ */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      transition: all 0.4s var(--ease);
     }
-    .navbar.scrolled {
-      background: var(--dark);
-      border-bottom-color: var(--border-dark);
+    .nav.scrolled {
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+      border-bottom: 1px solid var(--border);
     }
-    .navbar-inner {
-      max-width: 1120px; margin: 0 auto; width: 100%;
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
     }
     .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.95rem; font-weight: 600; color: #fff;
     }
-    .nav-logo .ab { color: var(--accent); }
-    .nav-logo .dridi { color: var(--white); }
-    .nav-links {
-      display: flex; align-items: center; gap: 4px;
-    }
-    .nav-link {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      color: var(--text-muted-dark);
-      padding: 8px 16px;
+    .nav-logo-mark {
+      width: 34px; height: 34px;
+      background: var(--gold);
       border-radius: 6px;
-      transition: color 0.2s;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Instrument Serif', serif;
+      font-size: 15px; font-weight: 400; color: #0A0A0A;
     }
-    .nav-link:hover { color: var(--white); }
-    .btn-primary {
-      display: inline-flex; align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: var(--accent);
-      color: var(--white);
-      border: none; cursor: pointer;
-      padding: 12px 28px;
-      border-radius: 24px;
-      transition: all 0.2s ease;
-      text-decoration: none;
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
     }
-    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
-    .btn-outline {
-      display: inline-flex; align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.3);
-      cursor: pointer;
-      padding: 12px 28px;
-      border-radius: 24px;
-      transition: all 0.2s ease;
-      text-decoration: none;
+    .nav-links a {
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-sec);
+      transition: color 0.3s;
     }
-    .btn-outline:hover { border-color: rgba(255,255,255,0.6); transform: translateY(-2px); }
-    .btn-primary-dark {
-      display: inline-flex; align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: var(--accent);
-      color: var(--white);
-      border: none; cursor: pointer;
-      padding: 14px 36px;
-      border-radius: 24px;
-      transition: all 0.2s ease;
-      text-decoration: none;
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 22px; border-radius: 100px;
+      border: 1px solid rgba(212,168,83,0.4);
+      background: transparent; color: var(--gold);
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: all 0.3s var(--ease);
     }
-    .btn-primary-dark:hover { background: var(--accent-hover); transform: translateY(-2px); }
-    .btn-outline-white {
-      display: inline-flex; align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: transparent;
-      color: var(--white);
-      border: 2px solid var(--white);
-      cursor: pointer;
-      padding: 14px 36px;
-      border-radius: 24px;
-      transition: all 0.2s ease;
-      text-decoration: none;
+    .nav-cta:hover { background: var(--gold); color: #0A0A0A; }
+    .nav-burger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
     }
-    .btn-outline-white:hover { background: var(--white); color: var(--dark); transform: translateY(-2px); }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: rgba(250,250,250,0.6);
+      transition: all 0.3s;
+    }
 
-    /* ── HERO ───────────────────────────────── */
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.2rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-sec);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ══════════════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════════════ */
     .hero {
-      background: var(--dark);
-      padding: 160px 0 120px;
-      text-align: center;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(212,168,83,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 18px; border-radius: 100px;
+      background: rgba(212,168,83,0.08);
+      border: 1px solid rgba(212,168,83,0.15);
+      font-size: 0.82rem; font-weight: 500; color: var(--gold);
+      margin-bottom: 32px;
+      width: fit-content;
+    }
+    .hero-badge-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
     }
     .hero h1 {
-      font-size: clamp(36px, 5vw, 58px);
-      font-weight: 700;
-      max-width: 780px;
-      margin: 0 auto 24px;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 28px;
+      max-width: 900px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
     }
     .hero-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 17px;
-      color: var(--text-muted-dark);
-      max-width: 520px;
-      margin: 0 auto 40px;
+      font-size: 1.1rem; font-weight: 300;
+      color: var(--text-sec);
+      max-width: 620px;
       line-height: 1.7;
+      margin-bottom: 40px;
     }
-    .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-    /* ── STATS BAR ───────────────────────────── */
-    .stats-bar {
-      background: var(--dark2);
-      border-top: 1px solid var(--border-dark);
-      border-bottom: 1px solid var(--border-dark);
-      padding: 32px 0;
+    .hero-btns {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      margin-bottom: 80px;
     }
-    .stats-bar-inner {
-      display: flex; justify-content: center; gap: 64px; flex-wrap: wrap;
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 100px;
+      background: var(--gold); color: #0A0A0A;
+      font-size: 0.95rem; font-weight: 600;
+      border: none;
+      transition: all 0.3s var(--ease);
     }
-    .stat-item { text-align: center; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px; font-weight: 700;
-      color: var(--accent);
-      display: block;
-      line-height: 1.1;
+    .btn-gold:hover { background: #E0B86A; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 100px;
+      background: transparent; color: var(--text);
+      font-size: 0.95rem; font-weight: 500;
+      border: 1px solid var(--border);
+      transition: all 0.3s var(--ease);
     }
-    .stat-sep {
-      width: 32px; height: 2px;
-      background: var(--accent);
-      margin: 8px auto;
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: #fff; }
+    .hero-metrics {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      padding-top: 40px;
     }
-    .stat-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      color: var(--text-muted-dark);
-    }
-
-    /* ── À PROPOS ───────────────────────────── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .about-img {
-      border-radius: 4px;
-      overflow: hidden;
-      background: var(--cream);
-      aspect-ratio: 4/3;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .about-img-placeholder {
-      text-align: center; padding: 40px;
-    }
-    .about-img-placeholder .icon {
-      font-size: 48px; margin-bottom: 16px; display: block;
-    }
-    .about-img-placeholder p {
-      font-size: 13px; color: var(--text-body);
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* ── SERVICES ACCORDION ─────────────────── */
-    .accordion-item {
-      background: var(--card-dark);
-      border: 1px solid var(--border-dark);
-      border-radius: 12px;
-      margin-bottom: 8px;
-      overflow: hidden;
-      transition: border-color 0.2s;
-    }
-    .accordion-item:hover { border-color: rgba(99,102,241,0.3); }
-    .accordion-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 28px 32px;
-      cursor: pointer;
-      user-select: none;
-    }
-    .accordion-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 18px; font-weight: 500;
-      color: var(--white);
-    }
-    .accordion-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 14px; font-weight: 600;
-      color: var(--accent);
-      margin-right: 20px;
-      flex-shrink: 0;
-    }
-    .accordion-chevron {
-      width: 28px; height: 28px;
-      border: 1px solid var(--border-dark);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      transition: transform 0.3s, border-color 0.2s;
-    }
-    .accordion-item.open .accordion-chevron { transform: rotate(45deg); border-color: var(--accent); }
-    .accordion-chevron svg { stroke: var(--text-muted-dark); transition: stroke 0.2s; }
-    .accordion-item.open .accordion-chevron svg { stroke: var(--accent); }
-    .accordion-body {
-      padding: 0 32px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s;
-    }
-    .accordion-item.open .accordion-body {
-      max-height: 300px;
-      padding-bottom: 28px;
-    }
-    .accordion-desc {
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      color: var(--text-muted-dark);
-      line-height: 1.7;
-      margin-bottom: 20px;
-      padding-top: 4px;
-      border-top: 1px solid var(--border-dark);
-      padding-top: 20px;
-    }
-    .accordion-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-    .tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 11px; font-weight: 500;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      padding: 5px 12px; border-radius: 4px;
-      background: rgba(99,102,241,0.12);
-      color: var(--accent);
-      border: 1px solid rgba(99,102,241,0.2);
-    }
-
-    /* ── EN CHIFFRES ────────────────────────── */
-    .chiffres-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
+    .hero-metric {
       text-align: center;
     }
-    .chiffre-item {}
-    .chiffre-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px; font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 12px;
+    .hero-metric-n {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem; font-weight: 400; color: #fff;
     }
-    .chiffre-sep {
-      width: 40px; height: 2px;
-      background: var(--accent);
-      margin: 0 auto 12px;
-    }
-    .chiffre-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      color: var(--text-body);
+    .hero-metric-n span { color: var(--gold); }
+    .hero-metric-t {
+      font-size: 0.82rem; color: var(--text-muted);
+      margin-top: 4px;
     }
 
-    /* ── PRICING ─────────────────────────────── */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      max-width: 820px;
-      margin: 0 auto;
+    /* ══════════════════════════════════════════════════════
+       VIDEO SECTION
+    ══════════════════════════════════════════════════════ */
+    .video-section { padding: 0 0 120px; }
+    .video-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
     }
-    .pricing-card {
-      background: var(--card-dark);
-      border: 1px solid var(--border-dark);
-      border-radius: 16px;
-      padding: 40px 36px;
+    .video-cover {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1400&q=80') center/cover;
+      transition: opacity 0.6s var(--ease);
+      z-index: 2;
+    }
+    .video-cover::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(10,10,10,0.5);
+    }
+    .video-wrap.playing .video-cover { opacity: 0; pointer-events: none; }
+    .video-play {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: none;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s var(--ease);
+      cursor: pointer;
+    }
+    .video-play::before {
+      content: '';
+      position: absolute;
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,168,83,0.3);
+      animation: pulse-ring 2s ease-in-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.15); opacity: 0; }
+    }
+    .video-play:hover { transform: translate(-50%, -50%) scale(1.08); }
+    .video-play svg { margin-left: 4px; }
+    .video-text {
+      position: absolute; bottom: 24px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      font-size: 0.85rem; color: rgba(250,250,250,0.6);
+      white-space: nowrap;
+    }
+    .video-placeholder {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 0.9rem;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       MARQUEE
+    ══════════════════════════════════════════════════════ */
+    .marquee {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      overflow: hidden;
       position: relative;
     }
-    .pricing-card.featured {
-      border-color: rgba(99,102,241,0.5);
-      background: rgba(99,102,241,0.06);
+    .marquee-track {
+      display: flex; gap: 48px;
+      animation: marquee 30s linear infinite;
+      width: max-content;
     }
-    .pricing-badge {
-      position: absolute;
-      top: -13px; right: 24px;
-      font-family: 'Inter', sans-serif;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      background: var(--accent);
-      color: #fff;
-      padding: 4px 14px; border-radius: 12px;
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .pricing-plan-name {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px; font-weight: 500;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
+    .marquee-item {
+      display: flex; align-items: center; gap: 10px;
+      white-space: nowrap;
+      font-size: 0.9rem; font-weight: 500;
+      color: var(--text-sec);
     }
-    .pricing-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 44px; font-weight: 700;
-      color: var(--white);
-      line-height: 1;
+    .marquee-item svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ══════════════════════════════════════════════════════
+       PROBLEM SECTION
+    ══════════════════════════════════════════════════════ */
+    .problem-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; margin-top: 48px;
+    }
+    .problem-img {
+      position: relative;
+      border-radius: 16px; overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .problem-img img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .problem-img-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 32px;
+      background: linear-gradient(transparent, rgba(10,10,10,0.9));
+    }
+    .problem-img-quote {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(250,250,250,0.8);
+      line-height: 1.5;
+    }
+    .problem-cards { display: flex; flex-direction: column; gap: 12px; }
+    .problem-card {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      transition: all 0.4s var(--ease);
+    }
+    .problem-card:hover {
+      transform: translateX(8px);
+      border-color: rgba(212,168,83,0.25);
+    }
+    .problem-card-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--gold-dim);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .problem-card-icon svg { color: var(--gold); }
+    .problem-card h4 {
+      font-size: 1rem; font-weight: 600; color: #fff;
       margin-bottom: 4px;
     }
-    .pricing-price-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px; color: var(--text-muted-dark);
-      margin-bottom: 28px;
+    .problem-card p {
+      font-size: 0.88rem; color: var(--text-sec);
+      line-height: 1.5;
     }
-    .pricing-divider {
-      height: 1px; background: var(--border-dark);
-      margin-bottom: 24px;
-    }
-    .pricing-feature {
-      display: flex; align-items: center; gap: 10px;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      color: var(--text-muted-dark);
-      margin-bottom: 12px;
-    }
-    .pricing-feature .check { color: #10B981; flex-shrink: 0; }
-    .pricing-feature .cross { color: #374151; flex-shrink: 0; }
-    .pricing-cta {
-      margin-top: 28px;
-      display: block; width: 100%;
-      padding: 14px 0; border-radius: 24px;
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      transition: all 0.2s;
-    }
-    .pricing-cta-free {
-      background: transparent;
-      color: var(--text-muted-dark);
-      border: 1px solid var(--border-dark);
-    }
-    .pricing-cta-free:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
-    .pricing-cta-paid {
-      background: var(--accent);
-      color: var(--white);
-      border: none;
-    }
-    .pricing-cta-paid:hover { background: var(--accent-hover); transform: translateY(-2px); }
 
-    /* ── MÉTHODE ─────────────────────────────── */
-    .methode-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
+    /* ══════════════════════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════════════════════ */
+    .services-head {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 40px; margin-bottom: 48px;
     }
-    .methode-step {}
-    .methode-num {
-      width: 48px; height: 48px;
+    .services-head p {
+      max-width: 400px; font-size: 0.95rem; color: var(--text-sec);
+      line-height: 1.6; text-align: right;
+    }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .service-item {
+      background: var(--bg);
+      padding: 40px 32px;
+      position: relative;
+      transition: all 0.4s var(--ease);
+      overflow: hidden;
+    }
+    .service-item::after {
+      content: '';
+      position: absolute; bottom: 0; left: 32px; right: 32px;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s var(--ease);
+    }
+    .service-item:hover { background: var(--bg-raised); }
+    .service-item:hover::after { transform: scaleX(1); }
+    .service-num {
+      font-family: 'Instrument Serif', serif;
+      font-size: 3.5rem; font-weight: 400;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      margin-bottom: 16px;
+      transition: color 0.4s var(--ease);
+    }
+    .service-item:hover .service-num { color: rgba(212,168,83,0.15); }
+    .service-item h4 {
+      font-size: 1.1rem; font-weight: 600; color: #fff;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .service-item:hover h4 { color: var(--gold); }
+    .service-item p {
+      font-size: 0.88rem; color: var(--text-sec);
+      line-height: 1.5;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       PROCESS / METHOD
+    ══════════════════════════════════════════════════════ */
+    .process-section { text-align: center; }
+    .process-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+      position: relative;
+    }
+    .process-line {
+      position: absolute;
+      top: 40px; left: 15%; right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold), transparent);
+      opacity: 0.3;
+    }
+    .process-step { position: relative; text-align: center; }
+    .process-circle {
+      width: 80px; height: 80px;
       border-radius: 50%;
-      background: var(--accent);
+      border: 1px solid rgba(212,168,83,0.4);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 16px; font-weight: 700;
-      color: #fff;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.8rem; color: var(--gold);
+      transition: all 0.4s var(--ease);
+      position: relative;
+      z-index: 2;
+      background: var(--bg);
     }
-    .methode-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 15px; font-weight: 600;
-      color: var(--text-heading);
+    .process-step:hover .process-circle {
+      background: var(--gold);
+      color: #0A0A0A;
+      box-shadow: 0 0 40px rgba(212,168,83,0.2);
+    }
+    .process-step h4 {
+      font-size: 1rem; font-weight: 600; color: #fff;
       margin-bottom: 8px;
     }
-    .methode-sep {
-      width: 24px; height: 1px;
-      background: var(--accent);
-      margin: 12px 0;
+    .process-step p {
+      font-size: 0.85rem; color: var(--text-sec);
+      line-height: 1.5;
+      max-width: 200px; margin: 0 auto;
     }
-    .methode-desc {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      color: var(--text-body);
+
+    /* ══════════════════════════════════════════════════════
+       STATS BAND
+    ══════════════════════════════════════════════════════ */
+    .stats-band {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 0;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .stat-box {
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-raised);
+      text-align: center;
+      transition: all 0.3s var(--ease);
+    }
+    .stat-box:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,168,83,0.3);
+    }
+    .stat-box-n {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.5rem; font-weight: 400; color: #fff;
+    }
+    .stat-box-n span { color: var(--gold); }
+    .stat-box-t {
+      font-size: 0.85rem; color: var(--text-sec);
+      margin-top: 6px;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       PRICING
+    ══════════════════════════════════════════════════════ */
+    .pricing-section { text-align: center; }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 860px; margin: 48px auto 0;
+    }
+    .price-card {
+      padding: 40px 32px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      text-align: left;
+      position: relative;
+    }
+    .price-card.featured {
+      border-color: rgba(212,168,83,0.4);
+      background: linear-gradient(160deg, #1A1A1A, #141414);
+    }
+    .price-badge {
+      position: absolute; top: -12px; right: 24px;
+      padding: 5px 16px; border-radius: 100px;
+      background: var(--gold); color: #0A0A0A;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .price-name {
+      font-size: 1.1rem; font-weight: 600; color: #fff;
+      margin-bottom: 8px;
+    }
+    .price-amount {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.8rem; color: #fff;
+      margin-bottom: 24px;
+    }
+    .price-amount small {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem; font-weight: 400;
+      color: var(--text-sec);
+    }
+    .price-features {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 12px;
+      margin-bottom: 32px;
+    }
+    .price-features li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.9rem; color: var(--text-sec);
+    }
+    .price-features svg { color: var(--gold); flex-shrink: 0; }
+    .price-btn-gold {
+      display: block; width: 100%;
+      padding: 14px; border-radius: 100px;
+      background: var(--gold); color: #0A0A0A;
+      font-size: 0.95rem; font-weight: 600;
+      border: none; text-align: center;
+      transition: all 0.3s var(--ease);
+    }
+    .price-btn-gold:hover { background: #E0B86A; }
+    .price-btn-outline {
+      display: block; width: 100%;
+      padding: 14px; border-radius: 100px;
+      background: transparent; color: var(--text);
+      font-size: 0.95rem; font-weight: 500;
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: all 0.3s var(--ease);
+    }
+    .price-btn-outline:hover { border-color: rgba(255,255,255,0.25); color: #fff; }
+
+    /* ══════════════════════════════════════════════════════
+       FAQ
+    ══════════════════════════════════════════════════════ */
+    .faq-section { text-align: center; }
+    .faq-list {
+      max-width: 720px; margin: 48px auto 0;
+      text-align: left;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 24px 0;
+      background: none; border: none; width: 100%;
+      font-size: 1rem; font-weight: 500; color: #fff;
+      text-align: left;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .faq-q:hover { color: var(--gold); }
+    .faq-icon {
+      width: 24px; height: 24px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--gold);
+      transition: transform 0.3s var(--ease);
+      flex-shrink: 0;
+    }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s var(--ease), padding 0.4s;
+      padding: 0 0;
+    }
+    .faq-item.active .faq-a {
+      max-height: 300px;
+      padding: 0 0 24px;
+    }
+    .faq-a p {
+      font-size: 0.92rem; color: var(--text-sec);
       line-height: 1.7;
     }
 
-    /* ── FAQ ─────────────────────────────────── */
-    .faq-item {
-      border-bottom: 1px solid var(--border-light);
-    }
-    .faq-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 0;
-      cursor: pointer;
-    }
-    .faq-question {
-      font-family: 'Inter', sans-serif;
-      font-size: 15px; font-weight: 500;
-      color: var(--text-heading);
-      padding-right: 24px;
-    }
-    .faq-icon {
-      width: 24px; height: 24px; border-radius: 50%;
-      background: var(--cream);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-size: 16px;
-      color: var(--accent);
-      transition: transform 0.2s;
-    }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-answer {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px; line-height: 1.8;
-      color: var(--text-body);
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s;
-    }
-    .faq-item.open .faq-answer {
-      max-height: 200px;
-      padding-bottom: 22px;
-    }
-
-    /* ── CTA BOX ─────────────────────────────── */
-    .cta-box {
-      background: var(--accent);
-      border-radius: 16px;
-      padding: 64px 48px;
+    /* ══════════════════════════════════════════════════════
+       CTA FINAL
+    ══════════════════════════════════════════════════════ */
+    .cta-final {
       text-align: center;
-      margin: 0 40px;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
     }
-    .cta-box h2 { color: var(--white); margin-bottom: 16px; }
-    .cta-box p {
-      font-family: 'Inter', sans-serif;
-      font-size: 16px; color: rgba(255,255,255,0.8);
-      margin-bottom: 32px;
+    .cta-final::before {
+      content: '';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(212,168,83,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-final h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400; color: #fff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .cta-final h2 em { font-style: italic; color: var(--gold); }
+    .cta-final p {
+      font-size: 1.05rem; color: var(--text-sec);
+      margin-bottom: 36px;
+      max-width: 500px; margin-left: auto; margin-right: auto;
+    }
+    .cta-btns {
+      display: flex; gap: 14px;
+      justify-content: center; flex-wrap: wrap;
+      position: relative;
     }
 
-    /* ── FOOTER ─────────────────────────────── */
-    footer {
-      background: var(--dark);
-      padding: 60px 0 30px;
+    /* ══════════════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════════════ */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 64px 0 32px;
     }
-    .footer-inner {
-      max-width: 1120px; margin: 0 auto; padding: 0 40px;
-      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
       margin-bottom: 48px;
     }
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px; font-weight: 700;
+    .footer-brand p {
+      font-size: 0.88rem; color: var(--text-sec);
+      line-height: 1.6;
+      margin-top: 16px;
+      max-width: 280px;
+    }
+    .footer-col h5 {
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-muted);
       margin-bottom: 16px;
     }
-    .footer-logo .ab { color: var(--accent); }
-    .footer-logo .dridi { color: var(--white); }
-    .footer-desc {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px; color: var(--text-muted-dark);
-      line-height: 1.7; max-width: 300px;
-    }
-    .footer-col h4 {
-      font-family: 'Inter', sans-serif;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--text-muted-dark);
-      margin-bottom: 20px;
-    }
     .footer-col a {
-      display: block; font-family: 'Inter', sans-serif;
-      font-size: 14px; color: #475569;
+      display: block;
+      font-size: 0.88rem; color: var(--text-sec);
       margin-bottom: 10px;
-      transition: color 0.2s;
+      transition: color 0.3s;
     }
-    .footer-col a:hover { color: var(--white); }
+    .footer-col a:hover { color: var(--gold); }
     .footer-bottom {
-      max-width: 1120px; margin: 0 auto; padding: 0 40px;
-      border-top: 1px solid var(--border-dark);
-      padding-top: 24px;
       display: flex; justify-content: space-between; align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--text-muted);
     }
-    .footer-copy {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px; color: #475569;
+    .footer-bottom-links {
+      display: flex; gap: 20px;
     }
+    .footer-bottom-links a { transition: color 0.3s; }
+    .footer-bottom-links a:hover { color: var(--gold); }
 
-    /* ── MOBILE ─────────────────────────────── */
+    /* ══════════════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .process-line { display: none; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .problem-img { max-height: 400px; }
+    }
     @media (max-width: 768px) {
-      .container { padding: 0 20px; }
-      .section-dark, .section-light, .section-cream { padding: 60px 0; }
-      .navbar { padding: 0 20px; }
+      .section { padding: 80px 0; }
       .nav-links { display: none; }
-      .hero { padding: 120px 0 80px; }
-      .about-grid, .pricing-grid, .methode-grid, .chiffres-grid { grid-template-columns: 1fr; gap: 32px; }
-      .stats-bar-inner { gap: 32px; }
-      .footer-inner { grid-template-columns: 1fr; gap: 40px; }
-      .footer-bottom { flex-direction: column; gap: 8px; }
-      .cta-box { margin: 0 20px; padding: 40px 24px; }
-      .accordion-header { padding: 22px 20px; }
-      .accordion-body.open { padding: 0 20px 24px; }
+      .nav-burger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .services-head { flex-direction: column; align-items: flex-start; }
+      .services-head p { text-align: left; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-btns { flex-direction: column; }
+      .btn-gold, .btn-ghost { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .hero-metrics { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .process-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="navbar-inner">
-    <a href="/" class="nav-logo"><span class="ab">AB</span><span class="dridi"> DRIDI</span></a>
-    <div class="nav-links">
-      <a href="#about" class="nav-link">À Propos</a>
-      <a href="#services" class="nav-link">Nos Services</a>
-      <a href="#pricing" class="nav-link">Tarifs</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-    </div>
-    <a href="https://portal.abdridi.com/auth/register" class="btn-primary">Essayer Gratuitement</a>
-  </div>
-</nav>
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-<!-- HERO -->
-<section class="hero section-dark">
-  <div class="container">
-    <span class="label-tag">— AB DRIDI —</span>
-    <h1>La veille marchés publics<br>pensée pour le transport</h1>
-    <p class="hero-sub">Identifiez les appels d'offres, analysez la concurrence et remportez plus de marchés.</p>
-    <div class="hero-buttons">
-      <a href="https://portal.abdridi.com/auth/register" class="btn-primary">Essayer Gratuitement →</a>
-      <a href="https://portal.abdridi.com" class="btn-outline">Voir la plateforme</a>
-    </div>
-  </div>
-</section>
+  <!-- ════════════════════ NAVBAR ════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-mark">AB</div>
+        AB <span>DRIDI</span>
+      </a>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stats-bar-inner container">
-    <div class="stat-item">
-      <span class="stat-num">6 100+</span>
-      <div class="stat-sep"></div>
-      <span class="stat-label">Consultations ouvertes</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">102</span>
-      <div class="stat-sep"></div>
-      <span class="stat-label">Sources officielles</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">7 000+</span>
-      <div class="stat-sep"></div>
-      <span class="stat-label">Contrats attribués</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">24h</span>
-      <div class="stat-sep"></div>
-      <span class="stat-label">Fraîcheur données</span>
-    </div>
-  </div>
-</div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
 
-<!-- À PROPOS -->
-<section id="about" class="section-light">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-img">
-        <div class="about-img-placeholder">
-          <span class="icon">🏛️</span>
-          <p>Portail AB DRIDI<br><small style="color:#94A3B8;font-size:11px">portal.abdridi.com</small></p>
-        </div>
-      </div>
-      <div>
-        <span class="label-tag">À Propos de nous</span>
-        <h2 class="section-title" style="color: var(--text-heading)">Votre partenaire pour remporter des marchés publics.</h2>
-        <p class="section-sub" style="margin-bottom: 24px">AB DRIDI est un cabinet de conseil spécialisé dans les marchés publics du secteur transport. Notre portail agrège 102 sources officielles pour vous donner une vision complète et en temps réel des appels d'offres.</p>
-        <p class="section-sub">Nous maîtrisons les codes CPV, les acheteurs publics récurrents et les niveaux de prix du marché. Votre dossier est entre de bonnes mains.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
 
-<!-- NOS SERVICES -->
-<section id="services" class="section-dark">
-  <div class="container">
-    <div class="text-center" style="margin-bottom: 56px">
-      <span class="label-tag">Nos Services</span>
-      <h2 class="section-title">Expertise à la carte</h2>
-      <p class="section-sub section-sub-dark mx-auto text-center" style="margin: 0 auto">Des services conçus pour maximiser vos chances de remporter des marchés.</p>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div id="accordion-container">
-      <div class="accordion-item open" data-index="0">
-        <div class="accordion-header">
-          <div style="display:flex;align-items:center">
-            <span class="accordion-number">01</span>
-            <span class="accordion-title">Veille Marchés Publics</span>
-          </div>
-          <div class="accordion-chevron">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#methode" onclick="closeMobile()">Méthode</a>
+    <a href="#tarifs" onclick="closeMobile()">Tarifs</a>
+    <a href="#faq" onclick="closeMobile()">FAQ</a>
+    <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--gold);">Espace Client</a>
+  </div>
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge r">
+        <div class="hero-badge-dot"></div>
+        Cabinet Conseil — Marchés Publics Transport
+      </div>
+
+      <h1 class="r">Vos marchés publics,<br><em>trouvés et montés</em> pour vous</h1>
+
+      <p class="hero-sub r">
+        Nous détectons les appels d'offres transport qui vous correspondent et montons 100% du dossier de réponse — mémoire technique, BPU, administratif — jusqu'au dépôt final.
+      </p>
+
+      <div class="hero-btns r">
+        <a href="https://portal.abdridi.com/auth/register" class="btn-gold">Accéder au portail</a>
+        <a href="#video" class="btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Voir la présentation
+        </a>
+      </div>
+
+      <div class="hero-metrics r">
+        <div class="hero-metric">
+          <div class="hero-metric-n">9 300<span>+</span></div>
+          <div class="hero-metric-t">Marchés détectés</div>
         </div>
-        <div class="accordion-body">
-          <p class="accordion-desc">Accédez à 6 100+ consultations de 102 sources officielles. BOAMP, TED (UE), PLACE, Maximilien, Mégalis et bien d'autres. Filtrez par secteur, département, code CPV. Ne manquez plus aucun appel d'offres.</p>
-          <div class="accordion-tags">
-            <span class="tag">BOAMP</span>
-            <span class="tag">TED (UE)</span>
-            <span class="tag">PLACE</span>
-            <span class="tag">Maximilien</span>
-            <span class="tag">102 sources</span>
-          </div>
+        <div class="hero-metric">
+          <div class="hero-metric-n">12<span>+</span></div>
+          <div class="hero-metric-t">Sources officielles</div>
+        </div>
+        <div class="hero-metric">
+          <div class="hero-metric-n">100<span>%</span></div>
+          <div class="hero-metric-t">Dossier monté</div>
+        </div>
+        <div class="hero-metric">
+          <div class="hero-metric-n">24<span>h</span></div>
+          <div class="hero-metric-t">Veille quotidienne</div>
         </div>
       </div>
-      <div class="accordion-item" data-index="1">
-        <div class="accordion-header">
-          <div style="display:flex;align-items:center">
-            <span class="accordion-number">02</span>
-            <span class="accordion-title">Analyse Concurrentielle</span>
-          </div>
-          <div class="accordion-chevron">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ VIDEO ════════════════════ -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="video-wrap r" id="videoWrap">
+        <div class="video-placeholder">
+          <!-- REMPLACER PAR VOTRE EMBED YOUTUBE: <iframe src="https://www.youtube.com/embed/VOTRE_ID?autoplay=1" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe> -->
+          <p>Vidéo de présentation</p>
         </div>
-        <div class="accordion-body">
-          <p class="accordion-desc">Identifiez vos concurrents et analysez 7 000+ marchés attribués. Qui répond ? À quel prix ? Sur quels marchés ? Préparez vos offres avec une connaissance fine du marché.</p>
-          <div class="accordion-tags">
-            <span class="tag">DECP</span>
-            <span class="tag">Marchés attribués</span>
-            <span class="tag">Analyse prix</span>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item" data-index="2">
-        <div class="accordion-header">
-          <div style="display:flex;align-items:center">
-            <span class="accordion-number">03</span>
-            <span class="accordion-title">Alertes Personnalisées</span>
-          </div>
-          <div class="accordion-chevron">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </div>
-        <div class="accordion-body">
-          <p class="accordion-desc">Recevez chaque matin par email les appels d'offres qui correspondent à vos critères. Configurez par département, nature de marché, code CPV, montant estimé. Zéro bruit, que de la valeur.</p>
-          <div class="accordion-tags">
-            <span class="tag">Email quotidien</span>
-            <span class="tag">Critères multi-filtres</span>
-            <span class="tag">Immédiat ou hebdo</span>
-          </div>
+        <div class="video-cover" id="videoCover">
+          <button class="video-play" id="videoPlay" aria-label="Lire la vidéo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0A0A0A"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </button>
+          <div class="video-text">Découvrir AB DRIDI — 2 min</div>
         </div>
       </div>
-      <div class="accordion-item" data-index="3">
-        <div class="accordion-header">
-          <div style="display:flex;align-items:center">
-            <span class="accordion-number">04</span>
-            <span class="accordion-title">Accompagnement Réponse</span>
-          </div>
-          <div class="accordion-chevron">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </div>
-        <div class="accordion-body">
-          <p class="accordion-desc">Nous montons votre dossier de candidature de A à Z. Mémoire technique, références, pièces administratives. Audit gratuit 30 minutes pour commencer.</p>
-          <div class="accordion-tags">
-            <span class="tag">Mémoire technique</span>
-            <span class="tag">Dossier complet</span>
-            <span class="tag">Audit gratuit</span>
-          </div>
-        </div>
-      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ MARQUEE ════════════════════ -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Veille quotidienne</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Données BOAMP officielles</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Spécialiste Transport</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Mémoire technique clé en main</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Accompagnement humain</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>BPU stratégique</div>
+      <!-- Duplicate for infinite scroll -->
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Veille quotidienne</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Données BOAMP officielles</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Spécialiste Transport</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Mémoire technique clé en main</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Accompagnement humain</div>
+      <div class="marquee-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>BPU stratégique</div>
     </div>
   </div>
-</section>
 
-<!-- EN CHIFFRES -->
-<section class="section-cream">
-  <div class="container">
-    <div class="text-center" style="margin-bottom: 56px">
-      <span class="label-tag">En Chiffres</span>
-      <h2 class="section-title" style="color: var(--text-heading)">AB DRIDI en quelques chiffres.</h2>
-    </div>
-    <div class="chiffres-grid">
-      <div class="chiffre-item text-center">
-        <div class="chiffre-num">6 100+</div>
-        <div class="chiffre-sep"></div>
-        <div class="chiffre-label">Consultations ouvertes</div>
-      </div>
-      <div class="chiffre-item text-center">
-        <div class="chiffre-num">102</div>
-        <div class="chiffre-sep"></div>
-        <div class="chiffre-label">Sources officielles</div>
-      </div>
-      <div class="chiffre-item text-center">
-        <div class="chiffre-num">7 000+</div>
-        <div class="chiffre-sep"></div>
-        <div class="chiffre-label">Contrats suivis</div>
-      </div>
-      <div class="chiffre-item text-center">
-        <div class="chiffre-num">24h</div>
-        <div class="chiffre-sep"></div>
-        <div class="chiffre-label">Fraîcheur des données</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- ════════════════════ PROBLEM ════════════════════ -->
+  <section class="section" id="pourquoi">
+    <div class="container">
+      <div class="section-label r">Le problème</div>
+      <h2 class="section-title r">Vous êtes transporteur,<br>pas rédacteur</h2>
 
-<!-- TARIFS -->
-<section id="pricing" class="section-dark">
-  <div class="container">
-    <div class="text-center" style="margin-bottom: 56px">
-      <span class="label-tag">Nos Tarifs</span>
-      <h2 class="section-title">Nos Offres</h2>
-      <p class="section-sub section-sub-dark mx-auto" style="margin: 0 auto">Des solutions pour démarrer ou accélérer.</p>
-    </div>
-    <div class="pricing-grid">
-      <!-- Découverte -->
-      <div class="pricing-card">
-        <div class="pricing-plan-name">Découverte</div>
-        <div class="pricing-price">Gratuit</div>
-        <div class="pricing-price-sub">Sans carte bancaire</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature"><span class="check">✓</span> 3 appels d'offres par jour</div>
-        <div class="pricing-feature"><span class="check">✓</span> Résultats avec délai de 48h</div>
-        <div class="pricing-feature"><span class="check">✓</span> Prise de rendez-vous</div>
-        <div class="pricing-feature"><span class="cross">✗</span> <span style="color:#374151">Alertes email</span></div>
-        <div class="pricing-feature"><span class="cross">✗</span> <span style="color:#374151">Veille concurrentielle</span></div>
-        <div class="pricing-feature"><span class="cross">✗</span> <span style="color:#374151">Export données</span></div>
-        <a href="https://portal.abdridi.com/auth/register" class="pricing-cta pricing-cta-free">Créer un compte gratuit</a>
-      </div>
-      <!-- Veille -->
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Recommandé</div>
-        <div class="pricing-plan-name">Veille & Accompagnement</div>
-        <div class="pricing-price">25,90€</div>
-        <div class="pricing-price-sub">/mois · Annulable à tout moment</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature"><span class="check">✓</span> Appels d'offres illimités</div>
-        <div class="pricing-feature"><span class="check">✓</span> Résultats en temps réel</div>
-        <div class="pricing-feature"><span class="check">✓</span> Alertes email personnalisées</div>
-        <div class="pricing-feature"><span class="check">✓</span> Veille concurrentielle complète</div>
-        <div class="pricing-feature"><span class="check">✓</span> Export CSV / Excel</div>
-        <div class="pricing-feature"><span class="check">✓</span> Support prioritaire</div>
-        <a href="https://portal.abdridi.com/auth/register" class="pricing-cta pricing-cta-paid">Essayer gratuitement</a>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:20px;font-family:'Inter',sans-serif;font-size:12px;color:#475569">
-      Paiement sécurisé Stripe · Annulable à tout moment · Sans engagement
-    </p>
-  </div>
-</section>
+      <div class="problem-grid">
+        <div class="problem-img r">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Transport" loading="lazy">
+          <div class="problem-img-overlay">
+            <p class="problem-img-quote">"On ratait des marchés parce qu'on n'avait pas le temps de monter les dossiers."</p>
+          </div>
+        </div>
 
-<!-- MÉTHODE -->
-<section class="section-cream">
-  <div class="container">
-    <div class="text-center" style="margin-bottom: 56px">
-      <span class="label-tag">Notre Méthode</span>
-      <h2 class="section-title" style="color: var(--text-heading)">Un parcours en 4 étapes.</h2>
+        <div class="problem-cards">
+          <div class="problem-card r">
+            <div class="problem-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div>
+              <h4>Opportunités manquées</h4>
+              <p>Sans veille active, les bons marchés passent sous votre radar. Vous les découvrez trop tard.</p>
+            </div>
+          </div>
+          <div class="problem-card r">
+            <div class="problem-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>20 à 60h par dossier</h4>
+              <p>Rédiger un mémoire technique, un BPU et les pièces admin, c'est un travail à temps plein.</p>
+            </div>
+          </div>
+          <div class="problem-card r">
+            <div class="problem-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div>
+              <h4>Dossiers éliminés</h4>
+              <p>Une pièce manquante ou un mémoire trop faible et votre candidature est écartée d'office.</p>
+            </div>
+          </div>
+          <div class="problem-card r" style="border-color: rgba(212,168,83,0.2); background: rgba(212,168,83,0.04);">
+            <div class="problem-card-icon" style="background: var(--gold);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <h4>AB DRIDI s'occupe de tout</h4>
+              <p>Détection, rédaction, montage, dépôt. Vous vous concentrez sur votre métier.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="methode-grid">
-      <div class="methode-step">
-        <div class="methode-num">01</div>
-        <div class="methode-title">Inscription gratuite</div>
-        <div class="methode-sep"></div>
-        <div class="methode-desc">Créez votre compte en 2 minutes. Aucune carte bancaire requise pour commencer.</div>
+  </section>
+
+  <!-- ════════════════════ SERVICES ════════════════════ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="services-head">
+        <div>
+          <div class="section-label r">Nos services</div>
+          <h2 class="section-title r">Tout pour remporter<br>vos marchés</h2>
+        </div>
+        <p class="r">De la détection de l'opportunité au dépôt du dossier, nous intervenons à chaque étape pour maximiser vos chances.</p>
       </div>
-      <div class="methode-step">
-        <div class="methode-num">02</div>
-        <div class="methode-title">Configuration des alertes</div>
-        <div class="methode-sep"></div>
-        <div class="methode-desc">Définissez vos critères : département, secteur, type de marché. L'outil apprend vos préférences.</div>
+
+      <div class="services-grid r">
+        <div class="service-item">
+          <div class="service-num">01</div>
+          <h4>Veille & Détection</h4>
+          <p>Surveillance quotidienne de 12+ sources officielles. Les marchés transport qui vous correspondent, livrés chaque matin.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-num">02</div>
+          <h4>Mémoire Technique</h4>
+          <p>Rédaction complète de votre mémoire technique. Contenu percutant, chiffré, adapté aux critères de notation.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-num">03</div>
+          <h4>Montage BPU</h4>
+          <p>Bordereau de prix unitaires stratégique. Analyse des prix de marché et positionnement compétitif.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-num">04</div>
+          <h4>Pièces Administratives</h4>
+          <p>DC1, DC2, attestations, Kbis, assurances. Toutes les pièces rassemblées et vérifiées avant dépôt.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-num">05</div>
+          <h4>Dépôt & Soumission</h4>
+          <p>Dépôt dématérialisé sur la bonne plateforme, dans les délais, avec vérification de conformité.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-num">06</div>
+          <h4>Conseil Stratégique</h4>
+          <p>Analyse de vos chances, choix des marchés pertinents, optimisation de votre approche commerciale.</p>
+        </div>
       </div>
-      <div class="methode-step">
-        <div class="methode-num">03</div>
-        <div class="methode-title">Réception des AO</div>
-        <div class="methode-sep"></div>
-        <div class="methode-desc">Chaque matin, recevez par email les nouveaux appels d'offres correspondant à vos critères.</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ PROCESS ════════════════════ -->
+  <section class="section process-section" id="methode">
+    <div class="container">
+      <div class="section-label r">Notre méthode</div>
+      <h2 class="section-title r">4 étapes simples</h2>
+
+      <div class="process-grid r">
+        <div class="process-line"></div>
+        <div class="process-step">
+          <div class="process-circle">1</div>
+          <h4>Détection</h4>
+          <p>Nous identifions les appels d'offres qui correspondent à votre activité et votre zone.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-circle">2</div>
+          <h4>Proposition</h4>
+          <p>Nous vous présentons les opportunités avec une analyse rapide de vos chances.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-circle">3</div>
+          <h4>Montage</h4>
+          <p>Mémoire technique, BPU, pièces admin : nous montons 100% du dossier pour vous.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-circle">4</div>
+          <h4>Dépôt</h4>
+          <p>Soumission sur la bonne plateforme avant la date limite. Vous n'avez rien à faire.</p>
+        </div>
       </div>
-      <div class="methode-step">
-        <div class="methode-num">04</div>
-        <div class="methode-title">Accompagnement sur mesure</div>
-        <div class="methode-sep"></div>
-        <div class="methode-desc">Notre équipe monte votre dossier de réponse et vous accompagne jusqu'au dépôt.</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ STATS ════════════════════ -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="stats-grid r">
+        <div class="stat-box">
+          <div class="stat-box-n">9 300<span>+</span></div>
+          <div class="stat-box-t">Marchés détectés</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-n">12<span>+</span></div>
+          <div class="stat-box-t">Sources officielles</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-n">100<span>%</span></div>
+          <div class="stat-box-t">Dossier pris en charge</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-n">24<span>h</span></div>
+          <div class="stat-box-t">Veille quotidienne</div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- FAQ -->
-<section id="faq" class="section-light">
-  <div class="container">
-    <div class="text-center" style="margin-bottom: 56px">
-      <span class="label-tag">FAQ</span>
-      <h2 class="section-title" style="color: var(--text-heading)">Questions Fréquentes</h2>
-    </div>
-    <div style="max-width: 720px; margin: 0 auto">
-      <div class="faq-item">
-        <div class="faq-header">
-          <span class="faq-question">C'est quoi un appel d'offres public ?</span>
-          <span class="faq-icon">+</span>
+  <!-- ════════════════════ PRICING ════════════════════ -->
+  <section class="section pricing-section" id="tarifs">
+    <div class="container">
+      <div class="section-label r">Tarifs</div>
+      <h2 class="section-title r">Choisissez votre formule</h2>
+
+      <div class="pricing-grid r">
+        <!-- Découverte -->
+        <div class="price-card">
+          <div class="price-name">Découverte</div>
+          <div class="price-amount">0€ <small>/ gratuit</small></div>
+          <ul class="price-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>3 résultats par jour</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Aperçu des consultations</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Filtres basiques</li>
+          </ul>
+          <a href="https://portal.abdridi.com/auth/register" class="price-btn-outline">Commencer gratuitement</a>
         </div>
-        <div class="faq-answer">Un appel d'offres public est une procédure légale par laquelle une collectivité (commune, région, hôpital, État) met en concurrence des entreprises pour un service ou des travaux. C'est une opportunité commerciale répétable et prévisible, particulièrement importante dans le secteur transport.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header">
-          <span class="faq-question">Comment AB DRIDI trouve les marchés publics ?</span>
-          <span class="faq-icon">+</span>
+
+        <!-- Veille & Accompagnement -->
+        <div class="price-card featured">
+          <div class="price-badge">Recommandé</div>
+          <div class="price-name">Veille & Accompagnement</div>
+          <div class="price-amount">25,90€ <small>/ mois</small></div>
+          <ul class="price-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Consultations illimitées</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Alertes email personnalisées</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Veille concurrentielle</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Export des données</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Support prioritaire</li>
+          </ul>
+          <a href="https://portal.abdridi.com/auth/register" class="price-btn-gold">S'abonner maintenant</a>
         </div>
-        <div class="faq-answer">Notre portail agrège 102 sources officielles (BOAMP, TED, PLACE, Maximilien, Mégalis, e-marchespublics, achatpublic.com…) et met à jour la base quotidiennement. Les marchés arrivent directement dans votre tableau de bord, sans aucune action de votre part.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header">
-          <span class="faq-question">Quelle différence entre Découverte et Veille & Accompagnement ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">Le plan Découverte (gratuit) vous donne accès à 3 consultations par jour. Le plan Veille & Accompagnement (25,90€/mois) débloque l'accès illimité en temps réel, les alertes email personnalisées, la veille concurrentielle et l'export de données.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header">
-          <span class="faq-question">Comment annuler mon abonnement ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">Vous pouvez annuler à tout moment depuis votre espace client → Abonnement → "Gérer mon abonnement". L'annulation est immédiate et vous conservez l'accès jusqu'à la fin de la période payée. Aucun frais supplémentaire.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header">
-          <span class="faq-question">À quelle fréquence les données sont-elles mises à jour ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">La base est synchronisée quotidiennement. BOAMP et TED (UE) en priorité chaque matin. Les plateformes régionales (Maximilien, Mégalis, PLACE…) sont mises à jour dans la journée. Vous avez toujours accès aux données les plus fraîches.</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA FINAL -->
-<section class="section-light" style="padding-bottom: 100px; padding-top: 20px">
-  <div class="container">
-    <div class="cta-box">
-      <h2 style="color:#fff">Prêt à remporter plus de marchés ?</h2>
-      <p>Rejoignez les entreprises de transport qui ne manquent plus aucun appel d'offres.</p>
-      <a href="https://portal.abdridi.com/auth/register" class="btn-outline-white">Essayer Gratuitement</a>
-    </div>
-  </div>
-</section>
+  <!-- ════════════════════ FAQ ════════════════════ -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-label r">FAQ</div>
+      <h2 class="section-title r">Questions fréquentes</h2>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo"><span class="ab">AB</span><span class="dridi"> DRIDI</span></div>
-      <p class="footer-desc">Spécialiste des marchés publics dans le transport et les services aux collectivités. Veille, montage de dossiers et accompagnement stratégique.</p>
+      <div class="faq-list">
+        <div class="faq-item r">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            À quels types de marchés répondez-vous ?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a">
+            <p>Nous sommes spécialisés dans les marchés publics de transport : transport de personnes, transport scolaire, transport de marchandises, logistique et déménagement. Nous intervenons sur les marchés à procédure adaptée (MAPA) comme sur les appels d'offres formalisés.</p>
+          </div>
+        </div>
+        <div class="faq-item r">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Combien coûte le montage d'un dossier ?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a">
+            <p>Le montage de dossier fait l'objet d'un devis personnalisé après un premier rendez-vous gratuit. Le tarif dépend de la complexité du marché, du nombre de lots et du niveau de rédaction requis. Contactez-nous pour un diagnostic offert.</p>
+          </div>
+        </div>
+        <div class="faq-item r">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Quelle différence entre le portail et l'accompagnement ?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a">
+            <p>Le portail (à partir de 0€/mois) vous donne accès à la veille automatisée sur les marchés publics. L'accompagnement est un service sur-mesure où nous rédigeons et déposons vos dossiers de A à Z. Les deux sont complémentaires.</p>
+          </div>
+        </div>
+        <div class="faq-item r">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Combien de temps pour monter un dossier ?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a">
+            <p>En général, nous montons un dossier complet en 5 à 10 jours ouvrés selon la complexité. Pour les procédures urgentes, nous pouvons intervenir en mode accéléré sous 48h si les éléments sont disponibles.</p>
+          </div>
+        </div>
+        <div class="faq-item r">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Gérez-vous les marchés hors transport ?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a">
+            <p>Notre portail de veille couvre l'ensemble des marchés publics français (toutes natures). En revanche, notre service d'accompagnement au montage de dossiers est exclusivement dédié aux métiers du transport et de la logistique.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Nos Services</h4>
-      <a href="#services">Veille marchés publics</a>
-      <a href="#services">Analyse concurrentielle</a>
-      <a href="#services">Alertes personnalisées</a>
-      <a href="#services">Accompagnement réponse</a>
-    </div>
-    <div class="footer-col">
-      <h4>Nous Connaître</h4>
-      <a href="#about">À propos</a>
-      <a href="#pricing">Tarifs</a>
-      <a href="https://portal.abdridi.com">Portail client</a>
-      <a href="mailto:contact.abdridi@gmail.com">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2026 AB DRIDI. Tous droits réservés.</span>
-    <span class="footer-copy">Spécialiste Transport · Marchés Publics</span>
-  </div>
-</footer>
+  </section>
 
-<script>
-  // Navbar scroll
-  window.addEventListener('scroll', function() {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
-  });
+  <!-- ════════════════════ CTA FINAL ════════════════════ -->
+  <section class="cta-final">
+    <div class="container">
+      <h2 class="r">Prêt à remporter votre prochain<br><em>marché public</em> ?</h2>
+      <p class="r">Rejoignez les transporteurs qui nous font confiance pour leur veille et le montage de leurs dossiers.</p>
+      <div class="cta-btns r">
+        <a href="https://portal.abdridi.com/auth/register" class="btn-gold">Accéder au portail</a>
+        <a href="mailto:contact@abdridi.com" class="btn-ghost">Nous contacter</a>
+      </div>
+    </div>
+  </section>
 
-  // Accordion
-  document.querySelectorAll('.accordion-item').forEach(function(item) {
-    item.querySelector('.accordion-header').addEventListener('click', function() {
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.accordion-item').forEach(function(i) { i.classList.remove('open'); });
-      if (!isOpen) item.classList.add('open');
+  <!-- ════════════════════ FOOTER ════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom: 0;">
+            <div class="nav-logo-mark">AB</div>
+            AB <span style="color: var(--gold);">DRIDI</span>
+          </div>
+          <p>Cabinet conseil spécialisé dans les marchés publics de transport. Veille, montage de dossiers et accompagnement stratégique.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="#services">Veille & Détection</a>
+          <a href="#services">Mémoire Technique</a>
+          <a href="#services">Montage BPU</a>
+          <a href="#services">Dépôt & Soumission</a>
+        </div>
+        <div class="footer-col">
+          <h5>Portail</h5>
+          <a href="https://portal.abdridi.com/auth/login">Connexion</a>
+          <a href="https://portal.abdridi.com/auth/register">Créer un compte</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+          <a href="#">Lun — Sam, 8h — 18h</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 AB DRIDI. Tous droits réservés.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════════════════ -->
+  <script>
+    /* ── Navbar scroll ── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
     });
-  });
 
-  // FAQ
-  document.querySelectorAll('.faq-item').forEach(function(item) {
-    item.querySelector('.faq-header').addEventListener('click', function() {
-      item.classList.toggle('open');
+    /* ── Mobile menu ── */
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
     });
-  });
-</script>
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+    }
+
+    /* ── Scroll reveal ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('v');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.r').forEach(el => observer.observe(el));
+
+    /* ── Cursor glow ── */
+    const glow = document.getElementById('cursorGlow');
+    document.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    /* ── Video play ── */
+    document.getElementById('videoPlay').addEventListener('click', () => {
+      document.getElementById('videoWrap').classList.add('playing');
+    });
+
+    /* ── FAQ accordion ── */
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const wasActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!wasActive) item.classList.add('active');
+    }
+
+    /* ── Smooth scroll for anchor links ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
