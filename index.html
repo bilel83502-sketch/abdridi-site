@@ -120,9 +120,15 @@
     .nav.scrolled .nav-logo { color: var(--text-light); }
     .nav-logo-img {
       height: 56px; width: auto;
-      border-radius: 8px;
+      border-radius: 0;
     }
     .nav-logo span { color: var(--accent); }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.1em; color: #FFFFFF;
+    }
+    .nav.scrolled .logo-text { color: var(--text-light); }
     .nav-links {
       display: flex; align-items: center; gap: 32px;
       list-style: none;
@@ -138,7 +144,7 @@
     .nav.scrolled .nav-links a:hover { color: var(--text-light); }
     .nav-cta {
       display: inline-flex; align-items: center; gap: 6px;
-      padding: 10px 24px; border-radius: 100px;
+      padding: 10px 24px; border-radius: 0;
       border: none;
       background: #3B82F6;
       color: #FFFFFF;
@@ -199,7 +205,7 @@
       position: relative; z-index: 5;
     }
     .hero-split-img {
-      border-radius: 20px; overflow: hidden;
+      border-radius: 0; overflow: hidden;
       max-height: 560px;
       box-shadow: 0 25px 60px rgba(0,0,0,0.4), 0 0 40px rgba(59,130,246,0.08);
       border: 1px solid rgba(59,130,246,0.2);
@@ -273,7 +279,7 @@
     .hero-login-hint a:hover { color: #93C5FD; text-decoration: underline; }
     .btn-blue {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 32px; border-radius: 100px;
+      padding: 14px 32px; border-radius: 0;
       background: #3B82F6;
       color: #FFFFFF;
       font-size: 0.95rem; font-weight: 600;
@@ -288,7 +294,7 @@
     }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 32px; border-radius: 100px;
+      padding: 14px 32px; border-radius: 0;
       background: transparent; color: var(--text-light);
       font-size: 0.95rem; font-weight: 500;
       border: 1px solid var(--border-dark);
@@ -298,7 +304,7 @@
     /* Light variant */
     .btn-ghost-dark {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 32px; border-radius: 100px;
+      padding: 14px 32px; border-radius: 0;
       background: transparent; color: var(--text);
       font-size: 0.95rem; font-weight: 500;
       border: 1px solid var(--border);
@@ -411,7 +417,7 @@
     }
     .problem-img {
       position: relative;
-      border-radius: 16px; overflow: hidden;
+      border-radius: 0; overflow: hidden;
       aspect-ratio: 4/5;
     }
     .problem-img img {
@@ -433,7 +439,7 @@
     .problem-card {
       display: flex; align-items: flex-start; gap: 16px;
       padding: 24px;
-      border-radius: 12px;
+      border-radius: 0;
       border: 1px solid rgba(99,102,241,0.08);
       background: rgba(255,255,255,0.8);
       backdrop-filter: blur(10px);
@@ -446,7 +452,7 @@
       box-shadow: 0 8px 32px rgba(99,102,241,0.08);
     }
     .problem-card-icon {
-      width: 44px; height: 44px; border-radius: 10px;
+      width: 44px; height: 44px; border-radius: 0;
       background: var(--accent-dim);
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
@@ -481,7 +487,7 @@
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 2px;
       background: var(--border);
-      border-radius: 16px;
+      border-radius: 0;
       overflow: hidden;
     }
     .service-item {
@@ -605,7 +611,7 @@
     .stat-box {
       padding: 32px;
       border: 1px solid rgba(99,102,241,0.08);
-      border-radius: 12px;
+      border-radius: 0;
       background: rgba(255,255,255,0.8);
       backdrop-filter: blur(10px);
       box-shadow: 0 4px 24px rgba(99,102,241,0.04);
@@ -620,12 +626,9 @@
     .stat-box-n {
       font-family: 'Instrument Serif', serif;
       font-size: 2.5rem; font-weight: 400;
-      background: linear-gradient(135deg, #3B82F6, #60A5FA);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #1E3A5F;
     }
-    .stat-box-n span { color: inherit; }
+    .stat-box-n span { color: #3B82F6; }
     .stat-box-t {
       font-size: 0.85rem; color: var(--text-sec);
       margin-top: 6px;
@@ -642,7 +645,7 @@
     }
     .price-card {
       padding: 40px 32px;
-      border-radius: 16px;
+      border-radius: 0;
       border: 1px solid var(--border);
       background: var(--bg);
       box-shadow: var(--card-shadow);
@@ -650,18 +653,19 @@
       position: relative;
     }
     .price-card.featured {
-      border-color: rgba(99,102,241,0.4);
-      background: linear-gradient(170deg, rgba(99,102,241,0.06) 0%, #16162E 100%);
-      box-shadow: 0 0 40px rgba(99,102,241,0.12);
-      color: var(--text-light);
+      border-color: #3B82F6;
+      background: #1E293B;
+      box-shadow: 0 0 40px rgba(59,130,246,0.12);
+      color: #FFFFFF;
     }
-    .price-card.featured .price-name { color: var(--text-light); }
-    .price-card.featured .price-amount { color: var(--text-light); }
-    .price-card.featured .price-amount small { color: var(--text-light-sec); }
-    .price-card.featured .price-features li { color: rgba(255,255,255,0.85); }
+    .price-card.featured .price-name { color: #FFFFFF; }
+    .price-card.featured .price-amount { color: #3B82F6; }
+    .price-card.featured .price-amount small { color: rgba(255,255,255,0.5); }
+    .price-card.featured .price-features li { color: rgba(255,255,255,0.9); }
+    .price-card.featured .price-features svg { color: #60A5FA; }
     .price-badge {
       position: absolute; top: -12px; right: 24px;
-      padding: 5px 16px; border-radius: 100px;
+      padding: 5px 16px; border-radius: 0;
       background: #3B82F6; color: #FFFFFF;
       font-size: 0.75rem; font-weight: 600;
       letter-spacing: 0.04em;
@@ -692,7 +696,7 @@
     .price-features svg { color: var(--accent); flex-shrink: 0; }
     .price-btn-blue {
       display: block; width: 100%;
-      padding: 14px; border-radius: 100px;
+      padding: 14px; border-radius: 0;
       background: #3B82F6;
       color: #FFFFFF;
       font-size: 0.95rem; font-weight: 600;
@@ -707,7 +711,7 @@
     }
     .price-btn-outline {
       display: block; width: 100%;
-      padding: 14px; border-radius: 100px;
+      padding: 14px; border-radius: 0;
       background: transparent; color: var(--text);
       font-size: 0.95rem; font-weight: 500;
       border: 1px solid var(--border);
@@ -855,7 +859,7 @@
     .footer-bottom-links a { color: rgba(250,250,250,0.3); transition: color 0.3s; }
     .footer-bottom-links a:hover { color: var(--accent); }
     .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; color: var(--text-light); }
-    .footer-logo img { height: 38px; width: auto; border-radius: 8px; }
+    .footer-logo img { height: 38px; width: auto; border-radius: 0; }
     .footer-logo span { color: var(--accent); }
 
     /* ══════════════════════════════════════════════════════
@@ -981,6 +985,7 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <img src="./Logo AB DRIDI.png" alt="AB DRIDI" class="nav-logo-img">
+        <span class="logo-text">DRIDI</span>
       </a>
 
       <ul class="nav-links">
@@ -1017,15 +1022,15 @@
     <div class="container">
       <div class="hero-split">
         <div>
-          <h1 class="r">Vos marchés publics,<br><em>trouvés et montés</em> pour vous</h1>
+          <h1 class="r">Trouvez vos marchés publics<br><em>sur une seule plateforme</em></h1>
 
           <p class="hero-sub r">
-            Nous détectons les appels d'offres publics qui vous correspondent et montons 100% du dossier de réponse — mémoire technique, BPU, administratif — jusqu'au dépôt final.
+            La plateforme qui centralise tous les appels d'offres publics. Trouvez les marchés qui vous correspondent, et confiez-nous le montage complet de votre dossier de réponse.
           </p>
 
           <div class="hero-btns r">
             <a href="https://portal.abdridi.com/auth/register" class="btn-blue">
-              Inscription gratuite
+              Accéder à la plateforme
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
             <a href="https://portal.abdridi.com/auth/login" class="btn-ghost">Se connecter</a>
@@ -1038,24 +1043,6 @@
         </div>
       </div>
 
-      <div class="hero-metrics r">
-        <div class="hero-metric">
-          <div class="hero-metric-n"><span data-count="9300">0</span><span>+</span></div>
-          <div class="hero-metric-t">Marchés détectés</div>
-        </div>
-        <div class="hero-metric">
-          <div class="hero-metric-n"><span data-count="12">0</span><span>+</span></div>
-          <div class="hero-metric-t">Sources officielles</div>
-        </div>
-        <div class="hero-metric">
-          <div class="hero-metric-n"><span data-count="100">0</span><span>%</span></div>
-          <div class="hero-metric-t">Dossier monté</div>
-        </div>
-        <div class="hero-metric">
-          <div class="hero-metric-n"><span data-count="24">0</span><span>h</span></div>
-          <div class="hero-metric-t">Veille quotidienne</div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1095,7 +1082,7 @@
 
       <div class="problem-grid">
         <div class="problem-img r">
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80" alt="Équipe en réunion" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80" alt="Documents professionnels sur bureau" loading="lazy">
           <div class="problem-img-overlay">
             <p class="problem-img-quote">"On ratait des marchés parce qu'on n'avait pas le temps de monter les dossiers."</p>
           </div>
@@ -1149,7 +1136,7 @@
       <div class="services-head">
         <div>
           <div class="section-label r">Nos services</div>
-          <h2 class="section-title r">Tout pour remporter<br>vos marchés</h2>
+          <h2 class="section-title r">Une plateforme,<br>tous vos marchés</h2>
         </div>
         <p class="r">De la détection de l'opportunité au dépôt du dossier, nous intervenons à chaque étape pour maximiser vos chances.</p>
       </div>
@@ -1191,7 +1178,7 @@
 
   <!-- ════════════════════ MID CTA BANNER ════════════════════ -->
   <div class="mid-cta">
-    <p>Prêt à gagner du temps ? <a href="https://portal.abdridi.com/auth/register">Créez votre compte gratuitement &rarr;</a></p>
+    <p>Accédez gratuitement à la plateforme <a href="https://portal.abdridi.com/auth/register">&rarr;</a></p>
   </div>
 
   <!-- ════════════════════ PROCESS (DARK) ════════════════════ -->
@@ -1343,7 +1330,7 @@
       <div class="cta-photo-overlay"></div>
     </div>
     <div class="container">
-      <h2 class="r">Prêt à remporter votre prochain<br><em>marché public</em> ?</h2>
+      <h2 class="r">Accédez à tous les marchés publics<br><em>depuis une seule plateforme</em></h2>
       <p class="r">Rejoignez les entreprises qui nous font confiance pour leur veille et le montage de leurs dossiers.</p>
       <div class="cta-btns r">
         <a href="https://portal.abdridi.com/auth/register" class="btn-blue">Inscription gratuite</a>
@@ -1359,6 +1346,7 @@
         <div class="footer-brand">
           <div class="footer-logo">
             <img src="./Logo AB DRIDI.png" alt="AB DRIDI">
+            <span class="logo-text">DRIDI</span>
           </div>
           <p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics. De la veille au dépôt, nous montons vos dossiers à 100%.</p>
         </div>
@@ -1460,7 +1448,7 @@
         }
       });
     }, { threshold: 0.3 });
-    document.querySelectorAll('.stats-grid, .hero-metrics').forEach(el => {
+    document.querySelectorAll('.stats-grid').forEach(el => {
       counterObserver.observe(el);
     });
 
