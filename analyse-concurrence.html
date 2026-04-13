@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse Concurrentielle Marchés Publics — AB DRIDI</title>
+  <meta name="description" content="Analyse concurrentielle des marchés publics. 529 000+ marchés attribués analysés. Identifiez vos concurrents et leurs stratégies. AB DRIDI.">
+  <link rel="canonical" href="https://abdridi.com/analyse-concurrence.html">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abdridi.com/analyse-concurrence.html">
+  <meta property="og:title" content="Analyse Concurrentielle Marchés Publics — AB DRIDI">
+  <meta property="og:description" content="Analyse concurrentielle des marchés publics. 529 000+ marchés attribués analysés. Identifiez vos concurrents et leurs stratégies.">
+  <meta property="og:image" content="https://abdridi.com/favicon.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="AB DRIDI">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Analyse Concurrentielle Marchés Publics",
+    "description": "Service d'analyse concurrentielle des marchés publics. Base de données de 529 000+ marchés attribués. Identification des concurrents, analyse tarifaire, taux de réussite.",
+    "provider": {
+      "@type": "Organization",
+      "name": "AB DRIDI",
+      "url": "https://abdridi.com"
+    },
+    "url": "https://abdridi.com/analyse-concurrence.html",
+    "serviceType": "Analyse concurrentielle marchés publics"
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J026WD3XD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2J026WD3XD');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      background: #FFFFFF;
+      color: #1A1A2E;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    .r { opacity: 0; transform: translateY(40px) scale(0.98); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .r.v { opacity: 1; transform: translateY(0) scale(1); }
+
+    :root {
+      --bg: #FFFFFF;
+      --bg-cream: #FAF7F2;
+      --bg-dark: #0F0F23;
+      --bg-dark-elevated: #16162E;
+      --bg-dark-card: #1C1C38;
+      --indigo: #6366F1;
+      --indigo-light: #818CF8;
+      --indigo-glow: rgba(99,102,241,0.15);
+      --violet: #8B5CF6;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --accent-dim: rgba(59,130,246,0.15);
+      --accent-glow: rgba(59,130,246,0.2);
+      --text: #1A1A2E;
+      --text-sec: #5A5A72;
+      --text-muted: #8B8BA0;
+      --text-light: #F0EDF6;
+      --text-light-sec: #9896B0;
+      --text-light-dim: rgba(255,255,255,0.3);
+      --border: rgba(0,0,0,0.07);
+      --border-dark: rgba(99,102,241,0.12);
+      --green: #4ADE80;
+      --card-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; position: relative; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .section-title em { font-style: italic; color: var(--accent); }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      transition: all 0.4s var(--ease);
+      background: rgba(15,15,35,0.8);
+      backdrop-filter: blur(20px) saturate(1.3); -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      border-bottom: 1px solid rgba(99,102,241,0.1);
+    }
+    .nav.scrolled { box-shadow: 0 1px 12px rgba(0,0,0,0.2); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.95rem; font-weight: 600; color: #fff;
+    }
+    .nav-logo-img { height: 56px; width: auto; }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.1em; color: #FFFFFF;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--text-light); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 24px; border-radius: 0;
+      border: none;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+    }
+    .nav-cta:hover {
+      background: #2563EB;
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+      transform: translateY(-1px);
+    }
+    .nav-burger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-light-sec);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: rgba(15,15,35,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.2rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+
+    .page-hero {
+      padding: 160px 0 80px;
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .page-hero .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--text-light-sec);
+      margin-bottom: 32px;
+      position: relative; z-index: 5;
+      transition: color 0.3s;
+    }
+    .page-hero .back-link:hover { color: var(--accent); }
+    .page-hero h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 400;
+      color: var(--text-light);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      max-width: 800px;
+      position: relative; z-index: 5;
+    }
+    .page-hero p {
+      font-size: 1.1rem; font-weight: 300;
+      color: var(--text-light-sec);
+      max-width: 620px;
+      line-height: 1.7;
+      position: relative; z-index: 5;
+    }
+
+    .content-section { background: var(--bg); }
+    .content-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .content-section h2 em { font-style: italic; color: var(--accent); }
+    .content-section p {
+      font-size: 1rem;
+      color: var(--text-sec);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+    .content-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+
+    .cream-section { background: var(--bg-cream); }
+
+    .stats-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+    .stat-card .number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-card .label {
+      font-size: 0.85rem;
+      color: var(--text-sec);
+    }
+
+    .insights-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .insight-card {
+      padding: 32px 28px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: all 0.4s var(--ease);
+    }
+    .insight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(99,102,241,0.07);
+    }
+    .insight-icon {
+      width: 44px; height: 44px;
+      background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .insight-icon svg { color: var(--accent); width: 22px; height: 22px; }
+    .insight-card h4 {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .insight-card p {
+      font-size: 0.88rem;
+      color: var(--text-sec);
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      background: var(--bg-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .cta-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      position: relative; z-index: 5;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--accent); }
+    .cta-section p {
+      font-size: 1rem;
+      color: var(--text-light-sec);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      position: relative; z-index: 5;
+    }
+    .btn-blue {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 0;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.95rem; font-weight: 600;
+      border: none;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+      position: relative; z-index: 5;
+    }
+    .btn-blue:hover {
+      background: #2563EB;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+    }
+
+    .footer {
+      border-top: 1px solid var(--border-dark);
+      padding: 64px 0 32px;
+      background: var(--bg-dark);
+      color: var(--text-light-sec);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem; color: var(--text-light-sec);
+      line-height: 1.6;
+      margin-top: 16px;
+      max-width: 280px;
+    }
+    .footer-col h5 {
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(250,250,250,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem; color: var(--text-light-sec);
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.8rem; color: rgba(250,250,250,0.3);
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: rgba(250,250,250,0.3); transition: color 0.3s; }
+    .footer-bottom-links a:hover { color: var(--accent); }
+    .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; color: var(--text-light); }
+    .footer-logo img { height: 38px; width: auto; }
+
+    @media (max-width: 768px) {
+      .section { padding: 80px 0; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .content-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .insights-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .btn-blue { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .stats-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <img src="./Logo AB DRIDI.png" alt="AB DRIDI" class="nav-logo-img">
+        <span class="logo-text">DRIDI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="./#services">Services</a></li>
+        <li><a href="./#methode">Méthode</a></li>
+        <li><a href="./#tarifs">Tarifs</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+        <li><a href="./a-propos.html">À propos</a></li>
+      </ul>
+      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="./#services" onclick="closeMobile()">Services</a>
+    <a href="./#methode" onclick="closeMobile()">Méthode</a>
+    <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
+    <a href="./#faq" onclick="closeMobile()">FAQ</a>
+    <a href="./a-propos.html" onclick="closeMobile()">À propos</a>
+    <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <a href="./" class="back-link">&larr; Retour à l'accueil</a>
+      <h1 class="r">Analyse de la concurrence</h1>
+      <p class="r">Exploitez notre base de plus de 529 000 marchés attribués pour identifier vos concurrents, comprendre leurs stratégies et affiner votre positionnement.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-grid r">
+        <div>
+          <span class="section-label">Intelligence concurrentielle</span>
+          <h2>Connaître ses concurrents pour <em>mieux se positionner</em></h2>
+          <p>Dans les marchés publics, la transparence est un principe fondamental. Chaque marché attribué fait l'objet d'un avis d'attribution publié au BOAMP ou au JOUE, mentionnant le titulaire, le montant et les conditions du marché. Ces données, dispersées sur des dizaines de plateformes, représentent une mine d'or stratégique pour qui sait les exploiter.</p>
+          <p>Notre service d'analyse concurrentielle agrège et structure ces informations dans une base de données de plus de 529 000 marchés attribués. Pour chaque marché, nous identifions l'entreprise titulaire, le montant de l'offre retenue, l'acheteur public, la nature de la prestation et le département concerné. Ces données vous permettent de cartographier précisément votre environnement concurrentiel.</p>
+          <p>Vous pouvez ainsi savoir quelles entreprises remportent les marchés dans votre secteur d'activité, à quels prix, dans quels départements, et auprès de quels acheteurs. Cette connaissance est un avantage décisif pour calibrer vos offres futures et identifier les opportunités où vos chances de succès sont les plus élevées.</p>
+        </div>
+        <div>
+          <span class="section-label">Analyses disponibles</span>
+          <h2>Des données <em>exploitables</em></h2>
+          <p>Notre plateforme ne se contente pas de lister les marchés attribués. Elle fournit des analyses croisées qui transforment des données brutes en intelligence économique actionnable. Vous accédez à des tableaux de bord interactifs qui révèlent les tendances de votre marché.</p>
+          <p>L'analyse des taux de réussite par entreprise et par département vous permet d'identifier les zones géographiques où la concurrence est moins intense. L'étude des montants moyens par type de prestation vous aide à calibrer vos prix. Le suivi des acheteurs publics récurrents vous indique les collectivités qui renouvellent régulièrement leurs marchés.</p>
+          <p>Nous proposons également des rapports personnalisés sur demande, avec une analyse approfondie de votre positionnement concurrentiel, des recommandations stratégiques et un plan d'action pour améliorer votre taux de réussite aux appels d'offres. Chaque rapport est adapté à votre secteur d'activité et à votre zone géographique d'intervention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section cream-section">
+    <div class="container">
+      <div style="text-align: center;" class="r">
+        <span class="section-label">Notre base de données</span>
+        <h2 class="section-title">Des chiffres qui parlent <em>d'eux-mêmes</em></h2>
+      </div>
+      <div class="stats-row r">
+        <div class="stat-card">
+          <div class="number">529 000+</div>
+          <div class="label">Marchés attribués indexés</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">101</div>
+          <div class="label">Départements couverts</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">5 ans</div>
+          <div class="label">D'historique disponible</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">24h</div>
+          <div class="label">Mise à jour quotidienne</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights -->
+  <section class="section content-section">
+    <div class="container">
+      <div style="text-align: center;" class="r">
+        <span class="section-label">Fonctionnalités</span>
+        <h2 class="section-title">Ce que vous pouvez <em>analyser</em></h2>
+      </div>
+      <div class="insights-grid r">
+        <div class="insight-card">
+          <div class="insight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h4>Identification des concurrents</h4>
+          <p>Découvrez quelles entreprises remportent les marchés dans votre secteur. Nom, SIRET, chiffre d'affaires estimé, nombre de marchés remportés.</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg></div>
+          <h4>Analyse tarifaire</h4>
+          <p>Comparez les montants des marchés attribués par type de prestation et par zone géographique. Identifiez les fourchettes de prix gagnantes.</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h4>Cartographie géographique</h4>
+          <p>Visualisez la répartition des marchés par département et par région. Identifiez les zones à fort potentiel et à faible concurrence.</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+          <h4>Taux de réussite</h4>
+          <p>Calculez votre taux de réussite et comparez-le à celui de vos concurrents. Suivez son évolution dans le temps et mesurez vos progrès.</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <h4>Suivi des acheteurs</h4>
+          <p>Identifiez les acheteurs publics qui renouvellent régulièrement des marchés dans votre domaine. Anticipez les futures consultations.</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></div>
+          <h4>Rapports personnalisés</h4>
+          <p>Recevez des analyses sur-mesure avec recommandations stratégiques, positionnement tarifaire optimal et plan d'action pour vos prochaines réponses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <h2 class="r">Prêt à prendre un <em>avantage stratégique</em> ?</h2>
+      <p class="r">Accédez à notre base de données et transformez l'information publique en avantage concurrentiel.</p>
+      <a href="https://portal.abdridi.com/auth/register" class="btn-blue r">Analyser votre concurrence</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="./Logo AB DRIDI.png" alt="AB DRIDI">
+            <span class="logo-text">DRIDI</span>
+          </div>
+          <p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics. De la veille au dépôt, nous montons vos dossiers à 100%.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="./veille-marches-publics.html">Veille & Détection</a>
+          <a href="./memoire-technique.html">Mémoire Technique</a>
+          <a href="./montage-dossier.html">Montage Dossier</a>
+          <a href="./analyse-concurrence.html">Analyse Concurrence</a>
+        </div>
+        <div class="footer-col">
+          <h5>Portail</h5>
+          <a href="https://portal.abdridi.com/auth/login">Connexion</a>
+          <a href="https://portal.abdridi.com/auth/register">Créer un compte</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</span>
+        <div class="footer-bottom-links">
+          <a href="https://portal.abdridi.com/mentions-legales">Mentions légales</a>
+          <a href="https://portal.abdridi.com/politique-confidentialite">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('v'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.r').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

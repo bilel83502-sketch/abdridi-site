@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rédaction Mémoire Technique Marchés Publics — AB DRIDI</title>
+  <meta name="description" content="Rédaction professionnelle de mémoires techniques pour marchés publics. Accompagnement sur-mesure pour TPE/PME du transport. AB DRIDI.">
+  <link rel="canonical" href="https://abdridi.com/memoire-technique.html">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abdridi.com/memoire-technique.html">
+  <meta property="og:title" content="Rédaction Mémoire Technique Marchés Publics — AB DRIDI">
+  <meta property="og:description" content="Rédaction professionnelle de mémoires techniques pour marchés publics. Accompagnement sur-mesure pour TPE/PME.">
+  <meta property="og:image" content="https://abdridi.com/favicon.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="AB DRIDI">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Rédaction Mémoire Technique Marchés Publics",
+    "description": "Rédaction professionnelle de mémoires techniques pour répondre aux appels d'offres publics. Accompagnement sur-mesure, structuration, mise en conformité.",
+    "provider": {
+      "@type": "Organization",
+      "name": "AB DRIDI",
+      "url": "https://abdridi.com"
+    },
+    "url": "https://abdridi.com/memoire-technique.html",
+    "serviceType": "Rédaction mémoire technique"
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J026WD3XD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2J026WD3XD');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      background: #FFFFFF;
+      color: #1A1A2E;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    .r { opacity: 0; transform: translateY(40px) scale(0.98); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .r.v { opacity: 1; transform: translateY(0) scale(1); }
+
+    :root {
+      --bg: #FFFFFF;
+      --bg-cream: #FAF7F2;
+      --bg-dark: #0F0F23;
+      --bg-dark-elevated: #16162E;
+      --bg-dark-card: #1C1C38;
+      --indigo: #6366F1;
+      --indigo-light: #818CF8;
+      --indigo-glow: rgba(99,102,241,0.15);
+      --violet: #8B5CF6;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --accent-dim: rgba(59,130,246,0.15);
+      --accent-glow: rgba(59,130,246,0.2);
+      --text: #1A1A2E;
+      --text-sec: #5A5A72;
+      --text-muted: #8B8BA0;
+      --text-light: #F0EDF6;
+      --text-light-sec: #9896B0;
+      --text-light-dim: rgba(255,255,255,0.3);
+      --border: rgba(0,0,0,0.07);
+      --border-dark: rgba(99,102,241,0.12);
+      --green: #4ADE80;
+      --card-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; position: relative; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .section-title em { font-style: italic; color: var(--accent); }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      transition: all 0.4s var(--ease);
+      background: rgba(15,15,35,0.8);
+      backdrop-filter: blur(20px) saturate(1.3); -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      border-bottom: 1px solid rgba(99,102,241,0.1);
+    }
+    .nav.scrolled { box-shadow: 0 1px 12px rgba(0,0,0,0.2); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.95rem; font-weight: 600; color: #fff;
+    }
+    .nav-logo-img { height: 56px; width: auto; }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.1em; color: #FFFFFF;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--text-light); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 24px; border-radius: 0;
+      border: none;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+    }
+    .nav-cta:hover {
+      background: #2563EB;
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+      transform: translateY(-1px);
+    }
+    .nav-burger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-light-sec);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: rgba(15,15,35,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.2rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+
+    .page-hero {
+      padding: 160px 0 80px;
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .page-hero .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--text-light-sec);
+      margin-bottom: 32px;
+      position: relative; z-index: 5;
+      transition: color 0.3s;
+    }
+    .page-hero .back-link:hover { color: var(--accent); }
+    .page-hero h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 400;
+      color: var(--text-light);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      max-width: 800px;
+      position: relative; z-index: 5;
+    }
+    .page-hero p {
+      font-size: 1.1rem; font-weight: 300;
+      color: var(--text-light-sec);
+      max-width: 620px;
+      line-height: 1.7;
+      position: relative; z-index: 5;
+    }
+
+    .content-section { background: var(--bg); }
+    .content-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .content-section h2 em { font-style: italic; color: var(--accent); }
+    .content-section p {
+      font-size: 1rem;
+      color: var(--text-sec);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+    .content-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+
+    .cream-section { background: var(--bg-cream); }
+
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .step-card {
+      padding: 32px 28px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: all 0.4s var(--ease);
+    }
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(99,102,241,0.07);
+    }
+    .step-num {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.5rem;
+      color: rgba(99,102,241,0.2);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .step-card h4 {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .step-card p {
+      font-size: 0.88rem;
+      color: var(--text-sec);
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      background: var(--bg-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .cta-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      position: relative; z-index: 5;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--accent); }
+    .cta-section p {
+      font-size: 1rem;
+      color: var(--text-light-sec);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      position: relative; z-index: 5;
+    }
+    .btn-blue {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 0;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.95rem; font-weight: 600;
+      border: none;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+      position: relative; z-index: 5;
+    }
+    .btn-blue:hover {
+      background: #2563EB;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+    }
+
+    .footer {
+      border-top: 1px solid var(--border-dark);
+      padding: 64px 0 32px;
+      background: var(--bg-dark);
+      color: var(--text-light-sec);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem; color: var(--text-light-sec);
+      line-height: 1.6;
+      margin-top: 16px;
+      max-width: 280px;
+    }
+    .footer-col h5 {
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(250,250,250,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem; color: var(--text-light-sec);
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.8rem; color: rgba(250,250,250,0.3);
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: rgba(250,250,250,0.3); transition: color 0.3s; }
+    .footer-bottom-links a:hover { color: var(--accent); }
+    .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; color: var(--text-light); }
+    .footer-logo img { height: 38px; width: auto; }
+
+    @media (max-width: 768px) {
+      .section { padding: 80px 0; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .content-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .btn-blue { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <img src="./Logo AB DRIDI.png" alt="AB DRIDI" class="nav-logo-img">
+        <span class="logo-text">DRIDI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="./#services">Services</a></li>
+        <li><a href="./#methode">Méthode</a></li>
+        <li><a href="./#tarifs">Tarifs</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+        <li><a href="./a-propos.html">À propos</a></li>
+      </ul>
+      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="./#services" onclick="closeMobile()">Services</a>
+    <a href="./#methode" onclick="closeMobile()">Méthode</a>
+    <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
+    <a href="./#faq" onclick="closeMobile()">FAQ</a>
+    <a href="./a-propos.html" onclick="closeMobile()">À propos</a>
+    <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <a href="./" class="back-link">&larr; Retour à l'accueil</a>
+      <h1 class="r">Rédaction de mémoires techniques</h1>
+      <p class="r">Le mémoire technique représente jusqu'à 60% de la note finale dans un marché public. Confiez sa rédaction à des spécialistes pour maximiser vos chances d'attribution.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-grid r">
+        <div>
+          <span class="section-label">Rédaction sur-mesure</span>
+          <h2>Un document qui fait <em>la différence</em></h2>
+          <p>Le mémoire technique est le document le plus stratégique de votre réponse à un appel d'offres. C'est lui qui permet à l'acheteur public de distinguer votre offre parmi toutes les candidatures reçues. Un mémoire mal structuré, incomplet ou générique vous condamne à être écarté, même si votre prix est compétitif.</p>
+          <p>Chez AB DRIDI, nous analysons en profondeur le règlement de consultation (RC) et le cahier des clauses techniques particulières (CCTP) pour identifier précisément les critères de notation et les attentes de l'acheteur. Chaque mémoire que nous rédigeons est unique, pensé pour répondre point par point aux exigences du marché.</p>
+          <p>Nous mettons en valeur vos compétences, vos moyens humains et matériels, vos références, et votre compréhension du besoin. Le résultat est un document professionnel, clair et structuré qui démontre votre capacité à exécuter le marché dans les meilleures conditions. Notre accompagnement inclut plusieurs allers-retours pour affiner le contenu jusqu'à ce que le document soit parfait.</p>
+        </div>
+        <div>
+          <span class="section-label">Notre approche</span>
+          <h2>Un processus <em>rigoureux</em></h2>
+          <p>Nous travaillons en étroite collaboration avec vous pour comprendre votre entreprise, vos atouts et votre savoir-faire. La rédaction du mémoire technique suit une méthodologie éprouvée qui couvre chaque aspect attendu par les acheteurs publics.</p>
+          <p>Nous veillons à la conformité formelle du document : respect du cadre de réponse imposé, pagination, présentation des annexes, insertion des certificats et attestations. Un mémoire technique conforme et bien présenté témoigne du sérieux de votre candidature et inspire confiance à la commission d'attribution.</p>
+          <p>La mise en forme est travaillée avec soin : graphiques, tableaux, photos de réalisations, organigrammes du personnel dédié. Chaque élément visuel renforce l'impact de votre proposition et facilite la lecture pour les évaluateurs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section cream-section">
+    <div class="container">
+      <div style="text-align: center;" class="r">
+        <span class="section-label">Méthodologie</span>
+        <h2 class="section-title">Les étapes de <em>rédaction</em></h2>
+      </div>
+      <div class="steps-grid r">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4>Analyse du dossier</h4>
+          <p>Lecture approfondie du RC, CCTP, DPGF et de l'ensemble des pièces du marché. Identification des critères de notation et de leur pondération.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4>Collecte d'informations</h4>
+          <p>Entretien avec vous pour recueillir vos moyens, références, certifications, méthodologie de travail et toute information valorisante.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4>Rédaction & structuration</h4>
+          <p>Rédaction du mémoire en suivant le plan imposé ou en proposant une structure optimale. Chaque sous-critère est traité de manière exhaustive.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h4>Mise en forme</h4>
+          <p>Intégration de visuels, tableaux, organigrammes et planning. Formatage professionnel conforme aux exigences du règlement de consultation.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">05</div>
+          <h4>Relecture & conformité</h4>
+          <p>Vérification croisée avec les critères du marché. Contrôle orthographique, cohérence des données, complétude de la réponse.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">06</div>
+          <h4>Livraison & ajustements</h4>
+          <p>Livraison du document finalisé avec possibilité d'allers-retours pour ajuster le contenu avant le dépôt de l'offre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <h2 class="r">Besoin d'un mémoire technique <em>percutant</em> ?</h2>
+      <p class="r">Confiez la rédaction à nos spécialistes et maximisez votre note technique.</p>
+      <a href="https://portal.abdridi.com/auth/register" class="btn-blue r">Demander un accompagnement</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="./Logo AB DRIDI.png" alt="AB DRIDI">
+            <span class="logo-text">DRIDI</span>
+          </div>
+          <p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics. De la veille au dépôt, nous montons vos dossiers à 100%.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="./veille-marches-publics.html">Veille & Détection</a>
+          <a href="./memoire-technique.html">Mémoire Technique</a>
+          <a href="./montage-dossier.html">Montage Dossier</a>
+          <a href="./analyse-concurrence.html">Analyse Concurrence</a>
+        </div>
+        <div class="footer-col">
+          <h5>Portail</h5>
+          <a href="https://portal.abdridi.com/auth/login">Connexion</a>
+          <a href="https://portal.abdridi.com/auth/register">Créer un compte</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</span>
+        <div class="footer-bottom-links">
+          <a href="https://portal.abdridi.com/mentions-legales">Mentions légales</a>
+          <a href="https://portal.abdridi.com/politique-confidentialite">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('v'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.r').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

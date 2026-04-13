@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montage Dossier Marchés Publics — AB DRIDI</title>
+  <meta name="description" content="Montage complet de dossiers de réponse aux marchés publics. De la candidature au dépôt. Spécialiste transport et logistique. AB DRIDI.">
+  <link rel="canonical" href="https://abdridi.com/montage-dossier.html">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abdridi.com/montage-dossier.html">
+  <meta property="og:title" content="Montage Dossier Marchés Publics — AB DRIDI">
+  <meta property="og:description" content="Montage complet de dossiers de réponse aux marchés publics. De la candidature au dépôt.">
+  <meta property="og:image" content="https://abdridi.com/favicon.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="AB DRIDI">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Montage Dossier Marchés Publics",
+    "description": "Montage complet de dossiers de réponse aux marchés publics. De la candidature au dépôt électronique, prise en charge intégrale du processus.",
+    "provider": {
+      "@type": "Organization",
+      "name": "AB DRIDI",
+      "url": "https://abdridi.com"
+    },
+    "url": "https://abdridi.com/montage-dossier.html",
+    "serviceType": "Montage dossier marchés publics"
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J026WD3XD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2J026WD3XD');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      background: #FFFFFF;
+      color: #1A1A2E;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    .r { opacity: 0; transform: translateY(40px) scale(0.98); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .r.v { opacity: 1; transform: translateY(0) scale(1); }
+
+    :root {
+      --bg: #FFFFFF;
+      --bg-cream: #FAF7F2;
+      --bg-dark: #0F0F23;
+      --bg-dark-elevated: #16162E;
+      --bg-dark-card: #1C1C38;
+      --indigo: #6366F1;
+      --indigo-light: #818CF8;
+      --indigo-glow: rgba(99,102,241,0.15);
+      --violet: #8B5CF6;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --accent-dim: rgba(59,130,246,0.15);
+      --accent-glow: rgba(59,130,246,0.2);
+      --text: #1A1A2E;
+      --text-sec: #5A5A72;
+      --text-muted: #8B8BA0;
+      --text-light: #F0EDF6;
+      --text-light-sec: #9896B0;
+      --text-light-dim: rgba(255,255,255,0.3);
+      --border: rgba(0,0,0,0.07);
+      --border-dark: rgba(99,102,241,0.12);
+      --green: #4ADE80;
+      --card-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; position: relative; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .section-title em { font-style: italic; color: var(--accent); }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      transition: all 0.4s var(--ease);
+      background: rgba(15,15,35,0.8);
+      backdrop-filter: blur(20px) saturate(1.3); -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      border-bottom: 1px solid rgba(99,102,241,0.1);
+    }
+    .nav.scrolled { box-shadow: 0 1px 12px rgba(0,0,0,0.2); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.95rem; font-weight: 600; color: #fff;
+    }
+    .nav-logo-img { height: 56px; width: auto; }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.1em; color: #FFFFFF;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--text-light); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 24px; border-radius: 0;
+      border: none;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+    }
+    .nav-cta:hover {
+      background: #2563EB;
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+      transform: translateY(-1px);
+    }
+    .nav-burger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-light-sec);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: rgba(15,15,35,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.2rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+
+    .page-hero {
+      padding: 160px 0 80px;
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .page-hero .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--text-light-sec);
+      margin-bottom: 32px;
+      position: relative; z-index: 5;
+      transition: color 0.3s;
+    }
+    .page-hero .back-link:hover { color: var(--accent); }
+    .page-hero h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 400;
+      color: var(--text-light);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      max-width: 800px;
+      position: relative; z-index: 5;
+    }
+    .page-hero p {
+      font-size: 1.1rem; font-weight: 300;
+      color: var(--text-light-sec);
+      max-width: 620px;
+      line-height: 1.7;
+      position: relative; z-index: 5;
+    }
+
+    .content-section { background: var(--bg); }
+    .content-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .content-section h2 em { font-style: italic; color: var(--accent); }
+    .content-section p {
+      font-size: 1rem;
+      color: var(--text-sec);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+    .content-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+
+    .cream-section { background: var(--bg-cream); }
+
+    .docs-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .doc-card {
+      padding: 28px 24px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 16px;
+      transition: all 0.4s var(--ease);
+    }
+    .doc-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(99,102,241,0.07);
+    }
+    .doc-icon {
+      width: 40px; height: 40px;
+      background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .doc-icon svg { color: var(--accent); width: 20px; height: 20px; }
+    .doc-card h4 {
+      font-size: 1rem; font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .doc-card p {
+      font-size: 0.85rem;
+      color: var(--text-sec);
+      line-height: 1.5;
+    }
+
+    .cta-section {
+      background: var(--bg-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .cta-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      position: relative; z-index: 5;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--accent); }
+    .cta-section p {
+      font-size: 1rem;
+      color: var(--text-light-sec);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      position: relative; z-index: 5;
+    }
+    .btn-blue {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 0;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.95rem; font-weight: 600;
+      border: none;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+      position: relative; z-index: 5;
+    }
+    .btn-blue:hover {
+      background: #2563EB;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+    }
+
+    .footer {
+      border-top: 1px solid var(--border-dark);
+      padding: 64px 0 32px;
+      background: var(--bg-dark);
+      color: var(--text-light-sec);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem; color: var(--text-light-sec);
+      line-height: 1.6;
+      margin-top: 16px;
+      max-width: 280px;
+    }
+    .footer-col h5 {
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(250,250,250,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem; color: var(--text-light-sec);
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.8rem; color: rgba(250,250,250,0.3);
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: rgba(250,250,250,0.3); transition: color 0.3s; }
+    .footer-bottom-links a:hover { color: var(--accent); }
+    .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; color: var(--text-light); }
+    .footer-logo img { height: 38px; width: auto; }
+
+    @media (max-width: 768px) {
+      .section { padding: 80px 0; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .content-grid { grid-template-columns: 1fr; }
+      .docs-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .btn-blue { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <img src="./Logo AB DRIDI.png" alt="AB DRIDI" class="nav-logo-img">
+        <span class="logo-text">DRIDI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="./#services">Services</a></li>
+        <li><a href="./#methode">Méthode</a></li>
+        <li><a href="./#tarifs">Tarifs</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+        <li><a href="./a-propos.html">À propos</a></li>
+      </ul>
+      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="./#services" onclick="closeMobile()">Services</a>
+    <a href="./#methode" onclick="closeMobile()">Méthode</a>
+    <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
+    <a href="./#faq" onclick="closeMobile()">FAQ</a>
+    <a href="./a-propos.html" onclick="closeMobile()">À propos</a>
+    <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <a href="./" class="back-link">&larr; Retour à l'accueil</a>
+      <h1 class="r">Montage de dossiers de réponse</h1>
+      <p class="r">De la candidature au dépôt électronique, nous prenons en charge l'intégralité du montage de votre dossier de réponse aux marchés publics.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-grid r">
+        <div>
+          <span class="section-label">Prise en charge complète</span>
+          <h2>Un dossier <em>complet et conforme</em></h2>
+          <p>Répondre à un appel d'offres public est un exercice complexe qui exige rigueur et expertise. Le moindre oubli dans le dossier de candidature, une pièce manquante ou un formulaire mal rempli, peut entraîner le rejet pur et simple de votre offre. Pour une TPE ou PME, c'est un risque que vous ne pouvez pas vous permettre.</p>
+          <p>AB DRIDI prend en charge l'ensemble du processus de montage de votre dossier. Nous commençons par l'analyse approfondie du Dossier de Consultation des Entreprises (DCE) pour comprendre les exigences administratives, techniques et financières du marché. Chaque pièce est identifiée, chaque formulaire est complété avec précision.</p>
+          <p>Le dossier de candidature comprend les formulaires DC1 (lettre de candidature), DC2 (déclaration du candidat), ou le DUME (Document Unique de Marché Européen) selon les cas. Nous collectons et vérifions l'ensemble des pièces justificatives : attestations d'assurance, Kbis, attestations fiscales et sociales, certificats de qualification, références de marchés similaires. Rien n'est laissé au hasard.</p>
+        </div>
+        <div>
+          <span class="section-label">Offre financière</span>
+          <h2>Stratégie de prix <em>optimisée</em></h2>
+          <p>L'offre financière est un élément déterminant de votre réponse. Le Bordereau des Prix Unitaires (BPU) et le Détail Quantitatif Estimatif (DQE) doivent être remplis avec une stratégie de positionnement tarifaire réfléchie. Un prix trop bas peut sembler suspect, un prix trop haut vous élimine d'office.</p>
+          <p>Nous vous accompagnons dans l'élaboration de votre stratégie tarifaire en analysant le marché, les prix habituellement pratiqués dans votre secteur et la concurrence identifiée. Le BPU est structuré de manière cohérente, avec des prix unitaires justifiables et un montant global compétitif.</p>
+          <p>Une fois le dossier complet, nous procédons au dépôt électronique sur la plateforme de l'acheteur public dans les délais impartis. Nous nous assurons que chaque fichier respecte les formats demandés, que la signature électronique est conforme, et que l'accusé de réception est bien obtenu. Vous disposez d'un suivi complet jusqu'à la notification du résultat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documents -->
+  <section class="section cream-section">
+    <div class="container">
+      <div style="text-align: center;" class="r">
+        <span class="section-label">Pièces du dossier</span>
+        <h2 class="section-title">Tout ce que nous <em>gérons pour vous</em></h2>
+      </div>
+      <div class="docs-grid r">
+        <div class="doc-card">
+          <div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></div>
+          <div>
+            <h4>DC1 / DC2 / DUME</h4>
+            <p>Formulaires de candidature remplis avec précision. Lettre de candidature, déclaration du candidat ou Document Unique de Marché Européen.</p>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div>
+          <div>
+            <h4>Attestations & certificats</h4>
+            <p>Collecte et vérification des attestations d'assurance, fiscales, sociales, Kbis, certificats de qualification professionnelle.</p>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+          <div>
+            <h4>BPU & DQE</h4>
+            <p>Bordereau des Prix Unitaires et Détail Quantitatif Estimatif élaborés avec une stratégie tarifaire adaptée à votre positionnement.</p>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></div>
+          <div>
+            <h4>Mémoire technique</h4>
+            <p>Rédaction complète du mémoire technique adapté aux critères de notation du marché. Document structuré et professionnel.</p>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div>
+            <h4>Contrôle de conformité</h4>
+            <p>Vérification exhaustive de chaque pièce du dossier avant soumission. Checklist complète pour garantir zéro oubli.</p>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg></div>
+          <div>
+            <h4>Dépôt électronique</h4>
+            <p>Soumission du dossier sur la plateforme de l'acheteur dans les délais. Vérification des formats, signature électronique, accusé de réception.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <h2 class="r">Prêt à répondre à <em>votre prochain marché</em> ?</h2>
+      <p class="r">Déléguez le montage de votre dossier et concentrez-vous sur votre coeur de métier.</p>
+      <a href="https://portal.abdridi.com/auth/register" class="btn-blue r">Confier votre dossier</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="./Logo AB DRIDI.png" alt="AB DRIDI">
+            <span class="logo-text">DRIDI</span>
+          </div>
+          <p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics. De la veille au dépôt, nous montons vos dossiers à 100%.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="./veille-marches-publics.html">Veille & Détection</a>
+          <a href="./memoire-technique.html">Mémoire Technique</a>
+          <a href="./montage-dossier.html">Montage Dossier</a>
+          <a href="./analyse-concurrence.html">Analyse Concurrence</a>
+        </div>
+        <div class="footer-col">
+          <h5>Portail</h5>
+          <a href="https://portal.abdridi.com/auth/login">Connexion</a>
+          <a href="https://portal.abdridi.com/auth/register">Créer un compte</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</span>
+        <div class="footer-bottom-links">
+          <a href="https://portal.abdridi.com/mentions-legales">Mentions légales</a>
+          <a href="https://portal.abdridi.com/politique-confidentialite">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('v'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.r').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

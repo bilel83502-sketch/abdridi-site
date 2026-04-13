@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Marchés Publics Automatisée — AB DRIDI</title>
+  <meta name="description" content="Veille automatisée sur les marchés publics français. 25+ sources agrégées, alertes email personnalisées, consultations en temps réel. AB DRIDI.">
+  <link rel="canonical" href="https://abdridi.com/veille-marches-publics.html">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abdridi.com/veille-marches-publics.html">
+  <meta property="og:title" content="Veille Marchés Publics Automatisée — AB DRIDI">
+  <meta property="og:description" content="Veille automatisée sur les marchés publics français. 25+ sources agrégées, alertes email personnalisées, consultations en temps réel.">
+  <meta property="og:image" content="https://abdridi.com/favicon.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="AB DRIDI">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Veille Marchés Publics Automatisée",
+    "description": "Service de veille automatisée sur les marchés publics français. Agrégation de 25+ sources, alertes email personnalisées, filtres par département et code CPV.",
+    "provider": {
+      "@type": "Organization",
+      "name": "AB DRIDI",
+      "url": "https://abdridi.com"
+    },
+    "url": "https://abdridi.com/veille-marches-publics.html",
+    "serviceType": "Veille marchés publics"
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J026WD3XD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2J026WD3XD');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      background: #FFFFFF;
+      color: #1A1A2E;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    .r { opacity: 0; transform: translateY(40px) scale(0.98); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .r.v { opacity: 1; transform: translateY(0) scale(1); }
+
+    :root {
+      --bg: #FFFFFF;
+      --bg-cream: #FAF7F2;
+      --bg-dark: #0F0F23;
+      --bg-dark-elevated: #16162E;
+      --bg-dark-card: #1C1C38;
+      --indigo: #6366F1;
+      --indigo-light: #818CF8;
+      --indigo-glow: rgba(99,102,241,0.15);
+      --violet: #8B5CF6;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --accent-dim: rgba(59,130,246,0.15);
+      --accent-glow: rgba(59,130,246,0.2);
+      --text: #1A1A2E;
+      --text-sec: #5A5A72;
+      --text-muted: #8B8BA0;
+      --text-light: #F0EDF6;
+      --text-light-sec: #9896B0;
+      --text-light-dim: rgba(255,255,255,0.3);
+      --border: rgba(0,0,0,0.07);
+      --border-dark: rgba(99,102,241,0.12);
+      --green: #4ADE80;
+      --card-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; position: relative; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .section-title em { font-style: italic; color: var(--accent); }
+
+    /* Navbar */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      transition: all 0.4s var(--ease);
+      background: rgba(15,15,35,0.8);
+      backdrop-filter: blur(20px) saturate(1.3); -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      border-bottom: 1px solid rgba(99,102,241,0.1);
+    }
+    .nav.scrolled {
+      box-shadow: 0 1px 12px rgba(0,0,0,0.2);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.95rem; font-weight: 600; color: #fff;
+    }
+    .nav-logo-img { height: 56px; width: auto; }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.1em; color: #FFFFFF;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--text-light); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 24px; border-radius: 0;
+      border: none;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+    }
+    .nav-cta:hover {
+      background: #2563EB;
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+      transform: translateY(-1px);
+    }
+    .nav-burger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-light-sec);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: rgba(15,15,35,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.2rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+
+    /* Hero */
+    .page-hero {
+      padding: 160px 0 80px;
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .page-hero .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--text-light-sec);
+      margin-bottom: 32px;
+      position: relative; z-index: 5;
+      transition: color 0.3s;
+    }
+    .page-hero .back-link:hover { color: var(--accent); }
+    .page-hero h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 400;
+      color: var(--text-light);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      max-width: 800px;
+      position: relative; z-index: 5;
+    }
+    .page-hero p {
+      font-size: 1.1rem; font-weight: 300;
+      color: var(--text-light-sec);
+      max-width: 620px;
+      line-height: 1.7;
+      position: relative; z-index: 5;
+    }
+
+    /* Content sections */
+    .content-section { background: var(--bg); }
+    .content-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .content-section h2 em { font-style: italic; color: var(--accent); }
+    .content-section p {
+      font-size: 1rem;
+      color: var(--text-sec);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+    .content-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+    .feature-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 16px;
+      margin-top: 16px;
+    }
+    .feature-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 0.95rem; color: var(--text-sec);
+      line-height: 1.6;
+    }
+    .feature-list li .icon {
+      width: 36px; height: 36px;
+      background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .feature-list li .icon svg { color: var(--accent); width: 18px; height: 18px; }
+
+    /* Cream section */
+    .cream-section { background: var(--bg-cream); }
+
+    /* Stats row */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 32px 24px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+    .stat-card .number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.4rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-card .label {
+      font-size: 0.88rem;
+      color: var(--text-sec);
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: var(--bg-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .cta-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      position: relative; z-index: 5;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--accent); }
+    .cta-section p {
+      font-size: 1rem;
+      color: var(--text-light-sec);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      position: relative; z-index: 5;
+    }
+    .btn-blue {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 0;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.95rem; font-weight: 600;
+      border: none;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+      position: relative; z-index: 5;
+    }
+    .btn-blue:hover {
+      background: #2563EB;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border-dark);
+      padding: 64px 0 32px;
+      background: var(--bg-dark);
+      color: var(--text-light-sec);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem; color: var(--text-light-sec);
+      line-height: 1.6;
+      margin-top: 16px;
+      max-width: 280px;
+    }
+    .footer-col h5 {
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(250,250,250,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem; color: var(--text-light-sec);
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.8rem; color: rgba(250,250,250,0.3);
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: rgba(250,250,250,0.3); transition: color 0.3s; }
+    .footer-bottom-links a:hover { color: var(--accent); }
+    .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; color: var(--text-light); }
+    .footer-logo img { height: 38px; width: auto; }
+
+    @media (max-width: 768px) {
+      .section { padding: 80px 0; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .content-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .btn-blue { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <img src="./Logo AB DRIDI.png" alt="AB DRIDI" class="nav-logo-img">
+        <span class="logo-text">DRIDI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="./#services">Services</a></li>
+        <li><a href="./#methode">Méthode</a></li>
+        <li><a href="./#tarifs">Tarifs</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+        <li><a href="./a-propos.html">À propos</a></li>
+      </ul>
+      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="./#services" onclick="closeMobile()">Services</a>
+    <a href="./#methode" onclick="closeMobile()">Méthode</a>
+    <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
+    <a href="./#faq" onclick="closeMobile()">FAQ</a>
+    <a href="./a-propos.html" onclick="closeMobile()">À propos</a>
+    <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <a href="./" class="back-link">&larr; Retour à l'accueil</a>
+      <h1 class="r">Veille automatisée sur les marchés publics</h1>
+      <p class="r">Ne manquez plus aucun appel d'offres. Notre plateforme agrège plus de 25 sources publiques et vous alerte en temps réel sur les consultations qui correspondent à votre activité.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-grid r">
+        <div>
+          <span class="section-label">Agrégation multi-sources</span>
+          <h2>Plus de <em>25 sources</em> surveillées en continu</h2>
+          <p>La recherche manuelle sur les plateformes de marchés publics est chronophage et inefficace. Entre le BOAMP, le Journal Officiel de l'Union Européenne (TED), PLACE, les profils acheteurs des collectivités, les plateformes régionales et les sites spécialisés, il faudrait des heures chaque jour pour ne rien manquer.</p>
+          <p>Notre système de veille automatisée centralise toutes ces sources en un seul flux. Chaque nouvelle consultation est indexée, catégorisée et mise à disposition dans votre espace en quelques minutes après sa publication. Vous accédez à l'ensemble des appels d'offres français depuis une interface unique, sans avoir à naviguer entre des dizaines de sites différents.</p>
+          <p>Le système couvre les marchés de travaux, fournitures et services, tous secteurs confondus. Que vous soyez dans le transport, le BTP, les services informatiques ou la restauration collective, vous trouverez les consultations qui vous concernent.</p>
+        </div>
+        <div>
+          <ul class="feature-list">
+            <li>
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+              <div><strong>BOAMP, TED, PLACE, Maximilien, AWS</strong> et plus de 20 autres sources publiques agrégées automatiquement.</div>
+            </li>
+            <li>
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+              <div><strong>Alertes email personnalisées</strong> — Recevez chaque matin les nouveaux marchés correspondant à vos critères directement dans votre boîte mail.</div>
+            </li>
+            <li>
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><strong>Filtres géographiques</strong> — Ciblez par département, région ou rayon kilométrique autour de votre siège social.</div>
+            </li>
+            <li>
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></div>
+              <div><strong>Filtres par code CPV</strong> — Sélectionnez vos codes CPV (vocabulaire commun des marchés publics) pour ne recevoir que les avis pertinents pour votre secteur.</div>
+            </li>
+            <li>
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+              <div><strong>Tableau de bord analytique</strong> — Visualisez les tendances, le volume de marchés par secteur et suivez vos opportunités en cours.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section cream-section">
+    <div class="container">
+      <div style="text-align: center;" class="r">
+        <span class="section-label">Pourquoi les TPE/PME nous font confiance</span>
+        <h2 class="section-title">Un avantage concurrentiel <em>décisif</em></h2>
+      </div>
+      <div class="stats-row r">
+        <div class="stat-card">
+          <div class="number">25+</div>
+          <div class="label">Sources publiques agrégées</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">24h</div>
+          <div class="label">Délai max. d'indexation</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">100%</div>
+          <div class="label">Des avis publics couverts</div>
+        </div>
+      </div>
+      <div style="max-width: 720px; margin: 48px auto 0; text-align: center;" class="r">
+        <p style="font-size: 1rem; color: var(--text-sec); line-height: 1.7;">Pour une TPE ou PME du transport, chaque marché manqué est une opportunité de chiffre d'affaires perdue. La veille manuelle ne suffit plus face au volume croissant de consultations publiées chaque jour en France. Notre plateforme garantit que vous êtes informé de chaque appel d'offres pertinent, au bon moment, pour préparer votre réponse dans les meilleures conditions. Concentrez-vous sur votre coeur de métier, nous nous occupons de la détection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <h2 class="r">Prêt à ne plus manquer <em>aucun marché</em> ?</h2>
+      <p class="r">Créez votre compte gratuitement et configurez vos alertes en quelques minutes.</p>
+      <a href="https://portal.abdridi.com/auth/register" class="btn-blue r">Accéder à la plateforme de veille</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="./Logo AB DRIDI.png" alt="AB DRIDI">
+            <span class="logo-text">DRIDI</span>
+          </div>
+          <p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics. De la veille au dépôt, nous montons vos dossiers à 100%.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="./veille-marches-publics.html">Veille & Détection</a>
+          <a href="./memoire-technique.html">Mémoire Technique</a>
+          <a href="./montage-dossier.html">Montage Dossier</a>
+          <a href="./analyse-concurrence.html">Analyse Concurrence</a>
+        </div>
+        <div class="footer-col">
+          <h5>Portail</h5>
+          <a href="https://portal.abdridi.com/auth/login">Connexion</a>
+          <a href="https://portal.abdridi.com/auth/register">Créer un compte</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</span>
+        <div class="footer-bottom-links">
+          <a href="https://portal.abdridi.com/mentions-legales">Mentions légales</a>
+          <a href="https://portal.abdridi.com/politique-confidentialite">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('v'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.r').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
