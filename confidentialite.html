@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de confidentialite — AB DRIDI</title>
+  <meta name="description" content="Politique de confidentialite et protection des donnees personnelles conformement au RGPD.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://abdridi.com/confidentialite.html">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J026WD3XD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2J026WD3XD');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      background: #0F0F23;
+      color: #F0EDF6;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    :root {
+      --bg-dark: #0F0F23;
+      --bg-dark-card: #1E293B;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --text-light: #F0EDF6;
+      --text-light-sec: #9896B0;
+      --text-light-dim: rgba(255,255,255,0.3);
+      --text-body: #CBD5E1;
+      --text-muted: #64748B;
+      --border-dark: rgba(255,255,255,0.08);
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15,15,35,0.85); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-img { height: 32px; width: 32px; border-radius: 6px; }
+    .logo-text { font-size: 16px; font-weight: 700; letter-spacing: 1px; color: var(--text-light); }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a { font-size: 14px; color: var(--text-light-sec); transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      font-size: 13px; font-weight: 600; padding: 8px 20px; border-radius: 8px;
+      background: var(--accent); color: #fff; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent-hover); }
+    .nav-burger { display: none; background: none; border: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: var(--text-light-sec); border-radius: 2px; }
+
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: rgba(15,15,35,0.97); backdrop-filter: blur(16px);
+      flex-direction: column; padding: 24px; gap: 20px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 16px; color: var(--text-light-sec); }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-burger { display: flex; }
+    }
+
+    /* ── CONTENT ── */
+    .legal-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+    .legal-content h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+    .legal-content .subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+    .legal-content h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+      margin-top: 48px;
+    }
+    .legal-content h2:first-of-type { margin-top: 0; }
+    .legal-content h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-light-sec);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+    .legal-content p {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .legal-content p a { color: var(--accent); }
+    .legal-content p a:hover { text-decoration: underline; }
+    .legal-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .legal-content li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+    .legal-content li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .legal-content li strong { color: var(--text-light); }
+
+    .info-card {
+      background: var(--bg-dark-card);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .info-card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .info-card-row:last-child { border-bottom: none; }
+    .info-card-row .label { font-size: 14px; color: var(--text-light); font-weight: 500; }
+    .info-card-row .value { font-size: 13px; color: var(--text-light-sec); }
+
+    .provider-card {
+      background: var(--bg-dark-card);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .provider-card .provider-name { font-size: 14px; font-weight: 600; color: var(--text-light); }
+    .provider-card .provider-role { font-size: 12px; color: var(--text-muted); margin-left: 8px; }
+    .provider-card .provider-loc { font-size: 12px; color: var(--text-light-sec); }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid var(--border-dark);
+      padding: 48px 0 32px;
+      background: var(--bg-dark);
+    }
+    .footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copy { font-size: 13px; color: var(--text-light-dim); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 13px; color: var(--text-light-dim); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <img src="./Logo AB DRIDI.png" alt="AB DRIDI" class="nav-logo-img">
+        <span class="logo-text">DRIDI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="./#services">Services</a></li>
+        <li><a href="./#tarifs">Tarifs</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+        <li><a href="./a-propos.html">A propos</a></li>
+      </ul>
+      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="./#services" onclick="closeMobile()">Services</a>
+    <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
+    <a href="./#faq" onclick="closeMobile()">FAQ</a>
+    <a href="./a-propos.html" onclick="closeMobile()">A propos</a>
+    <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="legal-content">
+    <h1>Politique de confidentialite</h1>
+    <p class="subtitle">Derniere mise a jour : 13 avril 2026. AB DRIDI s'engage a proteger vos donnees personnelles conformement au Reglement General sur la Protection des Donnees (RGPD).</p>
+
+    <h2>Responsable du traitement</h2>
+    <p>AB DRIDI, representee par Bilel Dridi.</p>
+    <p>Contact : <a href="mailto:contact@abdridi.com">contact@abdridi.com</a></p>
+
+    <h2>Donnees collectees</h2>
+    <h3>Via le formulaire d'inscription</h3>
+    <p>Nom, prenom, adresse email, entreprise, SIRET, telephone, mot de passe (hashe via bcrypt).</p>
+    <h3>Via l'usage du portail</h3>
+    <p>Marches consultes, alertes creees, prospects, missions de prospection, documents uploades, activites de suivi commercial.</p>
+    <h3>Via les cookies techniques</h3>
+    <p>Session NextAuth (authentification), preferences utilisateur, consentement cookies.</p>
+    <h3>Via les logs serveur</h3>
+    <p>Adresse IP, user-agent, horodatage des requetes &mdash; conserves 12 mois maximum.</p>
+
+    <h2>Finalites du traitement</h2>
+    <ul>
+      <li>Fourniture du service de veille sur les marches publics</li>
+      <li>Accompagnement au montage de dossiers de reponse aux appels d'offres</li>
+      <li>Communication commerciale (avec consentement prealable)</li>
+      <li>Obligations legales et comptables</li>
+      <li>Securite du systeme : detection de fraude, audit log, prevention des abus</li>
+    </ul>
+
+    <h2>Base legale</h2>
+    <ul>
+      <li><strong>Execution du contrat</strong> &mdash; fourniture du service payant de veille et d'accompagnement</li>
+      <li><strong>Consentement</strong> &mdash; newsletters, cookies non essentiels, communications commerciales</li>
+      <li><strong>Interet legitime</strong> &mdash; securite de la plateforme, prevention de la fraude</li>
+      <li><strong>Obligations legales</strong> &mdash; comptabilite, conservation des donnees de facturation</li>
+    </ul>
+
+    <h2>Duree de conservation</h2>
+    <div class="info-card">
+      <div class="info-card-row">
+        <span class="label">Donnees de compte</span>
+        <span class="value">Duree de l'abonnement + 3 ans apres resiliation</span>
+      </div>
+      <div class="info-card-row">
+        <span class="label">Logs de securite</span>
+        <span class="value">12 mois</span>
+      </div>
+      <div class="info-card-row">
+        <span class="label">Donnees de facturation</span>
+        <span class="value">10 ans (obligation legale)</span>
+      </div>
+      <div class="info-card-row">
+        <span class="label">Cookies</span>
+        <span class="value">13 mois maximum</span>
+      </div>
+    </div>
+
+    <h2>Destinataires des donnees</h2>
+    <p>Les donnees sont traitees par AB DRIDI et ses sous-traitants techniques :</p>
+    <div style="display: grid; gap: 8px; margin-top: 12px;">
+      <div class="provider-card">
+        <div><span class="provider-name">Vercel</span><span class="provider-role">Hebergement</span></div>
+        <span class="provider-loc">Etats-Unis, clauses contractuelles types</span>
+      </div>
+      <div class="provider-card">
+        <div><span class="provider-name">Neon</span><span class="provider-role">Base de donnees PostgreSQL</span></div>
+        <span class="provider-loc">Union Europeenne</span>
+      </div>
+      <div class="provider-card">
+        <div><span class="provider-name">Resend</span><span class="provider-role">Emails transactionnels</span></div>
+        <span class="provider-loc">Union Europeenne</span>
+      </div>
+      <div class="provider-card">
+        <div><span class="provider-name">Stripe</span><span class="provider-role">Paiements securises</span></div>
+        <span class="provider-loc">Garanties adequates (SCCs)</span>
+      </div>
+      <div class="provider-card">
+        <div><span class="provider-name">Sentry</span><span class="provider-role">Monitoring des erreurs</span></div>
+        <span class="provider-loc">Filtrage des donnees sensibles</span>
+      </div>
+    </div>
+
+    <h2>Transferts hors Union Europeenne</h2>
+    <p>Certains sous-traitants (Vercel, Stripe) sont situes en dehors de l'Union Europeenne. Ces transferts sont encadres par des clauses contractuelles types (SCCs) approuvees par la Commission europeenne, garantissant un niveau de protection adequat de vos donnees.</p>
+
+    <h2>Vos droits RGPD</h2>
+    <p>Conformement aux articles 15 a 22 du Reglement General sur la Protection des Donnees, vous disposez des droits suivants :</p>
+    <ul>
+      <li><strong>Droit d'acces</strong> &mdash; obtenir une copie de vos donnees personnelles</li>
+      <li><strong>Droit de rectification</strong> &mdash; corriger des donnees inexactes ou incompletes</li>
+      <li><strong>Droit a l'effacement</strong> &mdash; demander la suppression de vos donnees ("droit a l'oubli")</li>
+      <li><strong>Droit a la limitation</strong> &mdash; restreindre le traitement de vos donnees</li>
+      <li><strong>Droit a la portabilite</strong> &mdash; recevoir vos donnees dans un format structure</li>
+      <li><strong>Droit d'opposition</strong> &mdash; vous opposer au traitement de vos donnees</li>
+      <li><strong>Retrait du consentement</strong> &mdash; retirer votre consentement a tout moment</li>
+    </ul>
+    <p>Pour exercer ces droits : <a href="mailto:contact@abdridi.com">contact@abdridi.com</a></p>
+
+    <h2>Reclamation</h2>
+    <p>En cas de litige concernant le traitement de vos donnees personnelles, vous pouvez introduire une reclamation aupres de la Commission Nationale de l'Informatique et des Libertes (CNIL) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a></p>
+
+    <h2>Cookies</h2>
+    <p>Le site utilise uniquement des cookies techniques necessaires au fonctionnement du service (session d'authentification, securite, preferences). Aucun cookie publicitaire ou de tracking tiers n'est depose sans votre consentement explicite.</p>
+
+    <h2>Mise a jour de cette politique</h2>
+    <p>La presente politique de confidentialite peut etre modifiee a tout moment pour tenir compte des evolutions reglementaires ou des changements de nos pratiques. La date de derniere mise a jour est indiquee en haut de cette page.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 AB DRIDI. Tous droits reserves.</span>
+      <div class="footer-links">
+        <a href="./mentions-legales.html">Mentions legales</a>
+        <a href="./confidentialite.html">Confidentialite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+  </script>
+</body>
+</html>

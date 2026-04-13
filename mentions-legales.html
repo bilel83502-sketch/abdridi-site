@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions légales — AB DRIDI</title>
+  <meta name="description" content="Mentions légales du site AB DRIDI, conformément à la loi LCEN 2004-575.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://abdridi.com/mentions-legales.html">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J026WD3XD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2J026WD3XD');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      background: #0F0F23;
+      color: #F0EDF6;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    :root {
+      --bg-dark: #0F0F23;
+      --bg-dark-elevated: #16162E;
+      --bg-dark-card: #1E293B;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --text-light: #F0EDF6;
+      --text-light-sec: #9896B0;
+      --text-light-dim: rgba(255,255,255,0.3);
+      --text-body: #CBD5E1;
+      --text-muted: #64748B;
+      --border-dark: rgba(255,255,255,0.08);
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15,15,35,0.85); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-img { height: 32px; width: 32px; border-radius: 6px; }
+    .logo-text { font-size: 16px; font-weight: 700; letter-spacing: 1px; color: var(--text-light); }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a { font-size: 14px; color: var(--text-light-sec); transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      font-size: 13px; font-weight: 600; padding: 8px 20px; border-radius: 8px;
+      background: var(--accent); color: #fff; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent-hover); }
+    .nav-burger { display: none; background: none; border: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: var(--text-light-sec); border-radius: 2px; transition: 0.3s; }
+
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: rgba(15,15,35,0.97); backdrop-filter: blur(16px);
+      flex-direction: column; padding: 24px; gap: 20px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 16px; color: var(--text-light-sec); }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-burger { display: flex; }
+    }
+
+    /* ── CONTENT ── */
+    .legal-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+    .legal-content h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+    .legal-content .subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+    .legal-content h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+      margin-top: 48px;
+    }
+    .legal-content h2:first-of-type { margin-top: 0; }
+    .legal-content p {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .info-card {
+      background: var(--bg-dark-card);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+    .info-row {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 14px;
+    }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .info-value {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    .info-value a { color: var(--accent); }
+    .info-value a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid var(--border-dark);
+      padding: 48px 0 32px;
+      background: var(--bg-dark);
+    }
+    .footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copy { font-size: 13px; color: var(--text-light-dim); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 13px; color: var(--text-light-dim); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <img src="./Logo AB DRIDI.png" alt="AB DRIDI" class="nav-logo-img">
+        <span class="logo-text">DRIDI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="./#services">Services</a></li>
+        <li><a href="./#tarifs">Tarifs</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+        <li><a href="./a-propos.html">A propos</a></li>
+      </ul>
+      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="./#services" onclick="closeMobile()">Services</a>
+    <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
+    <a href="./#faq" onclick="closeMobile()">FAQ</a>
+    <a href="./a-propos.html" onclick="closeMobile()">A propos</a>
+    <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="legal-content">
+    <h1>Mentions legales</h1>
+    <p class="subtitle">Conformement aux dispositions de la loi n&deg; 2004-575 du 21 juin 2004 pour la confiance dans l'economie numerique (LCEN).</p>
+
+    <h2>Editeur du site</h2>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label">Raison sociale</span>
+        <span class="info-value">AB DRIDI &mdash; [FORME JURIDIQUE]</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">SIRET</span>
+        <span class="info-value">[SIRET a remplir]</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Capital social</span>
+        <span class="info-value">[Si societe &mdash; a remplir]</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Siege social</span>
+        <span class="info-value">[Adresse a remplir]</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Directeur de la publication</span>
+        <span class="info-value">Bilel Dridi</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Email</span>
+        <span class="info-value"><a href="mailto:contact@abdridi.com">contact@abdridi.com</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Telephone</span>
+        <span class="info-value">[A remplir]</span>
+      </div>
+    </div>
+
+    <h2>Hebergement</h2>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label">Societe</span>
+        <span class="info-value">Vercel Inc.</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Adresse</span>
+        <span class="info-value">340 S Lemon Ave #4133, Walnut CA 91789, Etats-Unis</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Site web</span>
+        <span class="info-value"><a href="https://vercel.com" target="_blank" rel="noopener noreferrer">https://vercel.com</a></span>
+      </div>
+    </div>
+
+    <h2>Propriete intellectuelle</h2>
+    <p>Tous les contenus presents sur le site abdridi.com (textes, images, logo, graphismes, marques) sont la propriete exclusive d'AB DRIDI ou font l'objet d'une autorisation d'utilisation. Toute reproduction totale ou partielle de ces contenus est strictement interdite sans autorisation ecrite prealable d'AB DRIDI.</p>
+
+    <h2>Responsabilite</h2>
+    <p>AB DRIDI s'efforce d'assurer l'exactitude et la mise a jour des informations publiees sur ce site, mais ne peut garantir leur exhaustivite ni l'absence d'erreurs. L'utilisation des informations et contenus disponibles sur le site se fait sous la responsabilite pleine et entiere de l'utilisateur.</p>
+
+    <h2>Liens hypertextes</h2>
+    <p>Le site abdridi.com peut contenir des liens vers des sites tiers. AB DRIDI n'exerce aucun controle sur ces sites et decline toute responsabilite quant a leur contenu, leurs pratiques ou leur disponibilite.</p>
+
+    <h2>Droit applicable</h2>
+    <p>Le present site et les mentions legales qui y figurent sont regis par le droit francais. Tout litige en relation avec l'utilisation du site abdridi.com releve de la competence exclusive des tribunaux competents du ressort du siege social d'AB DRIDI.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 AB DRIDI. Tous droits reserves.</span>
+      <div class="footer-links">
+        <a href="./mentions-legales.html">Mentions legales</a>
+        <a href="./confidentialite.html">Confidentialite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+  </script>
+</body>
+</html>
