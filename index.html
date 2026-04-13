@@ -77,9 +77,12 @@
   }
   </script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J026WD3XD"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2J026WD3XD');</script>
+  <!-- Google Analytics — chargé uniquement après consentement cookies -->
+  <script>
+    function loadGA(){if(document.getElementById('ga-s'))return;var s=document.createElement('script');s.id='ga-s';s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-2J026WD3XD';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2J026WD3XD',{anonymize_ip:true,cookie_expires:34164000});window.gtag=gtag;}
+    function getCookieConsent(){var m=document.cookie.match(/cookie_consent=([^;]+)/);return m?m[1]:null;}
+    if(getCookieConsent()==='accepted'){loadGA();}
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1590,6 +1593,30 @@
       });
     })();
 
+  </script>
+
+  <!-- ════════════════════ COOKIE BANNER (RGPD) ════════════════════ -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0F1724;color:#fff;padding:16px 24px;border-top:1px solid rgba(59,130,246,0.2);font-family:'Outfit',system-ui,sans-serif;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <p style="font-size:13px;color:rgba(255,255,255,0.8);flex:1;min-width:280px;margin:0;line-height:1.5;">
+        Nous utilisons des cookies essentiels et, avec votre accord, des cookies d'analyse (Google Analytics) pour ameliorer le site.
+        <a href="./confidentialite.html" style="color:#60A5FA;margin-left:6px;text-decoration:none;">En savoir plus</a>
+      </p>
+      <div style="display:flex;gap:10px;">
+        <button onclick="handleCookieConsent(false)" style="padding:8px 18px;border:1px solid rgba(255,255,255,0.3);color:#fff;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;border-radius:6px;background:transparent;">Refuser</button>
+        <button onclick="handleCookieConsent(true)" style="padding:8px 18px;border:1px solid rgba(255,255,255,0.3);color:#fff;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;border-radius:6px;background:transparent;">Accepter</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function handleCookieConsent(accepted) {
+      document.cookie = 'cookie_consent=' + (accepted ? 'accepted' : 'declined') + '; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+      document.getElementById('cookieBanner').style.display = 'none';
+      if (accepted) loadGA();
+    }
+    (function() {
+      if (!getCookieConsent()) document.getElementById('cookieBanner').style.display = 'block';
+    })();
   </script>
 </body>
 </html>
