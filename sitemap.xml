@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://abdridi.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://abdridi.com/#services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abdridi.com/#tarifs</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abdridi.com/#faq</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abdridi.com/a-propos.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abdridi.com/veille-marches-publics.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abdridi.com/memoire-technique.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abdridi.com/montage-dossier.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abdridi.com/analyse-concurrence.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abdridi.com/mentions-legales.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://abdridi.com/confidentialite.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://abdridi.com/</loc><lastmod>2026-04-14</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://abdridi.com/a-propos.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abdridi.com/veille-marches-publics.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abdridi.com/memoire-technique.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abdridi.com/montage-dossier.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abdridi.com/analyse-concurrence.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abdridi.com/mentions-legales.html</loc><lastmod>2026-04-14</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://abdridi.com/confidentialite.html</loc><lastmod>2026-04-14</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

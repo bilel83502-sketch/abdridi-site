@@ -18,7 +18,7 @@
   <meta property="og:url" content="https://abdridi.com/">
   <meta property="og:title" content="AB DRIDI — Votre partenaire marchés publics">
   <meta property="og:description" content="Veille quotidienne sur 17+ sources officielles et montage complet de vos dossiers de réponse.">
-  <meta property="og:image" content="https://abdridi.com/Logo AB DRIDI.png">
+  <meta property="og:image" content="https://abdridi.com/logo-ab-dridi.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="fr_FR">
@@ -28,24 +28,68 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AB DRIDI — Votre partenaire marchés publics">
   <meta name="twitter:description" content="Veille quotidienne sur 17+ sources officielles et montage complet de vos dossiers de réponse.">
-  <meta name="twitter:image" content="https://abdridi.com/Logo AB DRIDI.png">
+  <meta name="twitter:image" content="https://abdridi.com/logo-ab-dridi.png">
 
-  <!-- JSON-LD: Organization -->
+  <!-- JSON-LD: Organization (enriched) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "AB DRIDI",
+    "legalName": "Bilel DRIDI",
     "url": "https://abdridi.com",
-    "logo": "https://abdridi.com/Logo AB DRIDI.png",
+    "logo": "https://abdridi.com/logo-ab-dridi.png",
     "description": "Cabinet conseil spécialisé dans la réponse aux appels d'offres publics",
+    "foundingDate": "2023-03-06",
+    "telephone": "+33621359640",
+    "email": "contact@abdridi.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "108 Rue Louis Martin Bidoure",
+      "addressLocality": "La Seyne-sur-Mer",
+      "postalCode": "83500",
+      "addressCountry": "FR",
+      "addressRegion": "Provence-Alpes-Côte d'Azur"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "contact@abdridi.com",
+      "telephone": "+33621359640",
       "contactType": "Customer Service",
       "availableLanguage": "French"
     },
     "sameAs": []
+  }
+  </script>
+  <!-- JSON-LD: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://abdridi.com/#organization",
+    "name": "AB DRIDI",
+    "legalName": "Bilel DRIDI",
+    "description": "Apporteur d'affaires et cabinet de conseil spécialisé dans les marchés publics",
+    "url": "https://abdridi.com",
+    "logo": "https://abdridi.com/logo-ab-dridi.png",
+    "telephone": "+33621359640",
+    "email": "contact@abdridi.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "108 Rue Louis Martin Bidoure",
+      "addressLocality": "La Seyne-sur-Mer",
+      "postalCode": "83500",
+      "addressCountry": "FR",
+      "addressRegion": "Provence-Alpes-Côte d'Azur"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "priceRange": "€€",
+    "areaServed": { "@type": "Country", "name": "France" }
   }
   </script>
   <!-- JSON-LD: Service -->
@@ -53,13 +97,29 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "provider": {
-      "@type": "Organization",
-      "name": "AB DRIDI"
-    },
+    "provider": { "@type": "Organization", "name": "AB DRIDI" },
     "name": "Montage de dossiers de réponse aux appels d'offres publics",
     "description": "Rédaction complète du mémoire technique, montage du BPU, pièces administratives et dépôt dématérialisé",
-    "areaServed": "France"
+    "areaServed": "France",
+    "serviceType": "Conseil en marchés publics"
+  }
+  </script>
+  <!-- JSON-LD: Offer (pricing) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Abonnement Veille Marchés Publics AB DRIDI",
+    "description": "Accès au portail de veille automatisée des marchés publics avec 17+ sources officielles, alertes email et export de données",
+    "brand": { "@type": "Brand", "name": "AB DRIDI" },
+    "offers": {
+      "@type": "Offer",
+      "price": "150",
+      "priceCurrency": "EUR",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": "https://abdridi.com/#tarifs"
+    }
   }
   </script>
   <!-- JSON-LD: WebSite with search -->
@@ -74,6 +134,47 @@
       "target": "https://portal.abdridi.com/marches?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
+  }
+  </script>
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "À quels types de marchés publics répondez-vous ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tous types de marchés publics : services, fournitures, travaux. Nous analysons le DCE, identifions si votre entreprise est en capacité de répondre, et montons le dossier complet quel que soit le secteur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien coûte le montage d'un dossier ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le montage de dossier fait l'objet d'un devis personnalisé après un premier rendez-vous gratuit. Le tarif dépend de la complexité du marché, du nombre de lots et du niveau de rédaction requis. Contactez-nous pour un diagnostic offert."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle différence entre le portail et l'accompagnement ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le portail (à partir de 0€/mois) vous donne accès à la veille automatisée sur les marchés publics. L'accompagnement est un service sur-mesure où nous rédigeons et montons vos dossiers de A à Z, quel que soit votre secteur. Les deux sont complémentaires."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de temps pour monter un dossier ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En général, nous montons un dossier complet en 5 à 10 jours ouvrés selon la complexité. Pour les procédures urgentes, nous pouvons intervenir en mode accéléré sous 48h si les éléments sont disponibles."
+        }
+      }
+    ]
   }
   </script>
 
@@ -1063,7 +1164,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="./Logo AB DRIDI.png" alt="AB DRIDI" class="nav-logo-img">
+        <img src="./logo-ab-dridi.png" alt="AB DRIDI" class="nav-logo-img">
         <span class="logo-text">DRIDI</span>
       </a>
 
@@ -1434,7 +1535,7 @@
   <!-- ════════════════════ CTA FINAL (DARK) ════════════════════ -->
   <section class="cta-final">
     <div class="cta-photo">
-      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&q=80" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&q=80" alt="Équipe professionnelle travaillant sur un dossier de marché public" loading="lazy">
       <div class="cta-photo-overlay"></div>
     </div>
     <div class="container">
@@ -1453,7 +1554,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="./Logo AB DRIDI.png" alt="AB DRIDI">
+            <img src="./logo-ab-dridi.png" alt="AB DRIDI">
             <span class="logo-text">DRIDI</span>
           </div>
           <p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics. De la veille au dépôt, nous montons vos dossiers à 100%.</p>
