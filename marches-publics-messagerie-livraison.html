@@ -70,6 +70,8 @@
     .footer-logo { display: flex; align-items: center; gap: 10px; } .footer-logo img { height: 38px; width: auto; }
     .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; } .step-card { padding: 32px 24px; } .step-number { font-family: 'Instrument Serif', serif; font-size: 2rem; color: var(--accent); margin-bottom: 12px; } .step-card h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 8px; } .step-card p { font-size: 0.9rem; color: var(--text-sec); line-height: 1.6; }
     .cpv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; } .cpv-tag { padding: 16px 20px; background: var(--bg); border: 1px solid var(--border); font-size: 0.9rem; color: var(--text-sec); } .cpv-tag strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .faq-section .faq-item { border-bottom: 1px solid var(--border); } .faq-section .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px 0; background: none; border: none; font-family: 'Outfit', system-ui, sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text); text-align: left; cursor: pointer; line-height: 1.4; gap: 16px; } .faq-section .faq-question .faq-chevron { flex-shrink: 0; width: 20px; height: 20px; transition: transform 0.3s var(--ease); color: var(--accent); } .faq-section .faq-question[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); } .faq-section .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); } .faq-section .faq-answer-inner { padding: 0 0 24px; font-size: 0.95rem; color: var(--text-sec); line-height: 1.7; max-width: 720px; }
+    .cta-contact { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 20px; position: relative; z-index: 5; } .cta-contact a { font-size: 0.92rem; color: var(--text-light-sec); transition: color 0.3s; } .cta-contact a:hover { color: var(--accent); }
     @media (max-width: 768px) { .nav-links { display: none; } .nav-burger { display: flex; } .content-grid { grid-template-columns: 1fr; } .stats-row { grid-template-columns: 1fr; } .steps-grid { grid-template-columns: 1fr 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 480px) { .steps-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; gap: 12px; text-align: center; } .hero-buttons { flex-direction: column; } }
   </style>
@@ -89,8 +91,10 @@
     <div>
       <span class="section-label">Le contexte</span>
       <h2>Environ <em>800 à 1 200 appels d'offres</em> messagerie et livraison par an</h2>
-      <p>Les administrations publiques françaises publient chaque année entre 800 et 1 200 appels d'offres pour des prestations de messagerie, transport de colis et logistique. Les acheteurs sont variés : ministères, préfectures, CHU, universités, établissements publics. Les budgets s'échelonnent de 20 000 euros pour un lot coursier local à plus de 3 millions d'euros pour un accord-cadre national multi-sites.</p>
-      <p>Le secteur est porté par la dématérialisation croissante qui renforce le besoin de transport sécurisé de documents sensibles, de matériel informatique et de colis urgents. Les exigences de traçabilité en temps réel et de délais garantis deviennent des critères discriminants dans les marchés publics de messagerie.</p>
+      <p>Les administrations publiques françaises publient chaque année entre 800 et 1 200 appels d'offres pour des prestations de messagerie, transport de colis et logistique. Les acheteurs sont variés : ministères, préfectures, hôpitaux publics, universités, collectivités territoriales, services déconcentrés de l'État et établissements publics administratifs. Les budgets s'échelonnent de 20 000 euros pour un lot coursier local à plus de 3 millions d'euros pour un accord-cadre national multi-sites.</p>
+      <p>Plusieurs exigences distinguent ces marchés des contrats privés. La confidentialité absolue est imposée sur les transports sensibles : plis judiciaires pour les tribunaux, documents classifiés pour la défense, dossiers nominatifs pour les préfectures. La chaîne du froid doit être respectée pour les transports biologiques (prélèvements sanguins, échantillons de laboratoire), avec une traçabilité thermique documentée.</p>
+      <p>Les engagements de délais sont stricts : livraison J+1 garantie sous pénalités, créneaux de 2 heures pour les courses urgentes, astreintes week-end pour les établissements hospitaliers. La logistique multi-sites est fréquente : universités réparties sur plusieurs campus, CHU avec leurs antennes, mairies de métropoles comptant plus de 10 points de livraison.</p>
+      <p>L'écomobilité urbaine monte en puissance dans les contrats métropolitains. Les acheteurs publics intègrent des critères environnementaux valorisant les vélos cargos, les véhicules électriques et les solutions décarbonées en centre-ville. Ce volet peut représenter jusqu'à 15 % de la note finale.</p>
       <p>Notre <a href="./veille-marches-publics.html">veille automatisée</a> couvre toutes les plateformes de publication. Pour chaque opportunité, nous pouvons prendre en charge le <a href="./montage-dossier.html">montage complet du dossier</a> et la rédaction du <a href="./memoire-technique.html">mémoire technique</a>.</p>
     </div>
     <div><ul class="feature-list">
@@ -115,21 +119,21 @@
 
   <section class="section content-section"><div class="container"><div style="text-align:center;" class="r"><span class="section-label">Comment nous travaillons</span><h2 class="section-title">De la détection à la <em>remise de l'offre</em></h2></div>
     <div class="steps-grid r">
-      <div class="step-card"><div class="step-number">01</div><h3>Veille spécialisée</h3><p>Alertes paramétrées sur les CPV 64121000 et 60161000, filtrées par zone géographique et type de prestation.</p></div>
-      <div class="step-card"><div class="step-number">02</div><h3>Analyse du DCE</h3><p>Étude du cahier des charges, des exigences de délais, des volumes prévisionnels et des niveaux de service attendus.</p></div>
-      <div class="step-card"><div class="step-number">03</div><h3>Montage du dossier</h3><p><a href="./montage-dossier.html" style="color:var(--accent);">Dossier complet</a> : DC1, DC2, attestations d'assurance transport, licences, références clients.</p></div>
-      <div class="step-card"><div class="step-number">04</div><h3>Mémoire technique</h3><p><a href="./memoire-technique.html" style="color:var(--accent);">Mémoire sur-mesure</a> valorisant votre flotte, votre traçabilité, vos délais garantis et votre couverture géographique.</p></div>
+      <div class="step-card"><div class="step-number">01</div><h3>Veille spécialisée</h3><p>Alertes paramétrées sur les CPV 64121000 et 60161000, filtrées par zone géographique et type de prestation. Nous couvrons l'ensemble des plateformes de publication (BOAMP, JOUE, profils d'acheteurs) et vous transmettons chaque opportunité sous 24 heures avec une fiche de synthèse.</p></div>
+      <div class="step-card"><div class="step-number">02</div><h3>Analyse du DCE</h3><p>Étude du cahier des charges, des exigences de délais, des volumes prévisionnels et des niveaux de service attendus. Nous identifions les points de vigilance propres au secteur : clauses de confidentialité, chaîne du froid, pénalités de retard et obligations d'astreinte. Vous recevez un avis go/no-go argumenté.</p></div>
+      <div class="step-card"><div class="step-number">03</div><h3>Montage du dossier</h3><p><a href="./montage-dossier.html" style="color:var(--accent);">Dossier complet</a> : DC1, DC2, attestations d'assurance transport, licences, références clients. Nous vérifions la conformité de chaque pièce et préparons les formulaires de sous-traitance (DC4) si votre offre implique des partenaires.</p></div>
+      <div class="step-card"><div class="step-number">04</div><h3>Mémoire technique</h3><p><a href="./memoire-technique.html" style="color:var(--accent);">Mémoire sur-mesure</a> valorisant votre flotte, votre traçabilité, vos délais garantis et votre couverture géographique. Nous structurons la réponse autour des critères pondérés du règlement de consultation : plan de continuité, démarche environnementale et gestion des urgences.</p></div>
     </div>
   </div></section>
 
   <section class="section cream-section"><div class="container"><div style="text-align:center;" class="r"><span class="section-label">Exemples de marchés récents</span><h2 class="section-title">Des opportunités <em>concrètes</em></h2></div>
     <div class="stats-row r">
-      <div class="stat-card"><div class="number">420K&euro;</div><div class="label">CHU — Messagerie express et transport de prélèvements, 36 mois, 3 lots</div></div>
-      <div class="stat-card"><div class="number">180K&euro;</div><div class="label">Préfecture — Transport de plis sensibles et courrier confidentiel, 24 mois</div></div>
-      <div class="stat-card"><div class="number">650K&euro;</div><div class="label">Université — Messagerie inter-campus et livraison de matériel, 48 mois</div></div>
+      <div class="stat-card"><div class="number">420K&euro;</div><div class="label">CHU — Messagerie express et transport de prélèvements biologiques entre 8 sites hospitaliers, 36 mois, 3 lots avec exigence de chaîne du froid</div></div>
+      <div class="stat-card"><div class="number">180K&euro;</div><div class="label">Préfecture — Transport de plis sensibles et courrier confidentiel entre services déconcentrés, 24 mois, habilitation sécurité requise</div></div>
+      <div class="stat-card"><div class="number">650K&euro;</div><div class="label">Université — Messagerie inter-campus et livraison de matériel pédagogique sur 12 sites, 48 mois, navettes quotidiennes planifiées</div></div>
     </div>
     <div class="stats-row r" style="margin-top:32px;">
-      <div class="stat-card" style="grid-column: 2;"><div class="number">280K&euro;</div><div class="label">Métropole — Coursier urbain et navettes inter-sites administratifs, 24 mois</div></div>
+      <div class="stat-card" style="grid-column: 2;"><div class="number">280K&euro;</div><div class="label">Métropole — Coursier urbain écomobile et navettes inter-sites administratifs en vélos cargos et véhicules électriques, 24 mois</div></div>
     </div>
   </div></section>
 
@@ -141,16 +145,43 @@
       <p>Les critères d'attribution combinent le prix et la valeur technique (couverture géographique, délais, plan de continuité, démarche environnementale). Notre expertise vous aide à calibrer vos offres et à rédiger un mémoire technique qui valorise vos points forts.</p>
     </div>
     <div><ul class="feature-list">
-      <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><div><strong>Confidentialité garantie</strong> — Nous valorisons vos protocoles de sécurité pour le transport de plis sensibles et documents confidentiels.</div></li>
-      <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div><div><strong>Traçabilité documentée</strong> — Mise en avant de vos outils de suivi temps réel, preuves de livraison et reporting automatisé.</div></li>
-      <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div><div><strong>Réactivité démontrée</strong> — Structuration de votre offre autour des délais garantis, astreintes et plan de continuité d'activité.</div></li>
+      <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><div><strong>Confidentialité garantie</strong> — Nous valorisons vos protocoles de sécurité pour le transport de plis sensibles et documents confidentiels. Habilitations du personnel, véhicules scellés, chaîne de custody documentée : chaque dispositif est détaillé dans le mémoire technique pour rassurer l'acheteur.</div></li>
+      <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div><div><strong>Traçabilité temps réel</strong> — Mise en avant de vos outils de suivi temps réel, preuves de livraison et reporting automatisé. Nous structurons la présentation de votre système de tracking : tableaux de bord, alertes de retard et bilans mensuels exigés par les acheteurs.</div></li>
+      <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div><div><strong>Réactivité et délais courts</strong> — Structuration de votre offre autour des délais garantis J+1, créneaux de livraison de 2 heures, astreintes et plan de continuité d'activité. Nous démontrons votre capacité à absorber les pics d'activité et à maintenir le service en toutes circonstances.</div></li>
+      <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div><strong>Écomobilité valorisée</strong> — Nous mettons en avant votre flotte décarbonée (vélos cargos, véhicules électriques, GNV) dans les critères environnementaux. Ce volet peut représenter 10 à 15 % de la note technique dans les marchés métropolitains.</div></li>
     </ul></div>
   </div></div></section>
 
+  <section class="section cream-section faq-section"><div class="container">
+    <div style="text-align:center;" class="r"><span class="section-label">Questions fréquentes</span><h2 class="section-title">Vos questions sur les marchés de <em>messagerie publique</em></h2></div>
+    <div style="max-width:800px;margin:48px auto 0;" class="r">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Quelles assurances sont exigées pour les marchés publics de messagerie ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Les acheteurs publics exigent généralement une assurance responsabilité civile professionnelle couvrant les dommages aux envois, une assurance transport de marchandises (ad valorem pour les plis sensibles) et une garantie contre le vol. Les montants de couverture varient selon la valeur des envois, pouvant atteindre plusieurs millions d'euros pour le transport de documents confidentiels.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Comment garantir la confidentialité des plis sensibles dans un marché public ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="faq-answer"><div class="faq-answer-inner">La confidentialité repose sur plusieurs dispositifs : traçabilité en temps réel de chaque pli, chaîne de custody documentée avec signatures électroniques, véhicules sécurisés et scellés, habilitation du personnel (voire habilitation secret défense pour certains ministères). Le mémoire technique doit détailler précisément ces protocoles de sécurité.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Faut-il disposer de sa propre flotte pour répondre à un marché de messagerie publique ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Non, il est possible de répondre avec une flotte partenaire ou sous-traitée, à condition de le mentionner dans le DC4 et de fournir les justificatifs de capacité des sous-traitants. Cependant, disposer d'une flotte propre, même partielle, est souvent valorisé dans les critères techniques car cela garantit une meilleure maîtrise des délais et de la qualité de service.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Quels sont les principaux critères de sélection dans un marché de messagerie publique ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Les critères principaux sont le prix (40 à 60 % de la note), la valeur technique (délais de livraison, traçabilité, plan de continuité d'activité, démarche environnementale) et parfois un critère social (insertion). La réactivité en cas d'urgence et la capacité à couvrir l'ensemble du territoire national sont des éléments différenciants importants.</div></div>
+      </div>
+    </div>
+  </div></section>
+
   <section class="section cta-section"><div class="container">
     <h2 class="r">Ne laissez plus passer les marchés de <em>messagerie et livraison</em></h2>
-    <p class="r">Inscrivez-vous et recevez les appels d'offres de messagerie correspondant à votre zone d'intervention.</p>
+    <p class="r">Inscrivez-vous et recevez les appels d'offres de messagerie correspondant à votre zone d'intervention. Nous vous accompagnons jusqu'à la remise de l'offre.</p>
     <a href="https://portal.abdridi.com/auth/register" class="btn-blue r">Commencer la veille messagerie</a>
+    <div class="cta-contact r">
+      <a href="tel:+33621359640">06 21 35 96 40</a>
+      <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+    </div>
   </div></section>
 
   <footer class="footer"><div class="container"><div class="footer-grid">
@@ -164,6 +195,7 @@
     const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
     const burger=document.getElementById('burger'),mobileMenu=document.getElementById('mobileMenu');burger.addEventListener('click',()=>{mobileMenu.classList.toggle('open');});function closeMobile(){mobileMenu.classList.remove('open');}
     const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('v');observer.unobserve(entry.target);}});},{threshold:0.1});document.querySelectorAll('.r').forEach(el=>observer.observe(el));
+    function toggleFaq(btn){var expanded=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-question').forEach(function(q){q.setAttribute('aria-expanded','false');q.nextElementSibling.style.maxHeight=null;});if(!expanded){btn.setAttribute('aria-expanded','true');var answer=btn.nextElementSibling;answer.style.maxHeight=answer.scrollHeight+'px';}}
   </script>
 </body>
 </html>
