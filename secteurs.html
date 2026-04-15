@@ -114,236 +114,836 @@
       font-family: 'Instrument Serif', Georgia, serif;
       font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 400;
-      line-height: 1.15;
       color: var(--text);
-      margin-bottom: 24px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
     }
     .section-title em { font-style: italic; color: var(--accent); }
+
+    /* Navbar */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      transition: all 0.4s var(--ease);
+      background: rgba(15,15,35,0.8);
+      backdrop-filter: blur(20px) saturate(1.3); -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      border-bottom: 1px solid rgba(99,102,241,0.1);
+    }
+    .nav.scrolled {
+      box-shadow: 0 1px 12px rgba(0,0,0,0.2);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.95rem; font-weight: 600; color: #fff;
+    }
+    .nav-logo-img { height: 56px; width: auto; }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.1em; color: #FFFFFF;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--text-light); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 24px; border-radius: 0;
+      border: none;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+    }
+    .nav-cta:hover {
+      background: #2563EB;
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+      transform: translateY(-1px);
+    }
+    .nav-burger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-light-sec);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: rgba(15,15,35,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.2rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-light-sec);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+
+    /* Hero */
+    .page-hero {
+      padding: 160px 0 80px;
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .page-hero .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+      position: relative; z-index: 5;
+      transition: color 0.3s;
+    }
+    .page-hero .back-link:hover { color: #FFFFFF; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+    .hero-content h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 400;
+      color: var(--text-light);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 em { font-style: italic; color: var(--accent); }
+    .hero-content p {
+      font-size: 1.1rem; font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .hero-buttons {
+      display: flex; gap: 16px; flex-wrap: wrap;
+    }
+    .hero-image {
+      position: relative;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    /* Content sections */
+    .content-section { background: var(--bg); }
     .cream-section { background: var(--bg-cream); }
 
-    /* NAV */
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 0; transition: all 0.35s var(--ease); background: transparent; }
-    .nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 10px 0; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.1rem; }
-    .nav-logo-img { height: 32px; width: auto; }
-    .logo-text { font-weight: 700; letter-spacing: 0.03em; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 0.88rem; font-weight: 400; color: var(--text-sec); transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta { font-size: 0.82rem; font-weight: 500; padding: 8px 20px; background: var(--accent); color: #fff; border-radius: 8px; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--accent-hover); }
-    .nav-burger { display: none; background: none; border: none; width: 28px; height: 20px; flex-direction: column; justify-content: space-between; }
-    .nav-burger span { display: block; height: 2px; background: var(--text); border-radius: 2px; }
-    @media(max-width:768px) {
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      .nav-burger { display: flex; }
+    /* Buttons */
+    .btn-blue {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 0;
+      background: #3B82F6;
+      color: #FFFFFF;
+      font-size: 0.95rem; font-weight: 600;
+      border: none;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+      transition: all 0.3s var(--ease);
+      position: relative; z-index: 5;
     }
-    .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: #fff; padding: 24px; flex-direction: column; gap: 16px; z-index: 99; border-bottom: 1px solid var(--border); }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-size: 1rem; padding: 8px 0; color: var(--text); }
+    .btn-blue:hover {
+      background: #2563EB;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+    }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 0;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
+      color: var(--text-light);
+      font-size: 0.95rem; font-weight: 500;
+      transition: all 0.3s var(--ease);
+      position: relative; z-index: 5;
+    }
+    .btn-outline:hover {
+      border-color: rgba(255,255,255,0.5);
+      transform: translateY(-2px);
+    }
 
-    /* PAGE HERO */
-    .page-hero { padding: 140px 0 60px; background: var(--bg-cream); }
-    .page-hero h1 { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; line-height: 1.15; margin-bottom: 16px; }
-    .page-hero h1 em { font-style: italic; color: var(--accent); }
-    .page-hero p { font-size: 1.05rem; color: var(--text-sec); max-width: 700px; line-height: 1.7; }
-    .back-link { display: inline-block; font-size: 0.85rem; color: var(--accent); margin-bottom: 24px; }
-
-    /* SECTOR GRID */
-    .sector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    .sector-card {
-      display: flex; align-items: center; gap: 16px;
-      padding: 20px 24px;
+    /* Sector cards with images */
+    .sector-grid-featured {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .sector-card-featured {
       background: #fff;
-      border: 1px solid rgba(0,0,0,0.07);
-      transition: all 0.2s;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: all 0.3s var(--ease);
       text-decoration: none;
+      display: block;
     }
-    .sector-card:hover { border-color: var(--accent); box-shadow: 0 2px 12px rgba(59,130,246,0.08); }
-    .sector-icon {
-      width: 44px; height: 44px;
-      background: rgba(59,130,246,0.08);
+    .sector-card-featured:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+    }
+    .sector-card-img {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+    .sector-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .sector-card-icon-overlay {
+      position: absolute;
+      top: 12px; left: 12px;
+      width: 40px; height: 40px;
+      background: rgba(15,15,35,0.7);
+      backdrop-filter: blur(8px);
       display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-size: 20px;
+      color: #fff;
     }
-    .sector-name { font-size: 0.95rem; font-weight: 600; color: #1A1A2E; }
-    .sector-desc { font-size: 0.82rem; color: #5A5A72; }
+    .sector-card-icon-overlay svg {
+      width: 20px; height: 20px;
+    }
+    .sector-card-body {
+      padding: 24px;
+    }
+    .sector-card-body h3 {
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .sector-card-body p {
+      font-size: 0.9rem;
+      color: var(--text-sec);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .sector-card-link {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+      transition: color 0.3s;
+    }
+    .sector-card-link:hover { color: var(--accent-hover); }
 
+    /* Simple sector cards (no image) */
+    .sector-grid-simple {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
     .sector-card-simple {
-      padding: 16px 20px;
+      padding: 20px;
       background: #fff;
-      border: 1px solid rgba(0,0,0,0.07);
-      display: flex; align-items: center; gap: 12px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; gap: 14px;
+      transition: all 0.3s var(--ease);
     }
-    .sector-card-simple .sector-icon {
-      width: 36px; height: 36px; font-size: 16px;
-      background: rgba(99,102,241,0.06);
+    .sector-card-simple:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(59,130,246,0.08);
     }
-    .sector-card-simple .sector-name { font-size: 0.9rem; }
+    .sector-icon-simple {
+      width: 40px; height: 40px;
+      background: rgba(99,102,241,0.08);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--indigo);
+    }
+    .sector-icon-simple svg { width: 20px; height: 20px; }
+    .sector-card-simple .sector-name {
+      font-size: 0.9rem; font-weight: 600; color: var(--text);
+    }
 
-    /* CONTENT */
-    .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 48px; }
-    .method-card { padding: 32px; background: #fff; border: 1px solid var(--border); }
-    .method-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: var(--text); }
-    .method-card p { font-size: 0.92rem; color: var(--text-sec); line-height: 1.7; }
+    /* Method section */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .method-card {
+      padding: 32px;
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+    .method-icon {
+      width: 56px; height: 56px;
+      background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+    .method-icon svg { width: 28px; height: 28px; }
+    .method-card h3 {
+      font-size: 1.1rem; font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .method-card p {
+      font-size: 0.92rem;
+      color: var(--text-sec);
+      line-height: 1.7;
+    }
 
-    /* CTA */
-    .cta-section { background: var(--bg-dark); padding: 80px 0; text-align: center; }
-    .cta-section h2 { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 400; color: var(--text-light); margin-bottom: 16px; }
+    /* CTA section */
+    .cta-section {
+      background: var(--bg-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+    .cta-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      position: relative; z-index: 5;
+    }
     .cta-section h2 em { font-style: italic; color: var(--accent); }
-    .cta-section p { font-size: 1rem; color: var(--text-light-sec); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
-    .btn-blue { display: inline-block; padding: 14px 32px; background: var(--accent); color: #fff; font-weight: 500; font-size: 0.95rem; border-radius: 10px; transition: background 0.2s; }
-    .btn-blue:hover { background: var(--accent-hover); }
-    .btn-outline { display: inline-block; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-light); font-weight: 500; font-size: 0.95rem; border-radius: 10px; margin-left: 12px; transition: border-color 0.2s; }
-    .btn-outline:hover { border-color: rgba(255,255,255,0.5); }
-    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .cta-section p {
+      font-size: 1rem;
+      color: var(--text-light-sec);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      position: relative; z-index: 5;
+    }
+    .cta-buttons {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      position: relative; z-index: 5;
+    }
 
-    /* FOOTER */
-    .footer { background: var(--bg-dark); padding: 64px 0 32px; color: var(--text-light-sec); }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand p { font-size: 0.85rem; margin-top: 12px; line-height: 1.6; color: var(--text-light-sec); }
-    .footer-logo { display: flex; align-items: center; gap: 10px; }
-    .footer-logo img { height: 28px; filter: brightness(0) invert(1); }
-    .footer-logo .logo-text { color: var(--text-light); font-weight: 700; letter-spacing: 0.03em; }
-    .footer-col h5 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 16px; }
-    .footer-col a { display: block; font-size: 0.85rem; color: var(--text-light-sec); margin-bottom: 10px; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--text-light); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.8rem; }
-    .footer-bottom-links { display: flex; gap: 24px; }
-    .footer-bottom-links a { color: var(--text-light-sec); transition: color 0.2s; }
-    .footer-bottom-links a:hover { color: var(--text-light); }
-    @media(max-width:768px) {
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border-dark);
+      padding: 64px 0 32px;
+      background: var(--bg-dark);
+      color: var(--text-light-sec);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem; color: var(--text-light-sec);
+      line-height: 1.6;
+      margin-top: 16px;
+      max-width: 280px;
+    }
+    .footer-col h5 {
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(250,250,250,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem; color: var(--text-light-sec);
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.8rem; color: rgba(250,250,250,0.3);
+    }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: rgba(250,250,250,0.3); transition: color 0.3s; }
+    .footer-bottom-links a:hover { color: var(--accent); }
+    .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; color: var(--text-light); }
+    .footer-logo img { height: 38px; width: auto; }
+
+    @media (max-width: 1024px) {
+      .sector-grid-simple { grid-template-columns: repeat(2, 1fr); }
+      .method-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 80px 0; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-image { order: -1; }
+      .hero-image img { height: 300px; }
+      .sector-grid-featured { grid-template-columns: 1fr; }
+      .sector-grid-simple { grid-template-columns: repeat(2, 1fr); }
+      .method-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .btn-blue, .btn-outline { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .sector-grid-simple { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .hero-buttons { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-  <nav class="nav" id="nav"><div class="nav-inner"><a href="./" class="nav-logo"><img src="./logo-ab-dridi.png" alt="AB DRIDI" class="nav-logo-img"><span class="logo-text">DRIDI</span></a><ul class="nav-links"><li><a href="./#services">Services</a></li><li><a href="./secteurs.html">Secteurs</a></li><li><a href="./#tarifs">Tarifs</a></li><li><a href="./#faq">FAQ</a></li><li><a href="./a-propos.html">À propos</a></li></ul><a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a><button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
-  <div class="mobile-menu" id="mobileMenu"><a href="./#services" onclick="closeMobile()">Services</a><a href="./secteurs.html" onclick="closeMobile()">Secteurs</a><a href="./#tarifs" onclick="closeMobile()">Tarifs</a><a href="./#faq" onclick="closeMobile()">FAQ</a><a href="./a-propos.html" onclick="closeMobile()">À propos</a><a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()">Se connecter</a></div>
 
-  <section class="page-hero"><div class="container">
-    <a href="./" class="back-link">&larr; Retour à l'accueil</a>
-    <h1 class="r">AB DRIDI accompagne les entreprises de <em>tous les secteurs</em></h1>
-    <p class="r">Les marchés publics couvrent tous les domaines d'activité. AB DRIDI accompagne les entreprises françaises quelle que soit leur taille et leur secteur.</p>
-  </div></section>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <img src="./logo-ab-dridi.png" alt="AB DRIDI" class="nav-logo-img">
+        <span class="logo-text">DRIDI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="./#services">Services</a></li>
+        <li><a href="./secteurs.html">Secteurs</a></li>
+        <li><a href="./#methode">M&eacute;thode</a></li>
+        <li><a href="./#tarifs">Tarifs</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+        <li><a href="./a-propos.html">&Agrave; propos</a></li>
+      </ul>
+      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-  <!-- SECTEURS AVEC EXPERTISE DÉDIÉE -->
-  <section class="section"><div class="container">
-    <div style="text-align: center;" class="r">
-      <span class="section-label">Expertise approfondie</span>
-      <h2 class="section-title">Secteurs avec <em>expertise dédiée</em></h2>
-      <p style="font-size: 1rem; color: var(--text-sec); max-width: 650px; margin: 0 auto 40px; line-height: 1.7;">Sur ces secteurs, nous avons développé une connaissance fine des codes CPV, des exigences réglementaires et des critères d'attribution spécifiques.</p>
-    </div>
-    <div class="sector-grid r">
-      <a href="./marches-publics-transport-medical.html" class="sector-card">
-        <div class="sector-icon">🚑</div>
-        <div><div class="sector-name">Transport Sanitaire</div><div class="sector-desc">Ambulances, VSL, transport de sang et d'organes</div></div>
-      </a>
-      <a href="./marches-publics-transport-funeraire.html" class="sector-card">
-        <div class="sector-icon">⚱️</div>
-        <div><div class="sector-name">Pompes Funèbres</div><div class="sector-desc">Conventions obsèques, CCAS, marbrerie</div></div>
-      </a>
-      <a href="./marches-publics-collecte-dechets.html" class="sector-card">
-        <div class="sector-icon">♻️</div>
-        <div><div class="sector-name">Collecte de Déchets</div><div class="sector-desc">OMR, tri sélectif, déchèteries, valorisation</div></div>
-      </a>
-      <a href="./marches-publics-fourniture-alimentaire.html" class="sector-card">
-        <div class="sector-icon">🍽️</div>
-        <div><div class="sector-name">Restauration Collective</div><div class="sector-desc">Cantines, EHPAD, loi EGalim, circuits courts</div></div>
-      </a>
-      <a href="./marches-publics-messagerie-livraison.html" class="sector-card">
-        <div class="sector-icon">📦</div>
-        <div><div class="sector-name">Messagerie & Livraison</div><div class="sector-desc">Colis, courrier, logistique urbaine</div></div>
-      </a>
-      <a href="./marches-publics-btp-travaux.html" class="sector-card">
-        <div class="sector-icon">🏗️</div>
-        <div><div class="sector-name">BTP & Travaux Publics</div><div class="sector-desc">Voirie, bâtiment, rénovation énergétique</div></div>
-      </a>
-      <a href="./marches-publics-nettoyage.html" class="sector-card">
-        <div class="sector-icon">🧹</div>
-        <div><div class="sector-name">Nettoyage & Propreté</div><div class="sector-desc">Locaux, hôpitaux, vitrerie, bio-nettoyage</div></div>
-      </a>
-    </div>
-  </div></section>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="./#services" onclick="closeMobile()">Services</a>
+    <a href="./secteurs.html" onclick="closeMobile()">Secteurs</a>
+    <a href="./#methode" onclick="closeMobile()">M&eacute;thode</a>
+    <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
+    <a href="./#faq" onclick="closeMobile()">FAQ</a>
+    <a href="./a-propos.html" onclick="closeMobile()">&Agrave; propos</a>
+    <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
+  </div>
 
-  <!-- AUTRES SECTEURS ACCOMPAGNÉS -->
-  <section class="section cream-section"><div class="container">
-    <div style="text-align: center;" class="r">
-      <span class="section-label">Couverture complète</span>
-      <h2 class="section-title">Autres secteurs <em>accompagnés</em></h2>
-      <p style="font-size: 1rem; color: var(--text-sec); max-width: 650px; margin: 0 auto 40px; line-height: 1.7;">Notre portail surveille 100 % des marchés publics français. Voici d'autres secteurs sur lesquels nous accompagnons régulièrement des entreprises.</p>
-    </div>
-    <div class="sector-grid r" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-      <div class="sector-card-simple"><div class="sector-icon">🏥</div><div><div class="sector-name">Santé & Médical</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">⚽</div><div><div class="sector-name">Sport & Loisirs</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🎓</div><div><div class="sector-name">Éducation & Formation</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🎭</div><div><div class="sector-name">Culture & Événementiel</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🛡️</div><div><div class="sector-name">Sécurité & Gardiennage</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🌾</div><div><div class="sector-name">Agriculture & Agroalimentaire</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">⚡</div><div><div class="sector-name">Énergie & Environnement</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">💻</div><div><div class="sector-name">IT & Télécoms</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🖨️</div><div><div class="sector-name">Communication & Imprimerie</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🪑</div><div><div class="sector-name">Mobilier & Équipement</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">📐</div><div><div class="sector-name">Conseil & Ingénierie</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🔧</div><div><div class="sector-name">Maintenance Industrielle</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🌿</div><div><div class="sector-name">Espaces Verts & Paysagisme</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🏨</div><div><div class="sector-name">Hébergement & Restauration</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🚛</div><div><div class="sector-name">Transport toutes catégories</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">📋</div><div><div class="sector-name">Logistique & Supply Chain</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🏠</div><div><div class="sector-name">BTP tous corps d'état</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">📊</div><div><div class="sector-name">Études & Diagnostics</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">🚗</div><div><div class="sector-name">Automobile & Flotte</div></div></div>
-      <div class="sector-card-simple"><div class="sector-icon">➕</div><div><div class="sector-name">Autres secteurs</div></div></div>
-    </div>
-  </div></section>
-
-  <!-- MÉTHODE UNIVERSELLE -->
-  <section class="section"><div class="container">
-    <div style="text-align: center;" class="r">
-      <span class="section-label">Notre approche</span>
-      <h2 class="section-title">Notre méthode est <em>universelle</em></h2>
-    </div>
-    <div class="method-grid r">
-      <div class="method-card">
-        <h3>La veille fonctionne pour tout secteur</h3>
-        <p>Notre portail agrège plus de 17 sources officielles de marchés publics — BOAMP, PLACE, plateformes régionales, TED Europe — et couvre l'intégralité des codes CPV existants. Que vous soyez dans le nettoyage, l'IT, l'agriculture ou la sécurité, les appels d'offres de votre secteur sont détectés et remontés automatiquement dans votre espace. Les alertes sont paramétrées sur vos codes CPV, vos départements et vos mots-clés métier.</p>
-      </div>
-      <div class="method-card">
-        <h3>Le montage de dossier est universel</h3>
-        <p>Un dossier de réponse aux marchés publics suit toujours la même structure : pièces administratives (DC1, DC2, attestations), mémoire technique valorisant votre savoir-faire, et bordereau de prix. Nos 30 dossiers montés couvrent des secteurs très différents. La rigueur du montage, la qualité rédactionnelle du mémoire et la conformité administrative sont les mêmes quel que soit votre métier.</p>
-      </div>
-      <div class="method-card">
-        <h3>L'expertise CPV s'adapte à chaque métier</h3>
-        <p>Chaque secteur a ses codes CPV, ses réglementations et ses critères d'attribution spécifiques. Nous étudions votre métier, identifions les codes CPV pertinents, analysons les exigences réglementaires propres à votre activité et structurons votre réponse en conséquence. Notre capacité d'adaptation est notre force : nous avons accompagné avec succès des ambulanciers, des restaurateurs, des entreprises de BTP, des sociétés de nettoyage, et bien d'autres.</p>
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <a href="./" class="back-link">&larr; Retour à l'accueil</a>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1 class="r">AB DRIDI accompagne les entreprises de <em>tous les secteurs</em></h1>
+          <p class="r">Les marchés publics couvrent tous les domaines d'activité. AB DRIDI accompagne les entreprises françaises quelle que soit leur taille et leur secteur.</p>
+          <div class="hero-buttons r">
+            <a href="https://portal.abdridi.com/auth/register" class="btn-blue">Demander un essai gratuit</a>
+            <a href="./#services" class="btn-outline">Découvrir nos services</a>
+          </div>
+        </div>
+        <div class="hero-image r">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=500&fit=crop&q=80" alt="Équipe professionnelle travaillant ensemble sur un projet de marchés publics" loading="lazy" data-credit="Photo by Annie Spratt on Unsplash">
+        </div>
       </div>
     </div>
-  </div></section>
+  </section>
+
+  <!-- SECTEURS AVEC EXPERTISE DEDIEE -->
+  <section class="section content-section">
+    <div class="container">
+      <div style="text-align: center;" class="r">
+        <span class="section-label">Expertise approfondie</span>
+        <h2 class="section-title">Secteurs avec <em>expertise dédiée</em></h2>
+        <p style="font-size: 1rem; color: var(--text-sec); max-width: 650px; margin: 0 auto 40px; line-height: 1.7;">Sur ces secteurs, nous avons développé une connaissance fine des codes CPV, des exigences réglementaires et des critères d'attribution spécifiques.</p>
+      </div>
+      <div class="sector-grid-featured r">
+
+        <!-- Transport Sanitaire -->
+        <a href="./marches-publics-transport-medical.html" class="sector-card-featured">
+          <div class="sector-card-img">
+            <img src="https://images.unsplash.com/photo-1587745416684-47953f16f02f?w=400&h=180&fit=crop&q=80" alt="Ambulance de transport sanitaire en intervention" loading="lazy" data-credit="Photo Unsplash">
+            <div class="sector-card-icon-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10H6"/><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.578-.502l-1.539-3.076A1 1 0 0 0 16.382 8H14"/><path d="M8 8v4"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            </div>
+          </div>
+          <div class="sector-card-body">
+            <h3>Transport Sanitaire</h3>
+            <p>Ambulances, VSL, transport de sang et d'organes</p>
+            <span class="sector-card-link">En savoir plus &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Pompes Funèbres -->
+        <a href="./marches-publics-transport-funeraire.html" class="sector-card-featured">
+          <div class="sector-card-img">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&h=180&fit=crop&q=80" alt="Services funéraires et cérémonies d'obsèques" loading="lazy" data-credit="Photo Unsplash">
+            <div class="sector-card-icon-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3H9"/><path d="M7.5 12a4.5 4.5 0 1 0 4.5 4.5M7.5 12A4.5 4.5 0 0 1 12 16.5m0 0V15m0 1.5 1.5-1.5"/></svg>
+            </div>
+          </div>
+          <div class="sector-card-body">
+            <h3>Pompes Funèbres</h3>
+            <p>Conventions obsèques, CCAS, marbrerie</p>
+            <span class="sector-card-link">En savoir plus &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Collecte Déchets -->
+        <a href="./marches-publics-collecte-dechets.html" class="sector-card-featured">
+          <div class="sector-card-img">
+            <img src="https://images.unsplash.com/photo-1532996122724-e3a507b9e2d6?w=400&h=180&fit=crop&q=80" alt="Camion de collecte de déchets en milieu urbain" loading="lazy" data-credit="Photo Unsplash">
+            <div class="sector-card-icon-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 12.065 3a1.784 1.784 0 0 1 1.578.887l4.052 7.034"/><path d="m14.5 9.5 2 3.5"/><path d="m17.5 6.5-4 1"/></svg>
+            </div>
+          </div>
+          <div class="sector-card-body">
+            <h3>Collecte de Déchets</h3>
+            <p>OMR, tri sélectif, déchetteries, valorisation</p>
+            <span class="sector-card-link">En savoir plus &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Restauration Collective -->
+        <a href="./marches-publics-fourniture-alimentaire.html" class="sector-card-featured">
+          <div class="sector-card-img">
+            <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=400&h=180&fit=crop&q=80" alt="Cuisine de restauration collective préparant des repas" loading="lazy" data-credit="Photo Unsplash">
+            <div class="sector-card-icon-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            </div>
+          </div>
+          <div class="sector-card-body">
+            <h3>Restauration Collective</h3>
+            <p>Cantines, EHPAD, loi EGalim, circuits courts</p>
+            <span class="sector-card-link">En savoir plus &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Messagerie & Livraison -->
+        <a href="./marches-publics-messagerie-livraison.html" class="sector-card-featured">
+          <div class="sector-card-img">
+            <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=180&fit=crop&q=80" alt="Livreur avec des colis pour la messagerie et livraison" loading="lazy" data-credit="Photo Unsplash">
+            <div class="sector-card-icon-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            </div>
+          </div>
+          <div class="sector-card-body">
+            <h3>Messagerie & Livraison</h3>
+            <p>Colis, courrier, logistique urbaine</p>
+            <span class="sector-card-link">En savoir plus &rarr;</span>
+          </div>
+        </a>
+
+        <!-- BTP & Travaux Publics -->
+        <a href="./marches-publics-btp-travaux.html" class="sector-card-featured">
+          <div class="sector-card-img">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=180&fit=crop&q=80" alt="Chantier de construction BTP avec grues et ouvriers" loading="lazy" data-credit="Photo Unsplash">
+            <div class="sector-card-icon-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+            </div>
+          </div>
+          <div class="sector-card-body">
+            <h3>BTP & Travaux Publics</h3>
+            <p>Voirie, bâtiment, rénovation énergétique</p>
+            <span class="sector-card-link">En savoir plus &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Nettoyage & Propreté -->
+        <a href="./marches-publics-nettoyage.html" class="sector-card-featured">
+          <div class="sector-card-img">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=180&fit=crop&q=80" alt="Agent de nettoyage professionnel en intervention" loading="lazy" data-credit="Photo Unsplash">
+            <div class="sector-card-icon-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 12.2a1 1 0 0 1-1 .8H6.24a1 1 0 0 1-1-.8L3.24 3"/><path d="M6.5 15.5A4 4 0 0 0 3 20h9a5 5 0 0 0-1.5-3.5"/></svg>
+            </div>
+          </div>
+          <div class="sector-card-body">
+            <h3>Nettoyage & Propreté</h3>
+            <p>Locaux, hôpitaux, vitrerie, bio-nettoyage</p>
+            <span class="sector-card-link">En savoir plus &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTRES SECTEURS ACCOMPAGNES -->
+  <section class="section cream-section">
+    <div class="container">
+      <div style="text-align: center;" class="r">
+        <span class="section-label">Couverture complète</span>
+        <h2 class="section-title">Autres secteurs <em>accompagnés</em></h2>
+        <p style="font-size: 1rem; color: var(--text-sec); max-width: 650px; margin: 0 auto 40px; line-height: 1.7;">Notre portail surveille 100 % des marchés publics français. Voici d'autres secteurs sur lesquels nous accompagnons régulièrement des entreprises.</p>
+      </div>
+      <div class="sector-grid-simple r">
+
+        <!-- Sante -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></div>
+          <div><div class="sector-name">Santé & Médical</div></div>
+        </div>
+
+        <!-- Sport -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
+          <div><div class="sector-name">Sport & Loisirs</div></div>
+        </div>
+
+        <!-- Education -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+          <div><div class="sector-name">Éducation & Formation</div></div>
+        </div>
+
+        <!-- Culture -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2Z"/></svg></div>
+          <div><div class="sector-name">Culture & Événementiel</div></div>
+        </div>
+
+        <!-- Securite -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+          <div><div class="sector-name">Sécurité & Gardiennage</div></div>
+        </div>
+
+        <!-- Agriculture -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/><path d="M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/></svg></div>
+          <div><div class="sector-name">Agriculture & Agroalimentaire</div></div>
+        </div>
+
+        <!-- Energie -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div>
+          <div><div class="sector-name">Énergie & Environnement</div></div>
+        </div>
+
+        <!-- IT -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
+          <div><div class="sector-name">IT & Télécoms</div></div>
+        </div>
+
+        <!-- Communication -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+          <div><div class="sector-name">Communication & Imprimerie</div></div>
+        </div>
+
+        <!-- Mobilier -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg></div>
+          <div><div class="sector-name">Mobilier & Équipement</div></div>
+        </div>
+
+        <!-- Conseil -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
+          <div><div class="sector-name">Conseil & Ingénierie</div></div>
+        </div>
+
+        <!-- Maintenance -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div><div class="sector-name">Maintenance Industrielle</div></div>
+        </div>
+
+        <!-- Espaces Verts -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.83V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M18 10v.2A3 3 0 0 1 16.9 16H13a3 3 0 0 1-1-5.83V10a3 3 0 0 1 6 0Z"/><path d="M15 16v6"/></svg></div>
+          <div><div class="sector-name">Espaces Verts & Paysagisme</div></div>
+        </div>
+
+        <!-- Hebergement -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+          <div><div class="sector-name">Hébergement & Restauration</div></div>
+        </div>
+
+        <!-- Transport -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
+          <div><div class="sector-name">Transport toutes catégories</div></div>
+        </div>
+
+        <!-- Logistique -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div>
+          <div><div class="sector-name">Logistique & Supply Chain</div></div>
+        </div>
+
+        <!-- BTP tous corps -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+          <div><div class="sector-name">BTP tous corps d'état</div></div>
+        </div>
+
+        <!-- Etudes -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg></div>
+          <div><div class="sector-name">Études & Diagnostics</div></div>
+        </div>
+
+        <!-- Automobile -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+          <div><div class="sector-name">Automobile & Flotte</div></div>
+        </div>
+
+        <!-- Autres -->
+        <div class="sector-card-simple">
+          <div class="sector-icon-simple"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>
+          <div><div class="sector-name">Autres secteurs</div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODE UNIVERSELLE -->
+  <section class="section content-section">
+    <div class="container">
+      <div style="text-align: center;" class="r">
+        <span class="section-label">Notre approche</span>
+        <h2 class="section-title">Notre méthode est <em>universelle</em></h2>
+      </div>
+      <div class="method-grid r">
+        <div class="method-card">
+          <div class="method-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h3>La veille fonctionne pour tout secteur</h3>
+          <p>Notre portail agrège plus de 17 sources officielles de marchés publics — BOAMP, PLACE, plateformes régionales, TED Europe — et couvre l'intégralité des codes CPV existants. Que vous soyez dans le nettoyage, l'IT, l'agriculture ou la sécurité, les appels d'offres de votre secteur sont détectés et remontés automatiquement dans votre espace. Les alertes sont paramétrées sur vos codes CPV, vos départements et vos mots-clés métier.</p>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          </div>
+          <h3>Le montage de dossier est universel</h3>
+          <p>Un dossier de réponse aux marchés publics suit toujours la même structure : pièces administratives (DC1, DC2, attestations), mémoire technique valorisant votre savoir-faire, et bordereau de prix. Nos 30 dossiers montés couvrent des secteurs très différents. La rigueur du montage, la qualité rédactionnelle du mémoire et la conformité administrative sont les mêmes quel que soit votre métier.</p>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <h3>L'expertise CPV s'adapte à chaque métier</h3>
+          <p>Chaque secteur a ses codes CPV, ses réglementations et ses critères d'attribution spécifiques. Nous étudions votre métier, identifions les codes CPV pertinents, analysons les exigences réglementaires propres à votre activité et structurons votre réponse en conséquence. Notre capacité d'adaptation est notre force : nous avons accompagné avec succès des ambulanciers, des restaurateurs, des entreprises de BTP, des sociétés de nettoyage, et bien d'autres.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA FINAL -->
-  <section class="section cta-section"><div class="container">
-    <h2 class="r">Demandez un essai gratuit <em>pour votre secteur</em></h2>
-    <p class="r">Quel que soit votre domaine d'activité, nous pouvons vous accompagner sur vos marchés publics. Inscrivez-vous gratuitement ou contactez-nous pour en discuter.</p>
-    <div class="hero-buttons r">
-      <a href="https://portal.abdridi.com/auth/register" class="btn-blue">S'inscrire gratuitement</a>
-      <a href="tel:+33756895534" class="btn-outline">07 56 89 55 34</a>
-      <a href="mailto:contact@abdridi.com" class="btn-outline">contact@abdridi.com</a>
+  <section class="section cta-section">
+    <div class="container">
+      <h2 class="r">Demandez un essai gratuit <em>pour votre secteur</em></h2>
+      <p class="r">Quel que soit votre domaine d'activité, nous pouvons vous accompagner sur vos marchés publics. Inscrivez-vous gratuitement ou contactez-nous pour en discuter.</p>
+      <div class="cta-buttons r">
+        <a href="https://portal.abdridi.com/auth/register" class="btn-blue">S'inscrire gratuitement</a>
+        <a href="tel:+33756895534" class="btn-outline">07 56 89 55 34</a>
+        <a href="mailto:contact@abdridi.com" class="btn-outline">contact@abdridi.com</a>
+      </div>
     </div>
-  </div></section>
+  </section>
 
-  <footer class="footer"><div class="container"><div class="footer-grid">
-    <div class="footer-brand"><div class="footer-logo"><img src="./logo-ab-dridi.png" alt="AB DRIDI"><span class="logo-text">DRIDI</span></div><p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics.</p></div>
-    <div class="footer-col"><h5>Services</h5><a href="./veille-marches-publics.html">Veille & Détection</a><a href="./memoire-technique.html">Mémoire Technique</a><a href="./montage-dossier.html">Montage Dossier</a><a href="./analyse-concurrence.html">Analyse Concurrence</a></div>
-    <div class="footer-col"><h5>Nos secteurs</h5><a href="./secteurs.html">Tous les secteurs</a><a href="./marches-publics-transport-medical.html">Transport Sanitaire</a><a href="./marches-publics-transport-funeraire.html">Pompes Funèbres</a><a href="./marches-publics-collecte-dechets.html">Collecte Déchets</a><a href="./marches-publics-fourniture-alimentaire.html">Restauration Collective</a><a href="./marches-publics-btp-travaux.html">BTP & Travaux</a><a href="./marches-publics-nettoyage.html">Nettoyage</a></div>
-    <div class="footer-col"><h5>Contact</h5><a href="mailto:contact@abdridi.com">contact@abdridi.com</a><a href="https://portal.abdridi.com/auth/login">Espace Client</a></div>
-  </div><div class="footer-bottom"><span>&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</span><div class="footer-bottom-links"><a href="./mentions-legales.html">Mentions légales</a><a href="./confidentialite.html">Confidentialité</a></div></div></div></footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="./logo-ab-dridi.png" alt="AB DRIDI">
+            <span class="logo-text">DRIDI</span>
+          </div>
+          <p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics. De la veille au dépôt, nous montons vos dossiers à 100%.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="./veille-marches-publics.html">Veille & Détection</a>
+          <a href="./memoire-technique.html">Mémoire Technique</a>
+          <a href="./montage-dossier.html">Montage Dossier</a>
+          <a href="./analyse-concurrence.html">Analyse Concurrence</a>
+        </div>
+        <div class="footer-col">
+          <h5>Secteurs</h5>
+          <a href="./secteurs.html">Tous les secteurs</a>
+          <a href="./marches-publics-transport-medical.html">Transport Sanitaire</a>
+          <a href="./marches-publics-transport-funeraire.html">Pompes Funèbres</a>
+          <a href="./marches-publics-collecte-dechets.html">Collecte Déchets</a>
+          <a href="./marches-publics-fourniture-alimentaire.html">Restauration</a>
+          <a href="./marches-publics-btp-travaux.html">BTP & Travaux</a>
+          <a href="./marches-publics-nettoyage.html">Nettoyage</a>
+        </div>
+        <div class="footer-col">
+          <h5>Portail</h5>
+          <a href="https://portal.abdridi.com/auth/login">Connexion</a>
+          <a href="https://portal.abdridi.com/auth/register">Créer un compte</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</span>
+        <div class="footer-bottom-links">
+          <a href="./mentions-legales.html">Mentions légales</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
-    const burger=document.getElementById('burger'),mobileMenu=document.getElementById('mobileMenu');burger.addEventListener('click',()=>{mobileMenu.classList.toggle('open');});function closeMobile(){mobileMenu.classList.remove('open');}
-    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('v');observer.unobserve(entry.target);}});},{threshold:0.1});document.querySelectorAll('.r').forEach(el=>observer.observe(el));
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('v'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.r').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
