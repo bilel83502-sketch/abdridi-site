@@ -497,21 +497,25 @@
       .steps-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="./site.css">
 </head>
 <body>
 
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="./" class="nav-logo"><img src="./logo-ab-dridi.png" alt="AB DRIDI" class="nav-logo-img"><span class="logo-text">DRIDI</span></a>
+      <a href="./" class="nav-logo"><img src="./logo-ab-dridi.png" alt="AB DRIDI" class="nav-logo-img"><span class="logo-text">AB DRIDI</span></a>
       <ul class="nav-links">
         <li><a href="./#services">Services</a></li>
         <li><a href="./secteurs.html">Secteurs</a></li>
         <li><a href="./#methode">Méthode</a></li>
         <li><a href="./#tarifs">Tarifs</a></li>
-        <li><a href="./#faq">FAQ</a></li>
         <li><a href="./a-propos.html">À propos</a></li>
+        <li><a href="./contact.html">Contact</a></li>
       </ul>
-      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <div class="nav-actions">
+        <a href="tel:+33756895534" class="nav-phone" aria-label="Appeler le 07 56 89 55 34"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg><span class="nav-phone-num">07 56 89 55 34</span></a>
+        <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      </div>
       <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -521,8 +525,11 @@
     <a href="./secteurs.html" onclick="closeMobile()">Secteurs</a>
     <a href="./#methode" onclick="closeMobile()">Méthode</a>
     <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
-    <a href="./#faq" onclick="closeMobile()">FAQ</a>
     <a href="./a-propos.html" onclick="closeMobile()">À propos</a>
+    <a href="./#faq" onclick="closeMobile()">FAQ</a>
+    <a href="./contact.html" onclick="closeMobile()">Contact</a>
+    <a href="tel:+33756895534" class="mm-phone">07 56 89 55 34</a>
+    <a href="https://portal.abdridi.com/auth/register" onclick="closeMobile()" class="mm-offer">3 mois offerts sur la veille</a>
     <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
   </div>
 
@@ -534,8 +541,8 @@
           <h1 class="r">Marchés publics collecte de déchets</h1>
           <p class="r">Collecte OMR, tri sélectif, biodéchets, gestion de déchèteries : nous détectons chaque appel d'offres déchets publié en France et vous accompagnons jusqu'au dépôt de votre offre.</p>
           <div class="hero-buttons r">
-            <a href="https://portal.abdridi.com/auth/register" class="btn-blue">S'inscrire gratuitement</a>
-            <a href="mailto:contact@abdridi.com" class="btn-outline-light">Prendre rendez-vous</a>
+            <a href="https://portal.abdridi.com/auth/register" class="btn-blue">3 mois offerts sur la veille</a>
+            <a href="./contact.html" class="btn-outline-light">Confier mon dossier</a>
           </div>
         </div>
         <div class="hero-image r">
@@ -632,8 +639,9 @@
   <section class="section cream-section">
     <div class="container">
       <div style="text-align: center;" class="r">
-        <span class="section-label">Exemples de marchés récents</span>
-        <h2 class="section-title">Des opportunités <em>concrètes</em></h2>
+        <span class="section-label">Exemples types</span>
+        <h2 class="section-title">À quoi ressemblent <em>ces marchés</em></h2>
+        <p class="example-note">Exemples types, montants indicatifs : ce ne sont pas des marchés réels ni des références clients.</p>
       </div>
       <div class="stats-row r">
         <div class="stat-card">
@@ -692,17 +700,17 @@
 
   <section class="section cream-section faq-section"><div class="container"><div style="text-align:center;" class="r"><span class="section-label">Questions fréquentes</span><h2 class="section-title">Tout savoir sur les marchés de <em>collecte de déchets</em></h2></div>
     <div style="max-width:800px;margin:48px auto 0;" class="r">
-      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Quelles certifications sont nécessaires pour répondre aux marchés déchets ?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Les certifications ISO 14001 (environnement) et ISO 9001 (qualité) sont fortement valorisées et parfois exigées. Les autorisations ICPE sont obligatoires pour les installations de traitement. Selon les marchés, des certifications spécifiques peuvent être requises : Qualipropreté, autorisation de transport de déchets dangereux, ou agrément pour les déchets d'équipements électriques et électroniques (DEEE).</p></div></div>
-      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Comment est structuré le BPU d'un marché de collecte ?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Le BPU d'un marché de collecte détaille les prix par type de prestation : collecte en porte-à-porte (prix au passage ou à la tonne), collecte en apport volontaire, location et entretien de conteneurs, prestations complémentaires (lavage de bacs, collecte de déchets verts). L'acheteur calcule un montant estimatif en croisant ces prix avec les volumes prévisionnels.</p></div></div>
-      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">La loi AGEC impacte-t-elle les marchés de collecte ?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Oui, la loi AGEC (Anti-Gaspillage pour une Économie Circulaire) a un impact majeur. Elle impose le tri à la source des biodéchets depuis le 1er janvier 2024, ce qui génère de nouvelles consultations pour la collecte séparée. Elle renforce aussi les objectifs de valorisation matière et organique, ce qui se traduit par des critères environnementaux plus exigeants dans les marchés.</p></div></div>
-      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Quelle est la durée habituelle des marchés de collecte ?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Les marchés de collecte sont généralement conclus pour 5 à 8 ans, permettant l'amortissement des investissements en véhicules et en matériel. Les marchés de fourniture de conteneurs sont plus courts (3 à 4 ans). Les DSP (délégations de service public) pour l'exploitation globale peuvent atteindre 10 à 15 ans.</p></div></div>
+      <div class="faq-item"><h3 class="faq-h"><button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">Quelles certifications sont nécessaires pour répondre aux marchés déchets ?<span class="faq-icon">+</span></button></h3><div class="faq-answer"><p>Les certifications ISO 14001 (environnement) et ISO 9001 (qualité) sont fortement valorisées et parfois exigées. Les autorisations ICPE sont obligatoires pour les installations de traitement. Selon les marchés, des certifications spécifiques peuvent être requises : Qualipropreté, autorisation de transport de déchets dangereux, ou agrément pour les déchets d'équipements électriques et électroniques (DEEE).</p></div></div>
+      <div class="faq-item"><h3 class="faq-h"><button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">Comment est structuré le BPU d'un marché de collecte ?<span class="faq-icon">+</span></button></h3><div class="faq-answer"><p>Le BPU d'un marché de collecte détaille les prix par type de prestation : collecte en porte-à-porte (prix au passage ou à la tonne), collecte en apport volontaire, location et entretien de conteneurs, prestations complémentaires (lavage de bacs, collecte de déchets verts). L'acheteur calcule un montant estimatif en croisant ces prix avec les volumes prévisionnels.</p></div></div>
+      <div class="faq-item"><h3 class="faq-h"><button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">La loi AGEC impacte-t-elle les marchés de collecte ?<span class="faq-icon">+</span></button></h3><div class="faq-answer"><p>Oui, la loi AGEC (Anti-Gaspillage pour une Économie Circulaire) a un impact majeur. Elle impose le tri à la source des biodéchets depuis le 1er janvier 2024, ce qui génère de nouvelles consultations pour la collecte séparée. Elle renforce aussi les objectifs de valorisation matière et organique, ce qui se traduit par des critères environnementaux plus exigeants dans les marchés.</p></div></div>
+      <div class="faq-item"><h3 class="faq-h"><button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">Quelle est la durée habituelle des marchés de collecte ?<span class="faq-icon">+</span></button></h3><div class="faq-answer"><p>Les marchés de collecte sont généralement conclus pour 5 à 8 ans, permettant l'amortissement des investissements en véhicules et en matériel. Les marchés de fourniture de conteneurs sont plus courts (3 à 4 ans). Les DSP (délégations de service public) pour l'exploitation globale peuvent atteindre 10 à 15 ans.</p></div></div>
     </div>
   </div></section>
 
   <section class="section cream-section"><div class="container"><div class="encart-universel" style="text-align:center; max-width:700px; margin:0 auto;" class="r">
     <span class="section-label">Tous secteurs confondus</span>
     <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2.2rem);">Vous êtes dans un <em>autre secteur</em> d'activité ?</h2>
-    <p style="font-size:0.95rem; color:var(--text-sec); line-height:1.7; margin-bottom:24px;">AB DRIDI accompagne les entreprises françaises dans plus de 25 secteurs d'activité différents : santé, sport, éducation, sécurité, événementiel, agriculture, énergie, IT, communication, et bien d'autres. Le portail surveille 100% des marchés publics français, tous secteurs confondus.</p>
+    <p style="font-size:0.95rem; color:var(--text-sec); line-height:1.7; margin-bottom:24px;">AB DRIDI accompagne les entreprises françaises dans de nombreux secteurs d'activité : santé, sport, éducation, sécurité, événementiel, agriculture, énergie, IT, communication, et bien d'autres. Le portail surveille 35+ sources officielles, tous secteurs confondus.</p>
     <a href="./secteurs.html" style="font-size:0.92rem; font-weight:600; color:var(--accent);">Découvrir tous les secteurs accompagnés &rarr;</a>
   </div></div></section>
 
@@ -714,44 +722,61 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo"><img src="./logo-ab-dridi.png" alt="AB DRIDI"><span class="logo-text">DRIDI</span></div>
-          <p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics. De la veille au dépôt, nous montons vos dossiers à 100%.</p>
+  <footer class="sf">
+    <div class="sf-inner">
+      <div class="sf-grid">
+        <div class="sf-brand">
+          <a href="./" class="sf-logo"><img src="./logo-ab-dridi.png" alt="">AB DRIDI</a>
+          <p>Veille des marchés publics et montage de dossiers de réponse, tous secteurs. De la détection au dépôt.</p>
+          <div class="sf-contact">
+            <a href="tel:+33756895534" class="sf-phone">07 56 89 55 34</a>
+            <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+            <span>Lun — Sam, 8h — 18h</span>
+          </div>
         </div>
-        <div class="footer-col">
+        <div class="sf-col">
           <h5>Services</h5>
-          <a href="./veille-marches-publics.html">Veille & Détection</a>
-          <a href="./memoire-technique.html">Mémoire Technique</a>
-          <a href="./montage-dossier.html">Montage Dossier</a>
-          <a href="./analyse-concurrence.html">Analyse Concurrence</a>
+          <a href="./veille-marches-publics.html">Veille des marchés</a>
+          <a href="./montage-dossier.html">Montage de dossier</a>
+          <a href="./memoire-technique.html">Mémoire technique</a>
+          <a href="./analyse-concurrence.html">Analyse de la concurrence</a>
+          <a href="./#methode">Notre méthode</a>
         </div>
-        <div class="footer-col">
-          <h5>Nos secteurs</h5>
-          <a href="./marches-publics-transport-medical.html">Transport Sanitaire</a>
-          <a href="./marches-publics-transport-funeraire.html">Pompes Funèbres</a>
-          <a href="./marches-publics-fourniture-alimentaire.html">Restauration Collective</a>
-          <a href="./marches-publics-messagerie-livraison.html">Messagerie & Livraison</a>
-          <a href="./marches-publics-btp-travaux.html">BTP & Travaux</a>
-          <a href="./marches-publics-nettoyage.html">Nettoyage & Propreté</a>
+        <div class="sf-col">
+          <h5>Secteurs</h5>
+          <a href="./marches-publics-transport-medical.html">Transport sanitaire</a>
+          <a href="./marches-publics-transport-scolaire.html">Transport scolaire</a>
+          <a href="./marches-publics-transport-tpmr.html">Transport de personnes / TPMR</a>
+          <a href="./marches-publics-transport-marchandises-logistique.html">Marchandises & logistique</a>
+          <a href="./marches-publics-demenagement.html">Déménagement</a>
+          <a href="./marches-publics-messagerie-livraison.html">Messagerie & livraison</a>
+          <a href="./marches-publics-transport-funeraire.html">Funéraire</a>
+          <a href="./marches-publics-collecte-dechets.html">Collecte de déchets</a>
+          <a href="./marches-publics-nettoyage.html">Nettoyage & propreté</a>
+          <a href="./marches-publics-btp-travaux.html">BTP & travaux</a>
+          <a href="./marches-publics-fourniture-alimentaire.html">Restauration collective</a>
+          <a href="./secteurs.html">Tous les secteurs</a>
         </div>
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
-          <a href="https://portal.abdridi.com/auth/login">Espace Client</a>
+        <div class="sf-col">
+          <h5>AB DRIDI</h5>
+          <a href="./contact.html">Contact</a>
+          <a href="./a-propos.html">À propos</a>
+          <a href="./#tarifs">Tarifs</a>
+          <a href="./#faq">FAQ</a>
+          <a href="https://portal.abdridi.com/auth/register">3 mois offerts</a>
+          <a href="https://portal.abdridi.com/auth/login">Espace client</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="sf-bottom">
         <span>&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</span>
-        <div class="footer-bottom-links">
-          <a href="https://portal.abdridi.com/mentions-legales">Mentions légales</a>
-          <a href="https://portal.abdridi.com/politique-confidentialite">Confidentialité</a>
+        <div>
+          <a href="./mentions-legales.html">Mentions légales</a>
+          <a href="./confidentialite.html">Confidentialité</a>
         </div>
       </div>
     </div>
   </footer>
+  <a href="tel:+33756895534" class="call-fab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg> Appeler le 07 56 89 55 34</a>
 
   <script>
     const nav = document.getElementById('nav');

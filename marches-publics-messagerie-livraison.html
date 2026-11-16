@@ -443,23 +443,27 @@
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
+  <link rel="stylesheet" href="./site.css">
 </head>
 <body>
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="./" class="nav-logo">
         <img src="./logo-ab-dridi.png" alt="AB DRIDI" class="nav-logo-img">
-        <span class="logo-text">DRIDI</span>
+        <span class="logo-text">AB DRIDI</span>
       </a>
       <ul class="nav-links">
         <li><a href="./#services">Services</a></li>
         <li><a href="./secteurs.html">Secteurs</a></li>
         <li><a href="./#methode">Méthode</a></li>
         <li><a href="./#tarifs">Tarifs</a></li>
-        <li><a href="./#faq">FAQ</a></li>
         <li><a href="./a-propos.html">À propos</a></li>
+        <li><a href="./contact.html">Contact</a></li>
       </ul>
-      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <div class="nav-actions">
+        <a href="tel:+33756895534" class="nav-phone" aria-label="Appeler le 07 56 89 55 34"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg><span class="nav-phone-num">07 56 89 55 34</span></a>
+        <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      </div>
       <button class="nav-burger" id="burger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -471,8 +475,11 @@
     <a href="./secteurs.html" onclick="closeMobile()">Secteurs</a>
     <a href="./#methode" onclick="closeMobile()">Méthode</a>
     <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
-    <a href="./#faq" onclick="closeMobile()">FAQ</a>
     <a href="./a-propos.html" onclick="closeMobile()">À propos</a>
+    <a href="./#faq" onclick="closeMobile()">FAQ</a>
+    <a href="./contact.html" onclick="closeMobile()">Contact</a>
+    <a href="tel:+33756895534" class="mm-phone">07 56 89 55 34</a>
+    <a href="https://portal.abdridi.com/auth/register" onclick="closeMobile()" class="mm-offer">3 mois offerts sur la veille</a>
     <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
   </div>
 
@@ -484,8 +491,8 @@
           <h1 class="r">Marchés publics messagerie et livraison</h1>
           <p class="r">CHU, préfectures, universités, ministères : nous détectons chaque appel d'offres de transport de colis, messagerie express et logistique publique en France et vous accompagnons dans le montage de vos dossiers de réponse.</p>
           <div class="hero-buttons r">
-            <a href="https://portal.abdridi.com/auth/register" class="btn-blue">S'inscrire gratuitement</a>
-            <a href="mailto:contact@abdridi.com" class="btn-outline-light">Prendre rendez-vous</a>
+            <a href="https://portal.abdridi.com/auth/register" class="btn-blue">3 mois offerts sur la veille</a>
+            <a href="./contact.html" class="btn-outline-light">Confier mon dossier</a>
           </div>
         </div>
         <div class="hero-image r">
@@ -534,7 +541,8 @@
     </div>
   </div></section>
 
-  <section class="section cream-section"><div class="container"><div style="text-align:center;" class="r"><span class="section-label">Exemples de marchés récents</span><h2 class="section-title">Des opportunités <em>concrètes</em></h2></div>
+  <section class="section cream-section"><div class="container"><div style="text-align:center;" class="r"><span class="section-label">Exemples types</span><h2 class="section-title">À quoi ressemblent <em>ces marchés</em></h2>
+        <p class="example-note">Exemples types, montants indicatifs : ce ne sont pas des marchés réels ni des références clients.</p></div>
     <div class="stats-row r">
       <div class="stat-card"><div class="number">420K&euro;</div><div class="label">CHU — Messagerie express et transport de prélèvements biologiques entre 8 sites hospitaliers, 36 mois, 3 lots avec exigence de chaîne du froid</div></div>
       <div class="stat-card"><div class="number">180K&euro;</div><div class="label">Préfecture — Transport de plis sensibles et courrier confidentiel entre services déconcentrés, 24 mois, habilitation sécurité requise</div></div>
@@ -564,19 +572,19 @@
     <div style="text-align:center;" class="r"><span class="section-label">Questions fréquentes</span><h2 class="section-title">Vos questions sur les marchés de <em>messagerie publique</em></h2></div>
     <div style="max-width:800px;margin:48px auto 0;" class="r">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Quelles assurances sont exigées pour les marchés publics de messagerie ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <h3 class="faq-h"><button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Quelles assurances sont exigées pour les marchés publics de messagerie ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button></h3>
         <div class="faq-answer"><div class="faq-answer-inner">Les acheteurs publics exigent généralement une assurance responsabilité civile professionnelle couvrant les dommages aux envois, une assurance transport de marchandises (ad valorem pour les plis sensibles) et une garantie contre le vol. Les montants de couverture varient selon la valeur des envois, pouvant atteindre plusieurs millions d'euros pour le transport de documents confidentiels.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Comment garantir la confidentialité des plis sensibles dans un marché public ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <h3 class="faq-h"><button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Comment garantir la confidentialité des plis sensibles dans un marché public ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button></h3>
         <div class="faq-answer"><div class="faq-answer-inner">La confidentialité repose sur plusieurs dispositifs : traçabilité en temps réel de chaque pli, chaîne de custody documentée avec signatures électroniques, véhicules sécurisés et scellés, habilitation du personnel (voire habilitation secret défense pour certains ministères). Le mémoire technique doit détailler précisément ces protocoles de sécurité.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Faut-il disposer de sa propre flotte pour répondre à un marché de messagerie publique ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <h3 class="faq-h"><button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Faut-il disposer de sa propre flotte pour répondre à un marché de messagerie publique ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button></h3>
         <div class="faq-answer"><div class="faq-answer-inner">Non, il est possible de répondre avec une flotte partenaire ou sous-traitée, à condition de le mentionner dans le DC4 et de fournir les justificatifs de capacité des sous-traitants. Cependant, disposer d'une flotte propre, même partielle, est souvent valorisé dans les critères techniques car cela garantit une meilleure maîtrise des délais et de la qualité de service.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Quels sont les principaux critères de sélection dans un marché de messagerie publique ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <h3 class="faq-h"><button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Quels sont les principaux critères de sélection dans un marché de messagerie publique ?<svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button></h3>
         <div class="faq-answer"><div class="faq-answer-inner">Les critères principaux sont le prix (40 à 60 % de la note), la valeur technique (délais de livraison, traçabilité, plan de continuité d'activité, démarche environnementale) et parfois un critère social (insertion). La réactivité en cas d'urgence et la capacité à couvrir l'ensemble du territoire national sont des éléments différenciants importants.</div></div>
       </div>
     </div>
@@ -586,7 +594,7 @@
   <section class="section cream-section encart-universel"><div class="container"><div style="text-align:center; max-width:700px; margin:0 auto;" class="r">
     <span class="section-label">Tous secteurs confondus</span>
     <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2.2rem);">Vous êtes dans un <em>autre secteur</em> d'activité ?</h2>
-    <p style="font-size:0.95rem; color:var(--text-sec); line-height:1.7; margin-bottom:24px;">AB DRIDI accompagne les entreprises françaises dans plus de 25 secteurs d'activité différents : santé, sport, éducation, sécurité, événementiel, agriculture, énergie, IT, communication, et bien d'autres. Le portail surveille 100% des marchés publics français, tous secteurs confondus.</p>
+    <p style="font-size:0.95rem; color:var(--text-sec); line-height:1.7; margin-bottom:24px;">AB DRIDI accompagne les entreprises françaises dans de nombreux secteurs d'activité : santé, sport, éducation, sécurité, événementiel, agriculture, énergie, IT, communication, et bien d'autres. Le portail surveille 35+ sources officielles, tous secteurs confondus.</p>
     <a href="./secteurs.html" style="font-size:0.92rem; font-weight:600; color:var(--accent);">Découvrir tous les secteurs accompagnés &rarr;</a>
   </div></div></section>
 
@@ -595,53 +603,72 @@
     <p class="r">Inscrivez-vous et recevez les appels d'offres de messagerie correspondant à votre zone d'intervention. Nous vous accompagnons jusqu'à la remise de l'offre.</p>
     <a href="https://portal.abdridi.com/auth/register" class="btn-blue r">Commencer la veille messagerie</a>
     <div class="cta-contact r">
-      <a href="tel:+33621359640">06 21 35 96 40</a>
+      <a href="tel:+33756895534">07 56 89 55 34</a>
       <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
     </div>
   </div></section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="./logo-ab-dridi.png" alt="AB DRIDI">
-            <span class="logo-text">DRIDI</span>
+  <footer class="sf">
+    <div class="sf-inner">
+      <div class="sf-grid">
+        <div class="sf-brand">
+          <a href="./" class="sf-logo"><img src="./logo-ab-dridi.png" alt="">AB DRIDI</a>
+          <p>Veille des marchés publics et montage de dossiers de réponse, tous secteurs. De la détection au dépôt.</p>
+          <div class="sf-contact">
+            <a href="tel:+33756895534" class="sf-phone">07 56 89 55 34</a>
+            <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+            <span>Lun — Sam, 8h — 18h</span>
           </div>
-          <p>Cabinet conseil spécialisé dans la réponse aux appels d'offres publics. De la veille au dépôt, nous montons vos dossiers à 100%.</p>
         </div>
-        <div class="footer-col">
+        <div class="sf-col">
           <h5>Services</h5>
-          <a href="./veille-marches-publics.html">Veille & Détection</a>
-          <a href="./memoire-technique.html">Mémoire Technique</a>
-          <a href="./montage-dossier.html">Montage Dossier</a>
-          <a href="./analyse-concurrence.html">Analyse Concurrence</a>
+          <a href="./veille-marches-publics.html">Veille des marchés</a>
+          <a href="./montage-dossier.html">Montage de dossier</a>
+          <a href="./memoire-technique.html">Mémoire technique</a>
+          <a href="./analyse-concurrence.html">Analyse de la concurrence</a>
+          <a href="./#methode">Notre méthode</a>
         </div>
-        <div class="footer-col">
-          <h5>Portail</h5>
-          <a href="https://portal.abdridi.com/auth/login">Connexion</a>
-          <a href="https://portal.abdridi.com/auth/register">Créer un compte</a>
+        <div class="sf-col">
+          <h5>Secteurs</h5>
+          <a href="./marches-publics-transport-medical.html">Transport sanitaire</a>
+          <a href="./marches-publics-transport-scolaire.html">Transport scolaire</a>
+          <a href="./marches-publics-transport-tpmr.html">Transport de personnes / TPMR</a>
+          <a href="./marches-publics-transport-marchandises-logistique.html">Marchandises & logistique</a>
+          <a href="./marches-publics-demenagement.html">Déménagement</a>
+          <a href="./marches-publics-messagerie-livraison.html">Messagerie & livraison</a>
+          <a href="./marches-publics-transport-funeraire.html">Funéraire</a>
+          <a href="./marches-publics-collecte-dechets.html">Collecte de déchets</a>
+          <a href="./marches-publics-nettoyage.html">Nettoyage & propreté</a>
+          <a href="./marches-publics-btp-travaux.html">BTP & travaux</a>
+          <a href="./marches-publics-fourniture-alimentaire.html">Restauration collective</a>
+          <a href="./secteurs.html">Tous les secteurs</a>
         </div>
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+        <div class="sf-col">
+          <h5>AB DRIDI</h5>
+          <a href="./contact.html">Contact</a>
+          <a href="./a-propos.html">À propos</a>
+          <a href="./#tarifs">Tarifs</a>
+          <a href="./#faq">FAQ</a>
+          <a href="https://portal.abdridi.com/auth/register">3 mois offerts</a>
+          <a href="https://portal.abdridi.com/auth/login">Espace client</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="sf-bottom">
         <span>&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</span>
-        <div class="footer-bottom-links">
-          <a href="https://portal.abdridi.com/mentions-legales">Mentions légales</a>
-          <a href="https://portal.abdridi.com/politique-confidentialite">Confidentialité</a>
+        <div>
+          <a href="./mentions-legales.html">Mentions légales</a>
+          <a href="./confidentialite.html">Confidentialité</a>
         </div>
       </div>
     </div>
   </footer>
+  <a href="tel:+33756895534" class="call-fab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg> Appeler le 07 56 89 55 34</a>
 
   <script>
     const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);});
     const burger=document.getElementById('burger'),mobileMenu=document.getElementById('mobileMenu');burger.addEventListener('click',()=>{mobileMenu.classList.toggle('open');});function closeMobile(){mobileMenu.classList.remove('open');}
     const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('v');observer.unobserve(entry.target);}});},{threshold:0.1});document.querySelectorAll('.r').forEach(el=>observer.observe(el));
-    function toggleFaq(btn){var expanded=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-question').forEach(function(q){q.setAttribute('aria-expanded','false');q.nextElementSibling.style.maxHeight=null;});if(!expanded){btn.setAttribute('aria-expanded','true');var answer=btn.nextElementSibling;answer.style.maxHeight=answer.scrollHeight+'px';}}
+    function toggleFaq(btn){var expanded=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-question').forEach(function(q){q.setAttribute('aria-expanded','false');(q.closest('.faq-h')||q).nextElementSibling.style.maxHeight=null;});if(!expanded){btn.setAttribute('aria-expanded','true');var answer=(btn.closest('.faq-h')||btn).nextElementSibling;answer.style.maxHeight=answer.scrollHeight+'px';}}
   </script>
 </body>
 </html>

@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos — AB DRIDI | Cabinet Conseil Marchés Publics</title>
-  <meta name="description" content="Découvrez AB DRIDI, cabinet conseil spécialisé en marchés publics. Fondé par Bilel DRIDI, expert transport et logistique.">
+  <title>À propos — AB DRIDI | Veille et montage de dossiers de marchés publics</title>
+  <meta name="description" content="AB DRIDI, créé en 2023 par Bilel DRIDI : veille des marchés publics et montage de dossiers de réponse, tous secteurs. Une méthode claire et un engagement de confidentialité.">
   <link rel="canonical" href="https://abdridi.com/a-propos.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abdridi.com/a-propos.html">
+  <meta property="og:title" content="À propos — AB DRIDI">
+  <meta property="og:description" content="Créé en 2023 : veille des marchés publics et montage de dossiers, tous secteurs. Nous ne citons jamais nos clients.">
+  <meta property="og:image" content="https://abdridi.com/logo-ab-dridi.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="AB DRIDI">
   <link rel="icon" type="image/png" href="./favicon.png">
   <link rel="apple-touch-icon" href="./favicon.png">
 
@@ -198,6 +205,21 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AB DRIDI",
+    "url": "https://abdridi.com",
+    "logo": "https://abdridi.com/logo-ab-dridi.png",
+    "foundingDate": "2023-03-06",
+    "founder": { "@type": "Person", "name": "Bilel DRIDI" },
+    "telephone": "+33756895534",
+    "email": "contact@abdridi.com",
+    "description": "Veille des marchés publics et montage de dossiers de réponse aux appels d'offres, tous secteurs"
+  }
+  </script>
+  <link rel="stylesheet" href="./site.css">
 </head>
 <body>
 
@@ -206,7 +228,7 @@
     <div class="nav-inner">
       <a href="./" class="nav-logo">
         <img src="./logo-ab-dridi.png" alt="AB DRIDI" class="nav-logo-img">
-        <span class="logo-text">DRIDI</span>
+        <span class="logo-text">AB DRIDI</span>
       </a>
 
       <ul class="nav-links">
@@ -214,11 +236,17 @@
         <li><a href="./secteurs.html">Secteurs</a></li>
         <li><a href="./#methode">Méthode</a></li>
         <li><a href="./#tarifs">Tarifs</a></li>
-        <li><a href="./#faq">FAQ</a></li>
-        <li><a href="./a-propos.html" style="color:#fff;">À propos</a></li>
+        <li><a href="./a-propos.html" aria-current="page">À propos</a></li>
+        <li><a href="./contact.html">Contact</a></li>
       </ul>
 
-      <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+      <div class="nav-actions">
+
+        <a href="tel:+33756895534" class="nav-phone" aria-label="Appeler le 07 56 89 55 34"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg><span class="nav-phone-num">07 56 89 55 34</span></a>
+
+        <a href="https://portal.abdridi.com/auth/login" class="nav-cta">Espace Client</a>
+
+      </div>
 
       <button class="nav-burger" id="burger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -232,9 +260,11 @@
     <a href="./secteurs.html" onclick="closeMobile()">Secteurs</a>
     <a href="./#methode" onclick="closeMobile()">Méthode</a>
     <a href="./#tarifs" onclick="closeMobile()">Tarifs</a>
+    <a href="./a-propos.html" onclick="closeMobile()">À propos</a>
     <a href="./#faq" onclick="closeMobile()">FAQ</a>
-    <a href="./a-propos.html" onclick="closeMobile()" style="color:#fff;">À propos</a>
-    <a href="https://portal.abdridi.com/auth/register" onclick="closeMobile()" style="color: #60A5FA;">Inscription gratuite</a>
+    <a href="./contact.html" onclick="closeMobile()">Contact</a>
+    <a href="tel:+33756895534" class="mm-phone">07 56 89 55 34</a>
+    <a href="https://portal.abdridi.com/auth/register" onclick="closeMobile()" class="mm-offer">3 mois offerts sur la veille</a>
     <a href="https://portal.abdridi.com/auth/login" onclick="closeMobile()" style="color: var(--text-light-sec);">Se connecter</a>
   </div>
 
@@ -242,7 +272,7 @@
   <section class="hero-section">
     <div class="container">
       <h1>À propos d&rsquo;<em>AB DRIDI</em></h1>
-      <p>Cabinet conseil spécialisé dans les marchés publics, au service des entreprises du transport et de la logistique.</p>
+      <p>Depuis 2023, AB DRIDI aide les entreprises de tous secteurs à trouver les marchés publics qui leur correspondent et à y répondre, avec une expertise particulière dans le transport.</p>
     </div>
   </section>
 
@@ -251,18 +281,30 @@
     <div class="container">
       <div class="section-label">Fondateur</div>
       <h2>Bilel DRIDI</h2>
-      <p>Expert en marchés publics, Bilel DRIDI est spécialisé dans les secteurs du transport et de la logistique. Fort de son expérience terrain auprès des TPE et PME, il a fondé AB DRIDI pour répondre à un besoin concret : permettre aux entreprises de taille modeste d&rsquo;accéder aux opportunités des marchés publics sans complexité inutile.</p>
-      <p>Son approche allie expertise réglementaire, connaissance fine des acheteurs publics et maîtrise des outils numériques pour offrir un accompagnement complet, du sourcing à la soumission.</p>
+      <p>Expert en marchés publics, Bilel DRIDI a fondé AB DRIDI en 2023. Fort de son expérience terrain auprès des TPE et PME, notamment dans le transport et la logistique, il a créé AB DRIDI pour répondre à un besoin concret : permettre aux entreprises de taille modeste d&rsquo;accéder aux opportunités des marchés publics sans complexité inutile.</p>
+      <p>Son approche allie connaissance de la réglementation, connaissance des acheteurs publics et maîtrise des outils numériques pour offrir un accompagnement complet, de la détection de l&rsquo;appel d&rsquo;offres jusqu&rsquo;au dépôt.</p>
     </div>
   </section>
 
-  <!-- ════════════════════ MISSION ════════════════════ -->
+  <!-- ════════════════════ METHODE ════════════════════ -->
+  <section class="section" id="methode">
+    <div class="container">
+      <div class="section-label">Notre méthode</div>
+      <h2>Quatre étapes, <em>un seul interlocuteur</em></h2>
+      <p><strong>1. Détection.</strong> Chaque nuit, notre portail interroge 35+ sources officielles. Chaque matin, vous recevez les appels d&rsquo;offres de votre secteur et de vos départements.</p>
+      <p><strong>2. Analyse.</strong> Nous lisons le dossier de consultation avec vous : exigences, critères de notation, délais. Nous vous disons franchement si le marché est à votre portée.</p>
+      <p><strong>3. Montage.</strong> Mémoire technique, BPU, pièces administratives : si vous nous confiez le dossier, nous le montons à 100 %, à partir de vos informations.</p>
+      <p><strong>4. Dépôt.</strong> Nous déposons l&rsquo;offre sur la bonne plateforme avant la date limite, et nous suivons le résultat avec vous.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════ CONFIDENTIALITE ════════════════════ -->
   <section class="section">
     <div class="container">
-      <div class="section-label">Notre mission</div>
-      <h2>Démocratiser l&rsquo;accès aux <em>marchés publics</em></h2>
-      <p>AB DRIDI a pour mission de démocratiser l&rsquo;accès aux marchés publics pour les TPE et PME du transport. Trop d&rsquo;entreprises compétentes passent à côté d&rsquo;opportunités faute de temps, de méthode ou de visibilité sur les appels d&rsquo;offres.</p>
-      <p>Nous simplifions chaque étape : la veille quotidienne sur les consultations, le montage des dossiers de réponse, et le suivi des attributions. Notre plateforme centralise plus de 25 sources publiques pour vous offrir une vision complète du marché.</p>
+      <div class="section-label">Notre engagement</div>
+      <h2>Nous ne citons <em>jamais nos clients</em></h2>
+      <p>Vos réponses aux marchés publics contiennent vos prix, vos méthodes et vos moyens : ce sont des informations stratégiques. C&rsquo;est pourquoi nous ne publions ni noms, ni logos, ni témoignages de nos clients, et nous ne réutilisons jamais le contenu d&rsquo;un dossier pour un autre client.</p>
+      <p>Ce choix nous prive d&rsquo;une vitrine, mais il vous garantit une discrétion totale vis-à-vis de vos concurrents.</p>
     </div>
   </section>
 
@@ -270,20 +312,31 @@
   <section class="section">
     <div class="container">
       <div class="section-label">En chiffres</div>
-      <h2>Une plateforme à la <em>hauteur de vos ambitions</em></h2>
+      <h2>AB DRIDI <em>aujourd&rsquo;hui</em></h2>
 
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-number">25+</div>
-          <div class="stat-label">Sources publiques agrégées</div>
+          <div class="stat-number">2023</div>
+          <div class="stat-label">Année de création</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">13 000+</div>
-          <div class="stat-label">Consultations ouvertes suivies</div>
+          <div class="stat-number">35+</div>
+          <div class="stat-label">Sources officielles surveillées chaque jour</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">529 000+</div>
-          <div class="stat-label">Marchés attribués référencés</div>
+          <div class="stat-number"><span class="js-open-tenders">15 000+</span></div>
+          <div class="stat-label">Appels d&rsquo;offres ouverts en ce moment</div>
+        </div>
+      </div>
+      <!-- À COMPLÉTER : chiffres d'activité fournis par Bilel. Retirer l'attribut hidden une fois les [X] remplacés. -->
+      <div class="stats-grid" hidden>
+        <div class="stat-card">
+          <div class="stat-number">[X]</div>
+          <div class="stat-label">Dossiers de réponse montés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">[X]</div>
+          <div class="stat-label">Secteurs d&rsquo;activité accompagnés</div>
         </div>
       </div>
     </div>
@@ -292,35 +345,81 @@
   <!-- ════════════════════ CTA ════════════════════ -->
   <section class="cta-section">
     <div class="container">
-      <h2>Prêt à trouver vos <em>prochains marchés</em> ?</h2>
-      <p style="color:var(--text-light-sec);font-size:15px;margin:0 auto 32px;max-width:500px;">
-        Créez votre compte gratuitement et accédez à toutes les consultations publiques en cours.
+      <h2>Parlons de vos <em>prochains marchés</em></h2>
+      <p style="color:var(--text-light-sec);font-size:15px;margin:0 auto 32px;max-width:520px;">
+        3 mois offerts sur la veille, ou un premier rendez-vous gratuit pour confier votre dossier.
       </p>
-      <a href="https://portal.abdridi.com/auth/register" class="btn-blue">
-        Accéder à la plateforme
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://portal.abdridi.com/auth/register" class="btn-blue">Je veux la veille : 3 mois offerts</a>
+        <a href="./contact.html" class="btn-blue" style="background:transparent;border:1px solid rgba(255,255,255,0.3);box-shadow:none;">Je veux qu&rsquo;on monte mon dossier</a>
+      </div>
     </div>
   </section>
 
+  <script>
+    fetch('https://portal.abdridi.com/api/public/stats').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.openTenders) return;
+      var n = Math.floor(d.openTenders / 1000) * 1000;
+      document.querySelectorAll('.js-open-tenders').forEach(function (el) { el.textContent = n.toLocaleString('fr-FR') + '+'; });
+    }).catch(function () {});
+  </script>
+
   <!-- ════════════════════ FOOTER ════════════════════ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="./logo-ab-dridi.png" alt="AB DRIDI">
-          <span class="logo-text">DRIDI</span>
-          <span style="margin-left:12px;">Cabinet conseil marchés publics</span>
+  <footer class="sf">
+    <div class="sf-inner">
+      <div class="sf-grid">
+        <div class="sf-brand">
+          <a href="./" class="sf-logo"><img src="./logo-ab-dridi.png" alt="">AB DRIDI</a>
+          <p>Veille des marchés publics et montage de dossiers de réponse, tous secteurs. De la détection au dépôt.</p>
+          <div class="sf-contact">
+            <a href="tel:+33756895534" class="sf-phone">07 56 89 55 34</a>
+            <a href="mailto:contact@abdridi.com">contact@abdridi.com</a>
+            <span>Lun — Sam, 8h — 18h</span>
+          </div>
         </div>
-        <div class="footer-links">
-          <a href="https://portal.abdridi.com/mentions-legales">Mentions légales</a>
-          <a href="https://portal.abdridi.com/politique-confidentialite">Confidentialité</a>
-          <a href="mailto:contact@abdridi.com">Contact</a>
+        <div class="sf-col">
+          <h5>Services</h5>
+          <a href="./veille-marches-publics.html">Veille des marchés</a>
+          <a href="./montage-dossier.html">Montage de dossier</a>
+          <a href="./memoire-technique.html">Mémoire technique</a>
+          <a href="./analyse-concurrence.html">Analyse de la concurrence</a>
+          <a href="./#methode">Notre méthode</a>
+        </div>
+        <div class="sf-col">
+          <h5>Secteurs</h5>
+          <a href="./marches-publics-transport-medical.html">Transport sanitaire</a>
+          <a href="./marches-publics-transport-scolaire.html">Transport scolaire</a>
+          <a href="./marches-publics-transport-tpmr.html">Transport de personnes / TPMR</a>
+          <a href="./marches-publics-transport-marchandises-logistique.html">Marchandises & logistique</a>
+          <a href="./marches-publics-demenagement.html">Déménagement</a>
+          <a href="./marches-publics-messagerie-livraison.html">Messagerie & livraison</a>
+          <a href="./marches-publics-transport-funeraire.html">Funéraire</a>
+          <a href="./marches-publics-collecte-dechets.html">Collecte de déchets</a>
+          <a href="./marches-publics-nettoyage.html">Nettoyage & propreté</a>
+          <a href="./marches-publics-btp-travaux.html">BTP & travaux</a>
+          <a href="./marches-publics-fourniture-alimentaire.html">Restauration collective</a>
+          <a href="./secteurs.html">Tous les secteurs</a>
+        </div>
+        <div class="sf-col">
+          <h5>AB DRIDI</h5>
+          <a href="./contact.html">Contact</a>
+          <a href="./a-propos.html">À propos</a>
+          <a href="./#tarifs">Tarifs</a>
+          <a href="./#faq">FAQ</a>
+          <a href="https://portal.abdridi.com/auth/register">3 mois offerts</a>
+          <a href="https://portal.abdridi.com/auth/login">Espace client</a>
         </div>
       </div>
-      <div class="footer-copy">&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</div>
+      <div class="sf-bottom">
+        <span>&copy; 2026 AB DRIDI &mdash; Monsieur Bilel DRIDI, EI &mdash; SIREN 949654487</span>
+        <div>
+          <a href="./mentions-legales.html">Mentions légales</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </div>
+      </div>
     </div>
   </footer>
+  <a href="tel:+33756895534" class="call-fab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg> Appeler le 07 56 89 55 34</a>
 
   <script>
     function closeMobile() {
